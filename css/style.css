@@ -931,16 +931,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ===== i18n ===== */
-[data-lang="en"] { display: none; }
-body.lang-en [data-lang="en"] { display: block; }
-body.lang-en [data-lang="cn"] { display: none; }
-span[data-lang="en"], a[data-lang="en"] { display: none; }
-body.lang-en span[data-lang="en"], body.lang-en a[data-lang="en"] { display: inline; }
-body.lang-en span[data-lang="cn"], body.lang-en a[data-lang="cn"] { display: none; }
-body.lang-en .nav-links > li > a[data-lang="cn"] { display: none; }
-body.lang-en .nav-links > li > a[data-lang="en"] { display: inline; }
-body.lang-en .card[data-lang="cn"] { display: none; }
-body.lang-en .card[data-lang="en"] { display: block; }
+[data-lang="cn"] { display: none; }
+body.lang-cn [data-lang="cn"] { display: block; }
+body.lang-cn [data-lang="en"] { display: none; }
+span[data-lang="cn"], a[data-lang="cn"] { display: none; }
+body.lang-cn span[data-lang="cn"], body.lang-cn a[data-lang="cn"] { display: inline; }
+body.lang-cn span[data-lang="en"], body.lang-cn a[data-lang="en"] { display: none; }
+body.lang-cn .nav-links > li > a[data-lang="en"] { display: none; }
+body.lang-cn .nav-links > li > a[data-lang="cn"] { display: inline; }
+body.lang-cn .card[data-lang="en"] { display: none; }
+body.lang-cn .card[data-lang="cn"] { display: block; }
 /* Toggle buttons use data-value, not data-lang */
 .lang-toggle span { display: inline-block !important; }
 

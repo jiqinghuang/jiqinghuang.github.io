@@ -1,7 +1,7 @@
 // ===== i18n Language Engine =====
 const I18N = {
   init() {
-    const saved = localStorage.getItem('lang') || 'cn';
+    const saved = localStorage.getItem('lang') || 'en';
     this.set(saved, false);
     // Bind toggle buttons (use data-value to avoid CSS i18n conflict)
     document.querySelectorAll('.lang-toggle').forEach(btn => {
@@ -28,8 +28,8 @@ const I18N = {
   },
 
   _apply(lang) {
-    document.body.classList.toggle('lang-en', lang === 'en');
-    document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+    document.body.classList.toggle('lang-cn', lang === 'cn');
+    document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
     localStorage.setItem('lang', lang);
     // Update toggle buttons (use data-value)
     document.querySelectorAll('.lang-toggle').forEach(btn => {
