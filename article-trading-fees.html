@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你交易，有人在数钱 | 黄汲清</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-soft);
+      font-weight: 600;
+    }
+    .article-body p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .article-body strong { color: var(--text-bright); }
+    .article-body .math-block {
+      font-family: var(--font-mono);
+      background: var(--bg-alt);
+      border-left: 3px solid var(--green);
+      padding: 12px 16px;
+      margin: 20px 0;
+      font-size: 0.88rem;
+      color: var(--text-bright);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.88rem;
+    }
+    .article-body th, .article-body td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .article-body th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+    .article-body td { color: var(--text); }
+    .article-body .closing {
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border-left: 3px solid var(--amber);
+    }
+    .article-body .closing p { color: var(--text-bright); font-weight: 500; }
+    .article-info {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .article-info .meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .article-info h1 {
+      font-size: 1.8rem;
+      color: var(--text-bright);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" class="active" data-lang="cn">投资</a><a href="investment.html" class="active" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle">
+            <span data-value="en" class="active">EN</span>
+            <span data-value="cn">CN</span>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px">
+    <div class="container article-body">
+
+      <!-- Chinese Version -->
+      <div data-lang="cn">
+        <div class="article-info">
+          <div class="meta">2026.05.17 &nbsp;·&nbsp; 黄汲清</div>
+          <h1>你交易，有人在数钱</h1>
+        </div>
+
+        <p>很多人进入市场，关心的是买什么、什么时候买、什么时候卖。很少有人认真算过另一笔账——手续费。</p>
+        <p>这篇文章不讲K线，不讲策略，只讲一个被大多数人忽视的问题：你的钱，有多少悄悄流进了别人的口袋？</p>
+
+        <h2>一、看得见的费用与看不见的费用</h2>
+        <p>交易成本分两种。</p>
+        <p><strong>看得见的</strong>：印花税、佣金、交易所规费。这些会出现在你的对账单上，清清楚楚。</p>
+        <p><strong>看不见的</strong>：买卖价差、市场冲击、滑点。你挂单买入的价格和实际成交价格之间的差，就是你额外付出的成本。资金量越大，这部分越明显。</p>
+        <p>大多数人只盯着佣金费率谈，觉得自己谈到了万分之二很便宜。但他们没意识到，隐性费用可能比显性费用还高。</p>
+
+        <h2>二、手续费的复利反噬</h2>
+        <p>我举一个简单的例子。</p>
+        <p>中国股票市场的印花税目前是卖出时收取万分之五（2023年8月从千分之一下调）。假设你每天卖出固定金额的股票，一年大约240个交易日：</p>
+        <div class="math-block">240 &times; 0.05% = 12%</div>
+        <p>在千分之一的时代，这个数字是：</p>
+        <div class="math-block">240 &times; 0.1% = 24%</div>
+        <p>24%是什么概念？这是中国法律认定的高利贷年利率上限。也就是说，在不算佣金和其他费用的情况下，每天交易一次的成本，比借高利贷还恐怖。几乎没有机构能长期稳定跑赢年化24%的收益率。</p>
+        <p>更可怕的是，手续费吃掉的不是利润，是<strong>本金</strong>。每一次交易，你的本金基数都在缩小。这不是线性消耗，是复利反噬。</p>
+
+        <h2>三、费用结构决定了市场的生态</h2>
+        <p>不同市场的费用结构，本质上决定了什么样的交易策略能在其中生存。</p>
+        <p><strong>A股</strong>：卖出收印花税（万分之五）+ 双向佣金。这套费用结构天然抑制高频交易，市场生态偏向中长线持有。</p>
+        <p><strong>期货</strong>：没有印花税，但开仓平仓都收交易所手续费，按手数或按金额计算。费率低，适合日内和短线策略。</p>
+        <p>这不是巧合。费用结构就是市场的"自然选择压力"。在A股做日内高频，就像在沙漠里种水稻——环境不支持。在期货市场做长线持有，又浪费了低费率的优势。</p>
+        <p>理解了这一点，你就明白为什么不同市场有不同的主流策略，而不是简单地把一个市场的策略搬到另一个市场。</p>
+
+        <h2>四、收益的正则化：一个机器学习的类比</h2>
+        <p>做量化交易的人大多也熟悉机器学习。我想用一个机器学习的概念来解释手续费的本质。</p>
+        <p>在机器学习中，模型训练有两个目标：<strong>拟合数据</strong>（最小化误差）和<strong>保持简单</strong>（正则化）。一味追求拟合，模型会过拟合——在训练集上表现完美，在真实数据上一塌糊涂。正则化的作用就是惩罚模型的复杂度，逼它找到真正的规律，而不是记住噪声。</p>
+        <p>交易完全一样。</p>
+        <p>你的损失函数可以写成：</p>
+        <div class="math-block">Loss = -收益 + &lambda; &times; 手续费</div>
+        <p>"收益最大化"就是拟合——你恨不得抓住市场的每一次波动。"手续费最小化"就是正则化——它逼你减少不必要的交易，只在高确信度的机会出手。</p>
+        <p>这两者之间存在矛盾，就像机器学习中的<strong>偏差-方差权衡</strong>：</p>
+        <table>
+          <thead><tr><th>机器学习</th><th>交易</th></tr></thead>
+          <tbody>
+            <tr><td>欠拟合（高偏差）</td><td>交易太少，错过机会</td></tr>
+            <tr><td>过拟合（高方差）</td><td>交易太频繁，手续费吞噬利润</td></tr>
+            <tr><td>最优模型</td><td>交易频率与收益的平衡点</td></tr>
+          </tbody>
+        </table>
+        <p>一个不做正则化的模型，在训练集上漂亮但没有实战价值。一个不考虑手续费的策略，在回测里亮眼但实盘必亏。</p>
+        <p>如果你的策略加上真实手续费后就不行了，那它本来就不该存在——就像一个只在训练集上准确的模型没有价值。手续费，就是市场的天然正则化器。</p>
+
+        <h2>五、回测中最诚实的检验</h2>
+        <p>做量化策略的人都知道回测。但很多回测有一个致命问题：<strong>不计手续费</strong>。</p>
+        <p>我的经验是：<strong>回测时加上真实费用，是最简单也最诚实的筛选器。</strong>能扛住费用冲击的策略，才有资格进入实盘。</p>
+        <p>在我的策略回测系统中，10个趋势跟踪策略在黄金期货指数上跑5年，表现最好的 TMA 策略累积收益142%，但它一年只交易约10次。而 Bollinger 策略交易更频繁，结果却是负收益。交易次数和收益之间不是正相关——加上手续费后，这个差距只会更大。</p>
+
+        <div class="closing">
+          <p>手续费不会出现在任何技术指标里，不会在K线上留下痕迹。但它是每一个交易者必须面对的数学现实。</p>
+          <p>在你追逐下一次交易机会之前，先算一笔账：这次交易的预期收益，能不能覆盖你付出的所有成本？</p>
+          <p>如果不能，最好的交易就是不交易。</p>
+          <p>而你付出的每一分手续费，都有人在稳稳地收。你交易，他们在数钱。你亏损，他们还在数钱。这个世界上唯一稳赚不赔的生意，不是交易——是收过路费。</p>
+        </div>
+      </div>
+
+      <!-- English Version -->
+      <div data-lang="en">
+        <div class="article-info">
+          <div class="meta">2026.05.17 &nbsp;&middot;&nbsp; Jiqing Huang</div>
+          <h1>You Trade. Someone Is Counting.</h1>
+        </div>
+
+        <p>Most people entering the market focus on what to buy, when to buy, and when to sell. Few ever sit down and do the other math &mdash; the math on fees.</p>
+        <p>This article isn't about candlesticks or strategies. It's about one question most traders ignore: how much of your money is quietly flowing into someone else's pocket?</p>
+
+        <h2>I. Visible Costs vs. Invisible Costs</h2>
+        <p>Trading costs come in two varieties.</p>
+        <p><strong>Visible costs</strong>: stamp duty, commissions, exchange fees. These show up on your statements, clear as day.</p>
+        <p><strong>Invisible costs</strong>: bid-ask spreads, market impact, slippage. The difference between the price you quoted and the price you actually got &mdash; that's an extra cost you paid. The larger your position, the more pronounced this becomes.</p>
+        <p>Most people haggle over commission rates, proud of negotiating down to 0.02%. They don't realize that invisible costs may dwarf what they see on paper.</p>
+
+        <h2>II. The Compound Effect of Fees</h2>
+        <p>Let me give you a concrete example.</p>
+        <p>China's stock market currently charges a stamp duty of 0.05% on sells (reduced from 0.1% in August 2023). Suppose you sell a fixed amount every trading day. With roughly 240 trading days in a year:</p>
+        <div class="math-block">240 &times; 0.05% = 12%</div>
+        <p>Under the old 0.1% rate, the math was:</p>
+        <div class="math-block">240 &times; 0.1% = 24%</div>
+        <p>What does 24% mean? It's the legal ceiling for usury interest rates in China. In other words, the annual cost of daily trading &mdash; before commissions and other fees &mdash; exceeds what loan sharks charge. Almost no institution can consistently beat a 24% annualized return.</p>
+        <p>What's worse, fees don't eat into your profits &mdash; they eat into your <strong>principal</strong>. Each trade shrinks your base. This isn't linear decay. It's compound erosion.</p>
+
+        <h2>III. Fee Structures Shape Market Ecology</h2>
+        <p>The fee structure of a market fundamentally determines which trading strategies can survive in it.</p>
+        <p><strong>China A-shares</strong>: stamp duty on sells (0.05%) plus two-way commissions. This structure naturally suppresses high-frequency trading and favors medium-to-long-term holding.</p>
+        <p><strong>Futures</strong>: no stamp duty, but exchange fees on both opening and closing positions, calculated per lot or per value. The lower rates favor intraday and short-term strategies.</p>
+        <p>This is no accident. Fee structures are the market's natural selection pressure. Day-trading A-shares is like growing rice in a desert &mdash; the environment doesn't support it. Long-term holding in futures wastes the advantage of low per-trade costs.</p>
+        <p>Once you understand this, you realize why different markets have different dominant strategies &mdash; and why blindly transplanting a strategy from one market to another rarely works.</p>
+
+        <h2>IV. Regularizing Your Returns: A Machine Learning Analogy</h2>
+        <p>Anyone working in quantitative trading likely also knows machine learning. I want to use a concept from ML to explain the true nature of trading fees.</p>
+        <p>In machine learning, model training has two objectives: <strong>fitting the data</strong> (minimizing error) and <strong>staying simple</strong> (regularization). If you optimize purely for fit, the model overfits &mdash; it looks perfect on training data but falls apart in the real world. Regularization penalizes complexity, forcing the model to find genuine patterns instead of memorizing noise.</p>
+        <p>Trading works exactly the same way.</p>
+        <p>Your loss function can be written as:</p>
+        <div class="math-block">Loss = -Returns + &lambda; &times; Fees</div>
+        <p>"Maximizing returns" is fitting &mdash; you want to capture every market swing. "Minimizing fees" is regularization &mdash; it forces you to trade less, only acting on high-conviction opportunities.</p>
+        <p>These two goals are in tension, just like the <strong>bias-variance tradeoff</strong> in machine learning:</p>
+        <table>
+          <thead><tr><th>Machine Learning</th><th>Trading</th></tr></thead>
+          <tbody>
+            <tr><td>Underfitting (high bias)</td><td>Trading too little, missing opportunities</td></tr>
+            <tr><td>Overfitting (high variance)</td><td>Trading too often, fees devour profits</td></tr>
+            <tr><td>Optimal model</td><td>The sweet spot between frequency and return</td></tr>
+          </tbody>
+        </table>
+        <p>A model without regularization looks great on paper but has no real-world value. A strategy without fee consideration looks great in backtest but will bleed money live.</p>
+        <p>If your strategy falls apart after adding real-world fees, it should never have existed &mdash; just like a model that only works on training data has no value. Fees are the market's natural regularizer.</p>
+
+        <h2>V. The Most Honest Backtest Filter</h2>
+        <p>Anyone building quantitative strategies knows about backtesting. But many backtests share a fatal flaw: <strong>they ignore fees</strong>.</p>
+        <p>My rule: <strong>add real-world fees to your backtest. It's the simplest and most honest filter.</strong> A strategy that survives the drag of fees earns the right to go live.</p>
+        <p>In my own backtesting system, 10 trend-following strategies tested on a gold futures index over 5 years tell the same story. The best performer, TMA, returned 142% cumulatively &mdash; but it only traded about 10 times per year. Bollinger Bands traded more frequently and ended up negative. Trade count and return are not positively correlated &mdash; and after fees, the gap only widens.</p>
+
+        <div class="closing">
+          <p>Fees don't appear in any technical indicator. They leave no trace on price charts. But they are a mathematical reality every trader must face.</p>
+          <p>Before chasing your next trade, do the math: can the expected return of this trade cover <em>all</em> the costs you're paying?</p>
+          <p>If not, the best trade is no trade at all.</p>
+          <p>And every cent you pay in fees, someone is collecting &mdash; steadily, silently. You trade, they count. You lose, they still count. The only business in the world that never loses money isn't trading &mdash; it's charging tolls.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <p class="footer-contact">
+        <span data-lang="cn">联系我：</span><span data-lang="en">Contact: </span>
+        <a href="mailto:jiqing.huang90@gmail.com">jiqing.huang90@gmail.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://github.com/jiqinghuang" target="_blank">GitHub</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Jiqing Huang</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
