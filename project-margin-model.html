@@ -99,19 +99,19 @@
       <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">方法说明</span><span data-lang="en">Methodology</span></h2>
       <div class="card-grid fade-in" style="margin-top:32px;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
         <div class="card">
-          <h3>EWMA 波动率</h3>
+          <h3><span data-lang="cn">EWMA 波动率</span><span data-lang="en">EWMA Volatility</span></h3>
           <p><span data-lang="cn">λ=0.98 RiskMetrics 风格指数加权移动平均。初始化窗口 k=228 天，递推公式 v_{t+1} = λ·v_t + (1−λ)·r_t²。</span><span data-lang="en">λ=0.98 RiskMetrics-style exponentially weighted moving average. 228-day initialization window, recurrence v_{t+1} = λ·v_t + (1−λ)·r_t².</span></p>
         </div>
         <div class="card">
-          <h3>双尾 VaR</h3>
+          <h3><span data-lang="cn">双尾 VaR</span><span data-lang="en">Two-Tailed VaR</span></h3>
           <p><span data-lang="cn">使用 z_{α/2} 而非单尾 z_α，产生更保守的保证金估计。99% 置信度下 z=2.576 vs 单尾 z=2.326。对数正态假设：VaR = exp(z·σ) − 1。</span><span data-lang="en">Two-tailed z_{α/2} for conservative margin estimates. At 99%: z=2.576 vs one-tailed z=2.326. Lognormal assumption: VaR = exp(z·σ) − 1.</span></p>
         </div>
         <div class="card">
-          <h3>价格冲击</h3>
+          <h3><span data-lang="cn">价格冲击</span><span data-lang="en">Price Shocks</span></h3>
           <p><span data-lang="cn">冲击后方差 λ·σ² + (1−λ)·ln(1+z)²，覆盖 2%–15% 六档冲击幅度。测试极端行情下保证金充足率。</span><span data-lang="en">Post-shock variance λ·σ² + (1−λ)·ln(1+z)² for six shock levels (2%–15%). Tests margin adequacy under extreme conditions.</span></p>
         </div>
         <div class="card">
-          <h3>突破回测</h3>
+          <h3><span data-lang="cn">突破回测</span><span data-lang="en">Breakthrough Backtest</span></h3>
           <p><span data-lang="cn">方法一：|收益率| > 99% VaR 且 ≥ 最低阈值（Au 2%, Ag 4%）。方法二：波动率放大 √1.8 后重新检验。250 日滚动窗口统计。</span><span data-lang="en">Method 1: |return| > 99% VaR and ≥ threshold (Au 2%, Ag 4%). Method 2: volatility scaled by √1.8. 250-day rolling window.</span></p>
         </div>
       </div>
