@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin Model | 黄汲清</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" class="active" data-lang="cn">项目</a><a href="projects.html" class="active" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle">
+            <span data-value="en" class="active">EN</span>
+            <span data-value="cn">CN</span>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-lang="cn">保证金模型</span><span data-lang="en">Margin Model</span></h1>
+      <p><span data-lang="cn">// 黄金 & 白银 Wind 期货指数 — EWMA 波动率 + VaR 保证金计算</span><span data-lang="en">// Gold & Silver Wind Futures Index — EWMA Volatility + VaR Margin Calculation</span></p>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">NumPy</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">SciPy</span>
+        <span class="tech-tag">Matplotlib</span>
+        <span class="tech-tag">RiskMetrics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-row fade-in">
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label"><span data-lang="cn">品种覆盖</span><span data-lang="en">Products</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label"><span data-lang="cn">VaR 置信水平</span><span data-lang="en">VaR Levels</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">~7,870</div>
+          <div class="stat-label"><span data-lang="cn">总交易日数据</span><span data-lang="en">Total Trading Days</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">99.99%</div>
+          <div class="stat-label"><span data-lang="cn">最高置信度</span><span data-lang="en">Max Confidence</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">系统架构</span><span data-lang="en">Architecture</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">三阶段管道式处理流程</span><span data-lang="en">Three-stage pipeline processing</span></p>
+      <div class="arch-flow fade-in">
+        <div class="arch-step">
+          <div class="step-num">01</div>
+          <strong>data_processor.py</strong>
+          <p><span data-lang="cn">加载数据 · 对数收益率 · EWMA 波动率 · VaR 计算</span><span data-lang="en">Load Data · Log Returns · EWMA Vol · VaR Calc</span></p>
+        </div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-step">
+          <div class="step-num">02</div>
+          <strong>stress_test.py</strong>
+          <p><span data-lang="cn">N 日远期 VaR · 手动波动率 · 价格冲击情景</span><span data-lang="en">N-day Forward VaR · Manual Vol · Shock Scenarios</span></p>
+        </div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-step">
+          <div class="step-num">03</div>
+          <strong>backtest.py</strong>
+          <p><span data-lang="cn">突破回测 · 滚动窗口 · 可视化 · Excel 导出</span><span data-lang="en">Breakthrough Test · Rolling Window · Plots · Excel Export</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">方法说明</span><span data-lang="en">Methodology</span></h2>
+      <div class="card-grid fade-in" style="margin-top:32px;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+        <div class="card">
+          <h3>EWMA 波动率</h3>
+          <p><span data-lang="cn">λ=0.98 RiskMetrics 风格指数加权移动平均。初始化窗口 k=228 天，递推公式 v_{t+1} = λ·v_t + (1−λ)·r_t²。</span><span data-lang="en">λ=0.98 RiskMetrics-style exponentially weighted moving average. 228-day initialization window, recurrence v_{t+1} = λ·v_t + (1−λ)·r_t².</span></p>
+        </div>
+        <div class="card">
+          <h3>双尾 VaR</h3>
+          <p><span data-lang="cn">使用 z_{α/2} 而非单尾 z_α，产生更保守的保证金估计。99% 置信度下 z=2.576 vs 单尾 z=2.326。对数正态假设：VaR = exp(z·σ) − 1。</span><span data-lang="en">Two-tailed z_{α/2} for conservative margin estimates. At 99%: z=2.576 vs one-tailed z=2.326. Lognormal assumption: VaR = exp(z·σ) − 1.</span></p>
+        </div>
+        <div class="card">
+          <h3>价格冲击</h3>
+          <p><span data-lang="cn">冲击后方差 λ·σ² + (1−λ)·ln(1+z)²，覆盖 2%–15% 六档冲击幅度。测试极端行情下保证金充足率。</span><span data-lang="en">Post-shock variance λ·σ² + (1−λ)·ln(1+z)² for six shock levels (2%–15%). Tests margin adequacy under extreme conditions.</span></p>
+        </div>
+        <div class="card">
+          <h3>突破回测</h3>
+          <p><span data-lang="cn">方法一：|收益率| > 99% VaR 且 ≥ 最低阈值（Au 2%, Ag 4%）。方法二：波动率放大 √1.8 后重新检验。250 日滚动窗口统计。</span><span data-lang="en">Method 1: |return| > 99% VaR and ≥ threshold (Au 2%, Ag 4%). Method 2: volatility scaled by √1.8. 250-day rolling window.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts Gallery -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">回测图表</span><span data-lang="en">Backtest Charts</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">|收益率| vs 99% / 99.99% VaR &nbsp;·&nbsp; 点击图片可放大</span><span data-lang="en">|Return| vs 99% / 99.99% VaR &nbsp;·&nbsp; Click to enlarge</span></p>
+      <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))">
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/margin_model_Au.png" alt="Au Backtest" loading="lazy">
+          <div class="gallery-caption"><span data-lang="cn">黄金 (Au) — 2008-01-09 ~ 2026-05-22</span><span data-lang="en">Gold (Au) — 2008-01-09 ~ 2026-05-22</span></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/margin_model_Ag.png" alt="Ag Backtest" loading="lazy">
+          <div class="gallery-caption"><span data-lang="cn">白银 (Ag) — 2012-05-10 ~ 2026-05-22</span><span data-lang="en">Silver (Ag) — 2012-05-10 ~ 2026-05-22</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Backtest Results -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">回测结果</span><span data-lang="en">Backtest Results</span></h2>
+      <div class="table-wrapper fade-in" style="margin-top:24px">
+        <table class="perf-table">
+          <thead>
+            <tr>
+              <th><span data-lang="cn">品种</span><span data-lang="en">Product</span></th>
+              <th><span data-lang="cn">方法</span><span data-lang="en">Method</span></th>
+              <th><span data-lang="cn">总突破数</span><span data-lang="en">Total BT</span></th>
+              <th><span data-lang="cn">交易天数</span><span data-lang="en">Trading Days</span></th>
+              <th><span data-lang="cn">突破率</span><span data-lang="en">BT Rate</span></th>
+              <th><span data-lang="cn">250日滚动（最新）</span><span data-lang="en">250d Rolling (Latest)</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Au</strong></td>
+              <td><span data-lang="cn">方法一（含阈值）</span><span data-lang="en">Method 1 (w/ threshold)</span></td>
+              <td>87</td>
+              <td>4,461</td>
+              <td>1.95%</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><strong>Au</strong></td>
+              <td><span data-lang="cn">方法二（η=1.8）</span><span data-lang="en">Method 2 (η=1.8)</span></td>
+              <td>39</td>
+              <td>4,461</td>
+              <td>0.87%</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td><strong>Ag</strong></td>
+              <td><span data-lang="cn">方法一（含阈值）</span><span data-lang="en">Method 1 (w/ threshold)</span></td>
+              <td>57</td>
+              <td>3,409</td>
+              <td>1.67%</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td><strong>Ag</strong></td>
+              <td><span data-lang="cn">方法二（η=1.8）</span><span data-lang="en">Method 2 (η=1.8)</span></td>
+              <td>27</td>
+              <td>3,409</td>
+              <td>0.79%</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Link -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">开源代码</span><span data-lang="en">Source Code</span></h2>
+      <p class="fade-in" style="color:var(--text-dim);margin-bottom:24px;font-size:0.95rem">
+        <span data-lang="cn">完整代码已托管在 GitHub，包含数据处理器、压力测试和回测模块</span>
+        <span data-lang="en">Full source code on GitHub — data processor, stress test, and backtest modules</span>
+      </p>
+      <a href="https://github.com/jiqinghuang/margin_model" target="_blank" class="btn btn-primary fade-in">
+        GitHub &rarr;
+      </a>
+      <p class="fade-in" style="margin-top:20px">
+        <a href="projects.html" style="font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim)">
+          &larr; <span data-lang="cn">返回项目列表</span><span data-lang="en">Back to Projects</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <p class="footer-contact">
+        <span data-lang="cn">联系我：</span><span data-lang="en">Contact: </span>
+        <a href="mailto:jiqing.huang90@gmail.com">jiqing.huang90@gmail.com</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/jiqinghuang" target="_blank">GitHub</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Jiqing Huang</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

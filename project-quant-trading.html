@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quant Trading System | 黄汲清</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" class="active" data-lang="cn">项目</a><a href="projects.html" class="active" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle">
+            <span data-value="en" class="active">EN</span>
+            <span data-value="cn">CN</span>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-lang="cn">量化交易策略系统</span><span data-lang="en">Quantitative Trading System</span></h1>
+      <p><span data-lang="cn">// 从数据采集到策略回测的完整量化研究框架</span><span data-lang="en">// End-to-end quantitative research framework: data ingestion to backtesting</span></p>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Polars</span>
+        <span class="tech-tag">NumPy</span>
+        <span class="tech-tag">Matplotlib</span>
+        <span class="tech-tag">Excel COM</span>
+        <span class="tech-tag">Wind</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-row fade-in">
+        <div class="stat-card">
+          <div class="stat-number">10</div>
+          <div class="stat-label"><span data-lang="cn">策略算法</span><span data-lang="en">Strategies</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">68</div>
+          <div class="stat-label"><span data-lang="cn">商品品种</span><span data-lang="en">Symbols</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5<span style="font-size:1.2rem">yr</span></div>
+          <div class="stat-label"><span data-lang="cn">回测周期</span><span data-lang="en">Backtest Period</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">158<span style="font-size:1.2rem">%</span></div>
+          <div class="stat-label"><span data-lang="cn">最高累积收益</span><span data-lang="en">Best Cumulative Return</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">系统架构</span><span data-lang="en">Architecture</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">四层管道设计，模块解耦，可扩展</span><span data-lang="en">4-layer pipeline, modular, extensible</span></p>
+      <div class="arch-flow fade-in">
+        <div class="arch-step">
+          <div class="step-num">01</div>
+          <h4><span data-lang="cn">数据层</span><span data-lang="en">Data Layer</span></h4>
+          <p><span data-lang="cn">Wind Excel COM<br>Parquet 存储</span><span data-lang="en">Wind Excel COM<br>Parquet Storage</span></p>
+        </div>
+        <span class="arch-arrow">&rarr;</span>
+        <div class="arch-step">
+          <div class="step-num">02</div>
+          <h4><span data-lang="cn">策略层</span><span data-lang="en">Strategy Layer</span></h4>
+          <p><span data-lang="cn">10 种趋势跟踪<br>信号生成</span><span data-lang="en">10 Trend-Following<br>Signal Generation</span></p>
+        </div>
+        <span class="arch-arrow">&rarr;</span>
+        <div class="arch-step">
+          <div class="step-num">03</div>
+          <h4><span data-lang="cn">回测层</span><span data-lang="en">Backtest Layer</span></h4>
+          <p><span data-lang="cn">历史模拟<br>T+1 执行</span><span data-lang="en">Historical Sim<br>T+1 Execution</span></p>
+        </div>
+        <span class="arch-arrow">&rarr;</span>
+        <div class="arch-step">
+          <div class="step-num">04</div>
+          <h4><span data-lang="cn">可视化层</span><span data-lang="en">Visualization</span></h4>
+          <p><span data-lang="cn">三面板图表<br>性能报告</span><span data-lang="en">3-Panel Charts<br>Performance Reports</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Table -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">策略性能对比</span><span data-lang="en">Strategy Performance</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center">
+        <span data-lang="cn">基于 AUFI.WI 上海期货交易所黄金 Wind 指数 5 年历史数据回测</span>
+        <span data-lang="en">Backtested on AUFI.WI (Shanghai Futures Exchange Gold Index), 5-year historical data</span>
+      </p>
+      <div class="table-wrapper fade-in">
+        <table class="perf-table">
+          <thead>
+            <tr>
+              <th><span data-lang="cn">策略</span><span data-lang="en">Strategy</span></th>
+              <th><span data-lang="cn">累积收益</span><span data-lang="en">Cum. Return</span></th>
+              <th><span data-lang="cn">年化收益</span><span data-lang="en">Ann. Return</span></th>
+              <th><span data-lang="cn">最大回撤</span><span data-lang="en">Max DD</span></th>
+              <th><span data-lang="cn">交易次数</span><span data-lang="en">Trades</span></th>
+              <th><span data-lang="cn">胜率</span><span data-lang="en">Win Rate</span></th>
+              <th><span data-lang="cn">平均收益</span><span data-lang="en">Avg Return</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>TMA (5/20/60)</strong></td>
+              <td class="highlight">158.43%</td>
+              <td class="highlight">20.95%</td>
+              <td class="negative">-22.07%</td>
+              <td>51</td>
+              <td>50.00%</td>
+              <td>15.67%</td>
+            </tr>
+            <tr>
+              <td><strong>TMA (10/30/90)</strong></td>
+              <td class="highlight">136.88%</td>
+              <td class="highlight">18.86%</td>
+              <td class="negative">-18.88%</td>
+              <td>29</td>
+              <td>30.00%</td>
+              <td>14.81%</td>
+            </tr>
+            <tr>
+              <td><strong>Donchian (50)</strong></td>
+              <td class="highlight">107.91%</td>
+              <td class="highlight">15.79%</td>
+              <td class="negative">-24.45%</td>
+              <td>112</td>
+              <td>57.14%</td>
+              <td>15.16%</td>
+            </tr>
+            <tr>
+              <td><strong>EWMA Long-Only</strong></td>
+              <td class="highlight">107.22%</td>
+              <td class="highlight">15.72%</td>
+              <td class="negative">-13.48%</td>
+              <td>142</td>
+              <td>46.48%</td>
+              <td>1.16%</td>
+            </tr>
+            <tr>
+              <td><strong>Donchian (20)</strong></td>
+              <td class="highlight">90.40%</td>
+              <td class="highlight">13.77%</td>
+              <td class="negative">-17.78%</td>
+              <td>152</td>
+              <td>60.00%</td>
+              <td>4.58%</td>
+            </tr>
+            <tr>
+              <td><strong>EWMA Long-Short</strong></td>
+              <td class="highlight">67.50%</td>
+              <td class="highlight">10.89%</td>
+              <td class="negative">-19.57%</td>
+              <td>142</td>
+              <td>36.17%</td>
+              <td>0.40%</td>
+            </tr>
+            <tr>
+              <td><strong>MACD</strong></td>
+              <td class="highlight">8.05%</td>
+              <td class="highlight">1.56%</td>
+              <td class="negative">-18.48%</td>
+              <td>109</td>
+              <td>30.56%</td>
+              <td>0.12%</td>
+            </tr>
+            <tr>
+              <td><strong>RSI</strong></td>
+              <td class="negative">-40.53%</td>
+              <td class="negative">-9.89%</td>
+              <td class="negative">-60.84%</td>
+              <td>33</td>
+              <td>66.67%</td>
+              <td>-12.30%</td>
+            </tr>
+            <tr>
+              <td><strong>Bollinger (20, 2.0)</strong></td>
+              <td class="negative">-43.93%</td>
+              <td class="negative">-10.95%</td>
+              <td class="negative">-58.07%</td>
+              <td>54</td>
+              <td>52.38%</td>
+              <td>-2.76%</td>
+            </tr>
+            <tr>
+              <td><strong>Bollinger (20, 1.5)</strong></td>
+              <td class="negative">-54.75%</td>
+              <td class="negative">-14.69%</td>
+              <td class="negative">-64.31%</td>
+              <td>75</td>
+              <td>51.85%</td>
+              <td>-2.90%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fade-in" style="text-align:center;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);margin-top:8px">
+        <span data-lang="cn">执行价格 = (开盘 + 收盘) / 2 &nbsp;·&nbsp; 信号日 T 生成，T+1 执行</span>
+        <span data-lang="en">Execution price = (open + close) / 2 &nbsp;·&nbsp; Signal at day T, executed at T+1</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">回测图表</span><span data-lang="en">Backtest Charts</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">点击图片可放大查看</span><span data-lang="en">Click to enlarge</span></p>
+      <div class="gallery">
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/TMA_5_20_60.png" alt="TMA 5/20/60" loading="lazy">
+          <div class="gallery-caption">TMA (5/20/60) — <span data-lang="cn">累积收益 158.43%</span><span data-lang="en">Cumulative Return 158.43%</span></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/TMA_10_30_90.png" alt="TMA 10/30/90" loading="lazy">
+          <div class="gallery-caption">TMA (10/30/90) — <span data-lang="cn">累积收益 136.88%</span><span data-lang="en">Cumulative Return 136.88%</span></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/EWMA_LONG_ONLY_30.png" alt="EWMA Long-Only" loading="lazy">
+          <div class="gallery-caption">EWMA Long-Only — <span data-lang="cn">累积收益 107.22%</span><span data-lang="en">Cumulative Return 107.22%</span></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/DONCHIAN_20.png" alt="Donchian 20" loading="lazy">
+          <div class="gallery-caption">Donchian (20) — <span data-lang="cn">累积收益 90.40%</span><span data-lang="en">Cumulative Return 90.40%</span></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/DONCHIAN_50.png" alt="Donchian 50" loading="lazy">
+          <div class="gallery-caption">Donchian (50)</div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/EWMA_30.png" alt="EWMA Long-Short" loading="lazy">
+          <div class="gallery-caption">EWMA Long-Short</div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/MACD_12_26_9.png" alt="MACD" loading="lazy">
+          <div class="gallery-caption">MACD (12/26/9)</div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/RSI_14_30_70.png" alt="RSI" loading="lazy">
+          <div class="gallery-caption">RSI (14, 30/70)</div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/BOLLINGER_20_2.png" alt="Bollinger 2.0" loading="lazy">
+          <div class="gallery-caption">Bollinger (20, 2.0)</div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="assets/plots/BOLLINGER_20_1.5.png" alt="Bollinger 1.5" loading="lazy">
+          <div class="gallery-caption">Bollinger (20, 1.5)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategy Descriptions -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">策略说明</span><span data-lang="en">Strategy Descriptions</span></h2>
+      <div class="card-grid fade-in" style="margin-top:32px;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+        <div class="card">
+          <h3>EWMA</h3>
+          <p><span data-lang="cn">价格穿越指数加权移动平均线时产生信号。提供多空和仅做多两个版本。</span><span data-lang="en">Signals generated when price crosses the exponentially weighted moving average. Long-short and long-only variants.</span></p>
+        </div>
+        <div class="card">
+          <h3>MACD</h3>
+          <p><span data-lang="cn">利用快慢 EMA 差值及其信号线的交叉判断趋势方向。经典趋势跟踪指标。</span><span data-lang="en">Fast/slow EMA difference and signal line crossovers for trend direction. A classic trend-following indicator.</span></p>
+        </div>
+        <div class="card">
+          <h3>Donchian</h3>
+          <p><span data-lang="cn">价格突破 N 周期高点买入，跌破 N 周期低点卖出。海龟交易法则的核心。</span><span data-lang="en">Buy on N-period high breakout, sell on N-period low breakdown. The core of the Turtle Trading system.</span></p>
+        </div>
+        <div class="card">
+          <h3>Bollinger</h3>
+          <p><span data-lang="cn">基于移动平均和标准差构建波动率通道，捕捉带宽收窄后的突破行情。</span><span data-lang="en">Volatility bands based on moving average and standard deviation. Captures breakouts after bandwidth contraction.</span></p>
+        </div>
+        <div class="card">
+          <h3>RSI</h3>
+          <p><span data-lang="cn">利用超买超卖区间进行均值回归交易。适合震荡行情中的反转捕捉。</span><span data-lang="en">Mean-reversion trading using overbought/oversold zones. Effective for catching reversals in ranging markets.</span></p>
+        </div>
+        <div class="card">
+          <h3>TMA</h3>
+          <p><span data-lang="cn">快中慢三条均线的排列关系判断趋势强度。多均线共振减少假信号。</span><span data-lang="en">Triple moving average alignment for trend strength. Multi-MA resonance reduces false signals.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Link -->
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">开源代码</span><span data-lang="en">Source Code</span></h2>
+      <p class="fade-in" style="color:var(--text-dim);margin-bottom:24px;font-size:0.95rem">
+        <span data-lang="cn">完整代码已托管在 GitHub，欢迎交流讨论</span>
+        <span data-lang="en">Full source code on GitHub — contributions and discussions welcome</span>
+      </p>
+      <a href="https://github.com/jiqinghuang/trading_strategy" target="_blank" class="btn btn-primary fade-in">
+        GitHub &rarr;
+      </a>
+      <p class="fade-in" style="margin-top:20px">
+        <a href="projects.html" style="font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim)">
+          &larr; <span data-lang="cn">返回项目列表</span><span data-lang="en">Back to Projects</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <p class="footer-contact">
+        <span data-lang="cn">联系我：</span><span data-lang="en">Contact: </span>
+        <a href="mailto:jiqing.huang90@gmail.com">jiqing.huang90@gmail.com</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/jiqinghuang" target="_blank">GitHub</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Jiqing Huang</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
