@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Margin Model | 黄汲清</title>
   <link rel="stylesheet" href="css/style.css">
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: { fontCache: 'global' }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </head>
 <body>
   <nav class="navbar">
@@ -100,19 +110,19 @@
       <div class="card-grid fade-in" style="margin-top:32px;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
         <div class="card">
           <h3><span data-lang="cn">EWMA 波动率</span><span data-lang="en">EWMA Volatility</span></h3>
-          <p><span data-lang="cn">λ=0.98 RiskMetrics 风格指数加权移动平均。初始化窗口 k=228 天，递推公式 v_{t+1} = λ·v_t + (1−λ)·r_t²。</span><span data-lang="en">λ=0.98 RiskMetrics-style exponentially weighted moving average. 228-day initialization window, recurrence v_{t+1} = λ·v_t + (1−λ)·r_t².</span></p>
+          <p><span data-lang="cn"> $\lambda=0.98$ RiskMetrics 风格指数加权移动平均。初始化窗口 $k=228$ 天，递推公式 $v_{t+1}=\lambda\cdot v_t+(1-\lambda)\cdot r_t^2$ 。</span><span data-lang="en"> $\lambda=0.98$ RiskMetrics-style exponentially weighted moving average. 228-day initialization window, recurrence $v_{t+1}=\lambda\cdot v_t+(1-\lambda)\cdot r_t^2$ .</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">双尾 VaR</span><span data-lang="en">Two-Tailed VaR</span></h3>
-          <p><span data-lang="cn">使用 z_{α/2} 而非单尾 z_α，产生更保守的保证金估计。99% 置信度下 z=2.576 vs 单尾 z=2.326。对数正态假设：VaR = exp(z·σ) − 1。</span><span data-lang="en">Two-tailed z_{α/2} for conservative margin estimates. At 99%: z=2.576 vs one-tailed z=2.326. Lognormal assumption: VaR = exp(z·σ) − 1.</span></p>
+          <p><span data-lang="cn">使用 $z_{\alpha/2}$ 而非单尾 $z_\alpha$，产生更保守的保证金估计。99% 置信度下 $z=2.576$ vs 单尾 $z=2.326$ 。对数正态假设： $\text{VaR}=\exp(z\cdot\sigma)-1$ 。</span><span data-lang="en">Two-tailed $z_{\alpha/2}$ for conservative margin estimates. At 99%: $z=2.576$ vs one-tailed $z=2.326$ . Lognormal assumption: $\text{VaR}=\exp(z\cdot\sigma)-1$ .</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">价格冲击</span><span data-lang="en">Price Shocks</span></h3>
-          <p><span data-lang="cn">冲击后方差 λ·σ² + (1−λ)·ln(1+z)²，覆盖 2%–15% 六档冲击幅度。测试极端行情下保证金充足率。</span><span data-lang="en">Post-shock variance λ·σ² + (1−λ)·ln(1+z)² for six shock levels (2%–15%). Tests margin adequacy under extreme conditions.</span></p>
+          <p><span data-lang="cn">冲击后方差 $\lambda\cdot\sigma^2+(1-\lambda)\cdot\ln(1+z)^2$ ，覆盖 2%–15% 六档冲击幅度。测试极端行情下保证金充足率。</span><span data-lang="en">Post-shock variance $\lambda\cdot\sigma^2+(1-\lambda)\cdot\ln(1+z)^2$ for six shock levels (2%–15%). Tests margin adequacy under extreme conditions.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">突破回测</span><span data-lang="en">Breakthrough Backtest</span></h3>
-          <p><span data-lang="cn">方法一：|收益率| > 99% VaR 且 ≥ 最低阈值（Au 2%, Ag 4%）。方法二：波动率放大 √1.8 后重新检验。250 日滚动窗口统计。</span><span data-lang="en">Method 1: |return| > 99% VaR and ≥ threshold (Au 2%, Ag 4%). Method 2: volatility scaled by √1.8. 250-day rolling window.</span></p>
+          <p><span data-lang="cn">方法一：|收益率| > 99% VaR 且 ≥ 最低阈值（Au 2%, Ag 4%）。方法二：方差放大 $\eta=1.8$ 倍后重新检验。250 日滚动窗口统计。</span><span data-lang="en">Method 1: |return| > 99% VaR and ≥ threshold (Au 2%, Ag 4%). Method 2: variance scaled by $\eta=1.8$ . 250-day rolling window.</span></p>
         </div>
       </div>
     </div>
