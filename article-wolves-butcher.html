@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>狼与屠夫：同一场博弈的两种误判 | 黄汲清</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-soft);
+      font-weight: 600;
+    }
+    .article-body h3 {
+      font-size: 1rem;
+      color: var(--text-bright);
+      margin: 32px 0 12px;
+      font-weight: 600;
+    }
+    .article-body p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .article-body strong { color: var(--text-bright); }
+    .article-body blockquote.classical {
+      background: var(--bg-alt);
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      line-height: 2.2;
+      color: var(--text);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      font-style: normal;
+    }
+    .article-body .callout {
+      font-family: var(--font-mono);
+      background: var(--bg-alt);
+      border-left: 3px solid var(--amber);
+      padding: 10px 14px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: var(--text-bright);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .article-body .closing {
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border-left: 3px solid var(--amber);
+    }
+    .article-body .closing p { color: var(--text-bright); font-weight: 500; }
+    .article-info {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .article-info .meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .article-info h1 {
+      font-size: 1.8rem;
+      color: var(--text-bright);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" class="active" data-lang="cn">投资</a><a href="investment.html" class="active" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle">
+            <span data-value="en" class="active">EN</span>
+            <span data-value="cn">CN</span>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px">
+    <div class="container article-body">
+
+      <!-- Chinese Version -->
+      <div data-lang="cn">
+        <div class="article-info">
+          <div class="meta">2026.06.24 &nbsp;·&nbsp; 黄汲清</div>
+          <h1>狼与屠夫：同一场博弈的两种误判</h1>
+        </div>
+
+        <h2>原文</h2>
+        <p style="color:var(--text-dim);font-size:0.8rem;margin-bottom:8px">蒲松龄《聊斋志异·卷六·狼三则（其二）》</p>
+        <blockquote class="classical">
+          <p>一屠晚归，担中肉尽，止有剩骨。途中两狼，缀行甚远。</p>
+          <p>屠惧，投以骨。一狼得骨止，一狼仍从。复投之，后狼止而前狼又至。骨已尽矣，而两狼之并驱如故。</p>
+          <p>屠大窘，恐前后受其敌。顾野有麦场，场主积薪其中，苫蔽成丘。屠乃奔倚其下，弛担持刀。狼不敢前，眈眈相向。</p>
+          <p>少时，一狼径去，其一犬坐于前。久之，目似瞑，意暇甚。屠暴起，以刀劈狼首，又数刀毙之。方欲行，转视积薪后，一狼洞其中，意将隧入以攻其后也。身已半入，止露尻尾。屠自后断其股，亦毙之。乃悟前狼假寐，盖以诱敌。</p>
+          <p>狼亦黠矣，而顷刻两毙，禽兽之变诈几何哉？止增笑耳。</p>
+        </blockquote>
+
+        <h2>白话译文</h2>
+        <p>一个屠夫天晚回家，担子里的肉卖完了，只剩骨头。路上遇到两只狼，跟着他走了很远。</p>
+        <p>屠夫害怕，扔了一根骨头。一只狼停下来啃，另一只继续跟。再扔一根——后面那只停了，前面那只又追上来。骨头扔完了，两只狼一起追，跟之前一样。</p>
+        <p>屠夫非常窘迫，怕被前后夹击。看到田野里有个打麦场，场主堆了柴草，覆盖成小山。屠夫跑过去背靠柴垛，放下担子，拔出刀。狼不敢上前，瞪着他。</p>
+        <p>过了一会儿，一只狼径直走了；另一只像狗一样蹲坐在前面。时间长了，眼睛好像闭上了，神态很悠闲。屠夫突然跳起来，一刀劈中狼头，连砍几刀杀死。正要走，绕到柴垛后面一看——另一只狼正在柴垛里打洞，想钻进去从背后攻击。身子已经进去一半，只露出屁股和尾巴。屠夫从后面砍断它大腿，也杀了。他这才明白：前面那只狼假装睡觉，是为了诱敌。</p>
+        <p>狼也算狡猾，但一会儿工夫两只都被杀死。禽兽的诡计能有多少呢？只是给人增加笑料罢了。</p>
+
+        <h2>引言</h2>
+        <p>这篇课文每个人中学都读过。屠夫机智，狼狡猾但愚蠢。全文完。</p>
+        <p>但把这场博弈当成一笔交易来看——屠夫和狼各自犯了错，这些错在金融市场上反复发生，换了一茬又一茬的人，内核从来没变过。</p>
+
+        <h2>一、屠夫犯的错</h2>
+
+        <h3>投骨</h3>
+        <p>屠夫被狼跟踪，第一反应是扔骨头。狼停下来啃，不追了。再追，再扔。骨头扔完了，两只狼一起追，跟之前一样——甚至更凶。</p>
+        <p>这是屠夫唯一主动犯的错，差点要了他的命。</p>
+        <p><strong>在交易里：</strong>你买了一只股票，跌了。你补仓，告诉自己「摊低成本」。又跌了，再补。你的钱就是骨头。骨头扔完了，股票还在跌。每一次补仓都暂时缓解了焦虑——就像骨头扔出去，狼确实停了一下。但你解决的不是问题本身，是你自己的难受。等钱补完了，你发现那个让你难受的东西还在，而且更大了。</p>
+        <div class="callout">用有限的钱去安抚一个无限的问题，唯一的结局是弹尽粮绝。</div>
+        <p>屠夫后来做对了几件事：找草垛（不暴露后背）、拔刀（保留反击能力）、对峙（不乱动）、暴起（看准了出手）、转身检查背后（赢了不飘）。但大多数人做不到。他们进场时既没草垛也没刀——不设底线，不留现金，不看背后。赚了不走，亏了死扛。屠夫能活，是因为他扔完骨头之后醒了。大多数人醒不了。</p>
+
+        <h2>二、狼犯的错</h2>
+
+        <h3>错一：简单能赢，偏要搞复杂</h3>
+        <p>两只狼对一把刀。二打一。屠夫一把刀只能防一个方向。两只狼一起正面攻击，屠夫几乎没有生还可能。</p>
+        <p>但它们没有。它们觉得「直接上」太粗糙了，得想一个更好的办法。于是搞出了分兵方案：一只假装睡觉吸引注意力，另一只绕到草垛后面挖洞偷袭。纸上推演很漂亮。</p>
+        <p>但数一下这个方案可能出问题的地方：装睡的被识破怎么办？装得太像反应不过来被砍怎么办？挖洞的出声了怎么办？挖太慢前面撑不住怎么办？屠夫换位置了怎么办？任何一只出事，另一只立刻一对一。至少六个故障点。</p>
+        <p>直接一起上呢？只需要担心那把刀。一把刀一次只能捅一个方向。</p>
+        <p><strong>在交易里：</strong>你有一个简单、能赚钱的方法。但你不好意思——「这也太简单了吧？」你觉得肯定漏了什么，于是往上加东西。加过滤条件、加确认信号、加各种规则。每加一样，你离最初那个能赚钱的方法就远一步。而且你的操作环节越多，出错的概率越高。它不会断在你反复检查的地方——一定断在你没想到的地方。</p>
+        <p>简单不是粗糙。简单是你的优势本来就够大，大到不需要花招。</p>
+        <div class="callout">你往一个能赢的方法里加进去的每一个新东西，不是保险，是一扇会坏的门。</div>
+
+        <h3>错二：半个身子进了洞，出不来了</h3>
+        <p>全篇最狼狈的画面：「身已半入，止露尻尾。」往前不知道还要挖多久，往后卡住了退不出来。结局只有一个：等屠夫绕过来。</p>
+        <p><strong>在交易里：</strong>方向错了，不止损。往里补仓，叫「摊低成本」。把能动用的钱全放进去，甚至借钱。等你终于意识到不对的时候——仓位大到不敢平，亏到不敢打开账户。你不是在交易了，你是卡在洞里，进退两难。</p>
+        <div class="callout">每一笔交易，你最先应该想清楚的问题不是「能赚多少」，而是「什么情况下我必须出来」。回答不了这个问题，迟早有一只狼的下场在等着你。</div>
+
+        <h2>三、总结</h2>
+        <p>屠夫和狼放在一起，两件事看得最清楚：</p>
+        <p><strong>能简单赢的，不要搞复杂。</strong>屠夫的动作就三个——靠墙、放担、拿刀。狼的计划有六个环节。简单的那个活下来了。</p>
+        <p><strong>先想怎么出来，再想怎么进去。</strong>屠夫有草垛，退路清楚。狼半个身子卡在洞里，进退两难。有退路的，错一次不会死。没退路的，错一次全没了。</p>
+
+        <div class="closing">
+          <p>市场不偏袒屠夫也不偏袒狼。它安安静静地等着——等你扔完最后一根骨头，或者把自己半个身子挖进洞里。</p>
+        </div>
+      </div>
+
+      <!-- English Version -->
+      <div data-lang="en">
+        <div class="article-info">
+          <div class="meta">2026.06.24 &nbsp;&middot;&nbsp; Jiqing Huang</div>
+          <h1>The Butcher and the Wolves: Two Misjudgments in One Game</h1>
+        </div>
+
+        <h2>Original Text</h2>
+        <p style="color:var(--text-dim);font-size:0.8rem;margin-bottom:8px">Pu Songling, <em>Strange Tales from a Chinese Studio</em>, Vol. 6 &mdash; "Three Wolf Stories" (Part 2)</p>
+        <blockquote class="classical">
+          <p>一屠晚归，担中肉尽，止有剩骨。途中两狼，缀行甚远。</p>
+          <p>屠惧，投以骨。一狼得骨止，一狼仍从。复投之，后狼止而前狼又至。骨已尽矣，而两狼之并驱如故。</p>
+          <p>屠大窘，恐前后受其敌。顾野有麦场，场主积薪其中，苫蔽成丘。屠乃奔倚其下，弛担持刀。狼不敢前，眈眈相向。</p>
+          <p>少时，一狼径去，其一犬坐于前。久之，目似瞑，意暇甚。屠暴起，以刀劈狼首，又数刀毙之。方欲行，转视积薪后，一狼洞其中，意将隧入以攻其后也。身已半入，止露尻尾。屠自后断其股，亦毙之。乃悟前狼假寐，盖以诱敌。</p>
+          <p>狼亦黠矣，而顷刻两毙，禽兽之变诈几何哉？止增笑耳。</p>
+        </blockquote>
+
+        <h2>Translation</h2>
+        <p>A butcher was heading home late in the day. His load was sold, nothing left but bones. On the road, two wolves picked up his trail and followed him far.</p>
+        <p>Afraid, the butcher tossed them a bone. One wolf stopped to gnaw at it; the other kept following. He threw another &mdash; the trailing wolf stopped, but the first one caught up again. When the bones ran out, both wolves chased him together, same as before.</p>
+        <p>Now truly desperate, and fearing an attack from both sides, the butcher spotted a threshing ground in the field. The farmer had stacked hay there, covered into a mound. The butcher sprinted to it, pressed his back against the haystack, dropped his pole, and drew his knife. The wolves dared not advance. They stood glaring at him.</p>
+        <p>After a while, one wolf walked straight away. The other sat down in front of him like a dog. As time passed, its eyes seemed to close, its expression utterly relaxed. The butcher burst forward, slashed its head with his knife, and finished it with several more blows. Just as he was about to leave, he turned and looked behind the haystack &mdash; and there was the other wolf, burrowing into the stack, meaning to tunnel through and attack him from behind. Half its body was already in, only its rump and tail exposed. The butcher hacked its hind legs from behind and killed it too. Only then did he understand: the wolf in front had been feigning sleep. It was the decoy.</p>
+        <p>The wolves were cunning, yes. But both were dead in moments. What tricks do beasts have, after all? They only give us more to laugh about.</p>
+
+        <h2>Introduction</h2>
+        <p>Everyone read this story in school. The standard answer: butcher clever, wolves cunning but stupid. The end.</p>
+        <p>But reframe this as a trade. The butcher and the wolves each made decisions, each made mistakes. These mistakes repeat endlessly in financial markets &mdash; different faces, same core.</p>
+
+        <h2>I. The Butcher's Mistake</h2>
+
+        <h3>Throwing Bones</h3>
+        <p>A butcher, followed by wolves. His first instinct: throw them a bone. The wolf stops to gnaw. It works. When the wolf catches up again, he throws another. The bones run out. Both wolves chase him, same as before &mdash; worse than before.</p>
+        <p>This is the only active mistake the butcher made. It nearly killed him.</p>
+        <p><strong>In trading:</strong> You buy a stock. It drops. You average down, telling yourself you're "lowering your cost basis." It drops again. You add more. Your money is the bones. When the bones run out, the stock is still falling. Every time you add, the anxiety eases briefly &mdash; just like the wolf stopped for that bone. But you're not solving the problem. You're soothing your own discomfort. When the money's gone, you discover the thing that was hurting you is still there, and bigger.</p>
+        <div class="callout">Using finite resources to appease an infinite problem. The only outcome is running out of both.</div>
+        <p>The butcher later did several things right: found the haystack (protected his back), drew his knife (kept the ability to strike back), stood his ground (didn't panic), struck decisively (acted the moment he saw an opening), turned to check behind him (didn't get complacent after winning). Most people can't do these. They enter the market with no haystack and no knife &mdash; no bottom line, no cash reserve, blind to what's behind them. They won't take profits, won't cut losses. The butcher survived because he woke up after the bones ran out. Most people never do.</p>
+
+        <h2>II. The Wolves' Mistakes</h2>
+
+        <h3>Mistake 1: Had a simple win. Chose a complicated death.</h3>
+        <p>Two wolves against one knife. Two on one. The butcher can only defend one direction. If both wolves attack together from the front, the butcher has almost no chance.</p>
+        <p>But they didn't. "Just attack directly" felt too crude. They needed a better plan. So they split up: one wolf pretends to sleep as a decoy, the other circles around to tunnel through the haystack and attack from behind. On paper, elegant.</p>
+        <p>Now count the ways this plan can fail: What if the decoy's act is spotted? What if it acts too well and can't react in time when the butcher strikes? What if the tunneler makes noise? What if the tunneler is too slow and the decoy can't hold? What if the butcher changes position? And if either wolf fails, the other is suddenly one-on-one. At least six failure points.</p>
+        <p>What if they just attacked together? Only one thing to worry about: the knife. One knife can only stab one direction at a time.</p>
+        <p><strong>In trading:</strong> You have a simple method that makes money. But you're embarrassed &mdash; "It's too simple, right?" You feel like you must be missing something, so you add to it. Filters. Confirmation signals. More rules. Every addition takes you one step further from the original method that actually worked. And the more steps in your process, the higher the chance something breaks. It won't break where you're watching &mdash; it'll break exactly where you're not looking.</p>
+        <p>Simple isn't crude. Simple means your edge is big enough that you don't need tricks.</p>
+        <div class="callout">Every new thing you add to a winning method isn't insurance &mdash; it's a door that can break.</div>
+
+        <h3>Mistake 2: Half your body in the hole. No way out.</h3>
+        <p>The most haunting image in the whole story: "Its body already half in, only rump and tail exposed." Forward &mdash; who knows how much further to dig. Backward &mdash; stuck, can't retreat. Only one possible ending: waiting for the butcher to walk around.</p>
+        <p><strong>In trading:</strong> The position goes against you. You don't cut it. You add more, calling it "lowering your cost." You throw in every dollar you can access. You borrow. By the time you finally realize something's wrong &mdash; the position is too big to close, the loss is too big to look at. You're not trading anymore. You're stuck in a hole, halfway in, praying the butcher doesn't come around. But he always does.</p>
+        <div class="callout">Before every trade, the first question you need to answer isn't "how much can I make." It's "under what conditions do I get out." If you can't answer that, sooner or later, a wolf's fate is waiting for you.</div>
+
+        <h2>III. In Summary</h2>
+        <p>Put the butcher and the wolves side by side, two things become clear:</p>
+        <p><strong>If simple can win, don't make it complicated.</strong> The butcher had three moves &mdash; back to the wall, drop the burden, hold the knife. The wolves had a six-point plan. The simple one survived.</p>
+        <p><strong>Figure out how to get out before you figure out how to get in.</strong> The butcher had his haystack &mdash; a clear exit. The wolf had half its body in a hole &mdash; no way forward, no way back. With an exit, one mistake won't kill you. Without one, one mistake is all it takes.</p>
+
+        <div class="closing">
+          <p>The market doesn't favor the butcher or the wolves. It waits quietly &mdash; for you to throw your last bone, or dig yourself halfway into a hole.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <p class="footer-contact">
+        <span data-lang="cn">联系我：</span><span data-lang="en">Contact: </span>
+        <a href="mailto:jiqing.huang90@gmail.com">jiqing.huang90@gmail.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://github.com/jiqinghuang" target="_blank">GitHub</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Jiqing Huang</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
