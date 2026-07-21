@@ -912,6 +912,150 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .footer-contact a { color: var(--green); }
 
+/* Contact gate */
+.contact-reveal-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 5px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.contact-reveal-btn:hover { border-color: var(--green); color: var(--green); }
+
+/* Contact modal */
+.cg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s;
+}
+.cg-overlay.open { opacity: 1; visibility: visible; }
+
+.cg-modal {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 44px 36px;
+  max-width: 420px;
+  width: calc(100% - 48px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cg-overlay.open .cg-modal { transform: translateY(0) scale(1); }
+
+.cg-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color var(--transition);
+}
+.cg-close:hover { color: var(--text-bright); }
+
+.cg-body { text-align: center; }
+
+.cg-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 22px;
+}
+
+/* Math formula */
+.cg-formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  color: var(--text-bright);
+  margin-bottom: 26px;
+  font-size: 2rem;
+  transition: opacity 0.3s;
+}
+.cg-int {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 3.1rem;
+  font-style: normal;
+  line-height: 1;
+  color: var(--green);
+  padding-right: 0.28em; /* 给上下限留位 */
+}
+.cg-lims { position: absolute; right: 0; top: 50%; font-size: 0.32em; font-style: normal; line-height: 1; color: var(--text-dim); }
+.cg-lims sub, .cg-lims sup { position: absolute; right: 0; white-space: nowrap; }
+.cg-lims sup { bottom: 0.55em; }
+.cg-lims sub { top: 0.7em; }
+.cg-e sup { font-size: 0.55em; }
+.cg-dx { font-style: italic; }
+.cg-eq { color: var(--text-dim); font-style: normal; }
+
+.cg-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.cg-row[hidden] { display: none; }
+.cg-input {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text-bright);
+  width: 180px;
+  text-align: center;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.cg-input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-soft); }
+.cg-input-err { border-color: var(--red) !important; animation: cg-shake 0.4s; }
+@keyframes cg-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.cg-go {
+  background: var(--green);
+  color: #fff;
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  font-size: 1.05rem;
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.cg-go:hover { background: var(--teal); border-color: var(--teal); }
+
+.cg-result { font-size: 0.95rem; animation: cg-fadein 0.4s; }
+.cg-result a { color: var(--green); font-weight: 500; }
+@keyframes cg-fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.cg-solved { opacity: 0.35; }
+
 .footer-copy {
   font-family: var(--font-mono);
   font-size: 0.68rem;
