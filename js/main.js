@@ -1,7 +1,18 @@
 // ===== i18n Language Engine =====
 const I18N = {
   init() {
-    const saved = localStorage.getItem('lang') || 'en';
+    // file:// 本地预览时 localStorage 按文件隔离无法跨页共享，
+    // 改用 URL ?lang= 参数传递语言；http 部署后用 localStorage。
+    const isFile = location.protocol === 'file:';
+    const urlLang = new URLSearchParams(location.search).get('lang');
+    let saved;
+    if (urlLang === 'en' || urlLang === 'cn') {
+      saved = urlLang;
+    } else if (isFile) {
+      saved = 'en';
+    } else {
+      saved = localStorage.getItem('lang') || 'en';
+    }
     this.set(saved, false);
     // Bind toggle buttons (use data-value to avoid CSS i18n conflict)
     document.querySelectorAll('.lang-toggle').forEach(btn => {
@@ -11,6 +22,16 @@ const I18N = {
         });
       });
     });
+    // file:// 下拦截内部导航链接，自动携带 ?lang= 保持语言跨页
+    if (isFile) {
+      document.querySelectorAll('a[href$=".html"]').forEach(a => {
+        a.addEventListener('click', () => {
+          const cur = document.body.classList.contains('lang-cn') ? 'cn' : 'en';
+          const base = a.getAttribute('href').split('?')[0];
+          a.setAttribute('href', base + '?lang=' + cur);
+        });
+      });
+    }
   },
 
   set(lang, animate) {
