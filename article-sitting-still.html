@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>纹丝不动的艺术 | JQ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-soft);
+      font-weight: 600;
+    }
+    .article-body h3 {
+      font-size: 1rem;
+      color: var(--text-bright);
+      margin: 32px 0 12px;
+      font-weight: 600;
+    }
+    .article-body p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .article-body strong { color: var(--text-bright); }
+    .article-body .math-block {
+      font-family: var(--font-mono);
+      background: var(--bg-alt);
+      border-left: 3px solid var(--green);
+      padding: 12px 16px;
+      margin: 20px 0;
+      font-size: 0.88rem;
+      color: var(--text-bright);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      line-height: 1.9;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.88rem;
+    }
+    .article-body th, .article-body td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .article-body th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+    .article-body td { color: var(--text); }
+    .article-body .callout {
+      font-family: var(--font-mono);
+      background: var(--bg-alt);
+      border-left: 3px solid var(--amber);
+      padding: 10px 14px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: var(--text-bright);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .article-body .closing {
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border-left: 3px solid var(--amber);
+    }
+    .article-body .closing p { color: var(--text-bright); font-weight: 500; }
+    .article-info {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .article-info .meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .article-info h1 {
+      font-size: 1.8rem;
+      color: var(--text-bright);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" class="active" data-lang="cn">投资</a><a href="investment.html" class="active" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle">
+            <span data-value="en" class="active">EN</span>
+            <span data-value="cn">CN</span>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px">
+    <div class="container article-body">
+
+      <!-- Chinese Version -->
+      <div data-lang="cn">
+        <div class="article-info">
+          <div class="meta">2026.07.21 &nbsp;·&nbsp; JQ</div>
+          <h1>纹丝不动的艺术</h1>
+        </div>
+
+        <p>市场大涨，你手里有仓位，朋友圈里全是晒收益的。你坐不住了，想加仓，想追。市场大跌，账户缩水，各种声音告诉你「赶紧跑」。你又坐不住了，想割肉，想逃。</p>
+        <p>但有一个人，什么都没做。价格上天，他没动；价格入地，他也没动。别人在K线里冲进冲出，他坐在那里，纹丝不动。</p>
+        <p>这篇文章想聊聊这件事——在大涨大跌中持有不动，到底是高手的心法，还是懒人的借口？它好在哪，又坏在哪？</p>
+
+        <h2>一、先搞清楚：哪种「不动」</h2>
+        <p>「持有不动」这四个字，其实是两种完全不同的东西，混为一谈会出人命。</p>
+        <p><strong>一种是「基于判断的不动」</strong>。你研究清楚了，这笔资产值这个钱，你买入的理由没有被打破。价格波动只是别人在报价，跟你手里的东西值多少没关系。这种不动，是心里有底，手才稳。</p>
+        <p><strong>一种是「基于恐惧的不动」</strong>。你不敢看账户，不敢面对亏损，于是假装它不存在。跌了装死，告诉自己「只要不卖就不算亏」。这种不动，不是策略，是逃避。</p>
+        <div class="callout">同样是纹丝不动，一种是定了，一种是冻了。前者是功夫，后者是病。</div>
+        <p>这篇文章聊的是前一种。后一种我在《狼与屠夫》里写过了——那是半个身子卡在洞里的狼，不是不动，是动不了。</p>
+
+        <h2>二、为什么不动是对的：三根支柱</h2>
+
+        <h3>你的对手是「择时」，而择时几乎必输</h3>
+        <p>想在大涨大跌中「动起来」，你实际上在做一件事：低买高卖，踩准节奏。听起来天经地义，但这是一道残酷的数学题。</p>
+        <p>一次成功的择时，需要你做对两个决定：什么时候卖，什么时候买回来。假设你每次判断的胜率是 60%——这已经很高了，专业人士也很少稳定达到。那么一次完整的「卖+买回」成功的概率是：</p>
+        <div class="math-block">0.6 &times; 0.6 = 0.36，只有 36%</div>
+        <p>连续做三次这样的择时，全对的概率是 0.36 的三次方，约 4.7%。你以为你在操作，其实你在掷骰子，而且是赔率对你很不利的骰子。</p>
+        <p>而不动的人，他的胜率是 100%——他从不错过任何一段上涨，因为他从头到尾都在场。</p>
+
+        <h3>市场的收益，集中在极少数日子里</h3>
+        <p>这是我做量化回测后最震撼的一个发现：资产的长期收益，并不是均匀分布在每一天里，而是高度集中在极少数几个大涨日。</p>
+        <p>这意味着什么？如果你因为「想避开下跌」而离场，你极有可能同时错过了那几个关键的暴涨日。而错过它们的代价是毁灭性的——</p>
+        <div class="math-block">全程持有：赚的是复利曲线<br>错过最好的10天：收益往往被砍掉一半以上</div>
+        <p>问题在于，那些最好的日子，往往紧挨着最坏的日子出现。暴跌之后常常紧跟着暴力反弹。你想躲过跌，大概率也躲过了涨。你精准避开的那几根阴线，可能正是你踏空那几根阳线的入场券。</p>
+        <p>不动的人用「承受下跌」换来了「不错过上涨」。这不是被动挨打，这是一笔算得过来的账。</p>
+
+        <h3>不动，零成本</h3>
+        <p>我在《你交易，有人在数钱》里算过：每一次买卖，都有手续费、印花税、滑点从你本金里流走。交易越频繁，被磨掉的本金越多，这是复利反噬。</p>
+        <p>持有不动的人，这些成本全是零。他不交易，就没有费用；不判断，就没有判断失误。当频繁交易的人被成本和错误反复放血时，不动的人安安静静地让复利替他工作。</p>
+        <div class="callout">市场奖励的不是忙碌，是正确的等待。</div>
+
+        <h2>三、什么时候不动是灾难：三条边界</h2>
+        <p>把「持有不动」当成放之四海皆准的真理，和把它当成一无是处的借口一样危险。它有严格的适用边界，越界就是灾难。</p>
+
+        <h3>前提一：你持有的东西本身没问题</h3>
+        <p>「不动」的全部智慧，建立在一个前提上：你手里的资产是优质的，是会回来的。如果你拿的是一个基本面烂掉的公司、一个注定归零的品种，「持有不动」不是艺术，是抱着石头沉水。</p>
+        <p>价格大跌分两种。一种是市场情绪杀错了，好公司被错杀，这种下跌是机会，该不动甚至该加。另一种是公司真的不行了，护城河塌了，这种下跌是价值回归，越不动死得越透。</p>
+        <div class="callout">下跌本身从不告诉你该动还是不该动。告诉你答案的，是你手里的东西还值不值钱。</div>
+
+        <h3>前提二：你的仓位让你睡得着</h3>
+        <p>「纹丝不动」有一个隐藏条件：你的仓位足够轻，轻到大跌时你不会恐慌。</p>
+        <p>满仓加杠杆的人，是没资格谈「不动」的。市场一个正常的回调，就能击穿他的平仓线，逼他在最低点被动卖出。他不是不想不动，是他的仓位根本不允许他不动。真正能做到纹丝不动的人，往往仓位都不重——正因为他输得起，他才拿得住。</p>
+
+        <h3>前提三：你的时间够长</h3>
+        <p>「不动」本质上是和时间做朋友。但如果这笔钱你下个月要用、明年要买房，那你耗不起。再优质的资产，短期也可能深跌；时间不够，你等不到它回来那天。</p>
+        <p>短线资金和杠杆资金，都不适用「不动」策略。只有那些三五年不用的闲钱，才有资格享受纹丝不动带来的复利。</p>
+
+        <h2>四、一张表看清楚</h2>
+        <table>
+          <thead><tr><th>维度</th><th>持有不动（对的时候）</th><th>频繁操作</th></tr></thead>
+          <tbody>
+            <tr><td>收益来源</td><td>长期复利 + 不错过暴涨日</td><td>依赖择时胜率（数学上处于劣势）</td></tr>
+            <tr><td>成本</td><td>几乎为零</td><td>手续费、滑点、税，复利反噬</td></tr>
+            <tr><td>心性消耗</td><td>小（前提是仓位轻）</td><td>大，容易被情绪带着走</td></tr>
+            <tr><td>致命前提</td><td>标的好 + 仓位轻 + 时间长</td><td>每次都对（几乎不可能）</td></tr>
+          </tbody>
+        </table>
+
+        <h2>五、说到底</h2>
+        <p>大涨大跌中持有不动，这件事的好坏，从来不由「动或不动」本身决定，而由你背后的东西决定。</p>
+        <p><strong>如果你研究透了标的、控制了仓位、留足了时间</strong>——那不动就是最高级的策略。它让你避开择时的数学陷阱，躲开成本的复利反噬，安安静静把该赚的钱赚到手。这时候的纹丝不动，是胸有成竹。</p>
+        <p><strong>如果你只是不敢面对亏损、懒得研究、重仓死扛</strong>——那不动就是最贵的错误。它不会帮你赚钱，只会让你在错误的资产上越陷越深。这时候的纹丝不动，是掩耳盗铃。</p>
+        <p>同样是坐在那里一动不动，一个人是在等复利开花结果，另一个人是在等市场宣判。外人看不出区别，但结果天差地别。</p>
+
+        <div class="closing">
+          <p>市场每天都在报价，但它从不要求你必须回应。</p>
+          <p>大涨时，它诱惑你追；大跌时，它恐吓你跑。它想尽办法让你动起来，因为它知道，绝大多数人死在「动」上，而不是死在「不动」上。</p>
+          <p>真正难的不是看懂K线，是在所有人都慌着做点什么的时候，你能安安静静地坐着，什么都不做。</p>
+          <p>这份纹丝不动，是研究给的底气，是仓位给的从容，是时间给的耐心。三者缺一，不动就是另一种深渊。</p>
+        </div>
+      </div>
+
+      <!-- English Version -->
+      <div data-lang="en">
+        <div class="article-info">
+          <div class="meta">2026.07.21 &nbsp;&middot;&nbsp; JQ</div>
+          <h1>The Art of Sitting Still</h1>
+        </div>
+
+        <p>The market surges. You're holding a position, and your feed is full of people posting gains. You can't sit still &mdash; you want to add, to chase. The market crashes. Your account shrinks, and every voice tells you to run. You can't sit still again &mdash; you want to cut, to flee.</p>
+        <p>But there's someone who did nothing. When prices soared, he didn't move. When prices cratered, he didn't move either. While everyone else charged in and out of the chart, he sat there, perfectly still.</p>
+        <p>This article is about that &mdash; holding still through violent swings. Is it a master's discipline, or a lazy man's excuse? Where is it right, and where does it go wrong?</p>
+
+        <h2>I. First, Be Clear: Which Kind of "Still"</h2>
+        <p>"Holding still" is actually two completely different things wearing the same words. Confusing them can be fatal.</p>
+        <p><strong>One is stillness from conviction.</strong> You've done the work. This asset is worth what you paid. Your thesis hasn't broken. Price swings are just other people quoting numbers &mdash; they don't change what your holding is worth. This stillness comes from a steady mind, which steadies the hand.</p>
+        <p><strong>The other is stillness from fear.</strong> You don't dare open your account. You can't face the loss, so you pretend it doesn't exist. You go limp when it falls, telling yourself "it's not a loss until I sell." This stillness isn't a strategy. It's avoidance.</p>
+        <div class="callout">Same motionless body. One is settled; the other is frozen. The first is skill. The second is a symptom.</div>
+        <p>This article is about the former. I wrote about the latter in <em>The Butcher and the Wolves</em> &mdash; that's the wolf stuck halfway in the hole. Not still by choice. Stuck.</p>
+
+        <h2>II. Why Stillness Wins: Three Pillars</h2>
+
+        <h3>Your opponent is timing &mdash; and timing almost always loses</h3>
+        <p>To "act" through big swings is to attempt one thing: buy low, sell high, catch the rhythm. It sounds obvious. But it's brutal arithmetic.</p>
+        <p>One successful timing move requires two correct decisions: when to sell, and when to buy back. Suppose each call has a 60% hit rate &mdash; already high, better than most professionals sustain. The probability of one complete "sell + buy back" cycle working is:</p>
+        <div class="math-block">0.6 &times; 0.6 = 0.36 &mdash; just 36%</div>
+        <p>Do this three times in a row, and the chance all three work is 0.36 cubed &mdash; about 4.7%. You think you're operating. You're actually rolling dice, at odds stacked heavily against you.</p>
+        <p>The person who sits still has a 100% hit rate &mdash; he never misses a single rally, because he's in the market the entire time.</p>
+
+        <h3>Market returns concentrate in a handful of days</h3>
+        <p>This is the most striking thing I found running quantitative backtests: an asset's long-term return isn't spread evenly across days. It concentrates in a very few big up-days.</p>
+        <p>What does that mean? If you step aside to "avoid the drop," you very likely miss those few critical surge days too. And missing them is devastating &mdash;</p>
+        <div class="math-block">Fully invested: you earn the compounding curve<br>Miss the 10 best days: your return is often cut by more than half</div>
+        <p>The catch is that the best days tend to arrive right next to the worst ones. A crash is often followed by a violent rebound. Dodge the fall and you likely dodge the rise too. The down-candles you so skillfully avoided may have been your entry ticket to the up-candles you then missed.</p>
+        <p>The person who sits still trades "enduring the drops" for "never missing the rallies." That's not passively taking a beating. It's a trade that pencils out.</p>
+
+        <h3>Stillness costs nothing</h3>
+        <p>In <em>You Trade, Someone Is Counting</em>, I ran the numbers: every buy and sell bleeds commissions, stamp duty, and slippage out of your principal. The more you trade, the more principal erodes &mdash; compound erosion.</p>
+        <p>The person who holds still pays none of it. No trades, no fees. No calls, no bad calls. While the frequent trader gets bled by costs and mistakes over and over, the still investor quietly lets compounding work for him.</p>
+        <div class="callout">The market doesn't reward busyness. It rewards correct waiting.</div>
+
+        <h2>III. When Stillness Is a Disaster: Three Boundaries</h2>
+        <p>Treating "hold still" as a universal truth is as dangerous as dismissing it as an excuse. It has strict boundaries. Cross them and it becomes a catastrophe.</p>
+
+        <h3>Condition one: what you hold isn't broken</h3>
+        <p>The entire wisdom of "stillness" rests on one premise: the asset you hold is sound and will come back. If you're holding a company with rotting fundamentals, an instrument headed to zero, then "holding still" isn't art &mdash; it's hugging a rock underwater.</p>
+        <p>A big price drop comes in two kinds. One is the market mispricing in a panic &mdash; a good company wrongly beaten down. That drop is an opportunity; hold, or even add. The other is the company genuinely failing &mdash; the moat has collapsed. That drop is value returning to reality; the longer you hold, the deader you are.</p>
+        <div class="callout">A falling price never tells you whether to move. What tells you is whether what you hold is still worth anything.</div>
+
+        <h3>Condition two: your position lets you sleep</h3>
+        <p>"Sitting still" has a hidden requirement: your position is light enough that a crash doesn't panic you.</p>
+        <p>Someone fully leveraged has no right to talk about "stillness." A normal correction can blow through his margin and force him to sell at the exact bottom. It's not that he doesn't want to hold still &mdash; his position won't allow it. The people who truly sit still usually carry light positions. Precisely because they can afford to lose, they can afford to hold.</p>
+
+        <h3>Condition three: your time horizon is long enough</h3>
+        <p>"Stillness" means befriending time. But if you need this money next month, or to buy a home next year, you can't afford to wait. Even the best asset can drop deep in the short run; without enough time, you won't be there when it comes back.</p>
+        <p>Short-term money and leveraged money don't get to use the "stillness" strategy. Only money you won't touch for three to five years earns the right to compound in silence.</p>
+
+        <h2>IV. One Table</h2>
+        <table>
+          <thead><tr><th>Dimension</th><th>Holding still (when right)</th><th>Frequent trading</th></tr></thead>
+          <tbody>
+            <tr><td>Source of return</td><td>Long-term compounding + never missing surge days</td><td>Depends on timing win-rate (mathematically disadvantaged)</td></tr>
+            <tr><td>Cost</td><td>Nearly zero</td><td>Commissions, slippage, taxes &mdash; compound erosion</td></tr>
+            <tr><td>Emotional toll</td><td>Low (if position is light)</td><td>High &mdash; easily dragged around by emotion</td></tr>
+            <tr><td>Fatal precondition</td><td>Good asset + light position + long horizon</td><td>Being right every time (near impossible)</td></tr>
+          </tbody>
+        </table>
+
+        <h2>V. In the End</h2>
+        <p>Whether holding still through big swings is good or bad is never decided by "moving or not moving" itself. It's decided by what stands behind you.</p>
+        <p><strong>If you've researched the asset, controlled your position, and left yourself time</strong> &mdash; then stillness is the highest form of strategy. It lets you sidestep the timing trap, dodge compound erosion, and quietly collect what's yours. This stillness is quiet confidence.</p>
+        <p><strong>If you're just afraid to face a loss, too lazy to do the work, and holding a heavy losing position</strong> &mdash; then stillness is the most expensive mistake. It won't make you money. It'll only sink you deeper into the wrong asset. This stillness is self-deception.</p>
+        <p>Two people sit equally motionless. One waits for compounding to bloom. The other waits for the market to deliver its verdict. From the outside you can't tell them apart. The outcomes couldn't be more different.</p>
+
+        <div class="closing">
+          <p>The market quotes prices every day. It never demands you answer.</p>
+          <p>When it surges, it tempts you to chase. When it crashes, it frightens you into running. It does everything it can to make you move &mdash; because it knows most people die from moving, not from sitting still.</p>
+          <p>The hard part was never reading the chart. It's sitting quietly, doing nothing, while everyone around you scrambles to do something.</p>
+          <p>That stillness is conviction from research, ease from position sizing, patience from time. Take away any one of the three, and stillness becomes just another abyss.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <div class="footer-contact">
+        <button type="button" class="contact-reveal-btn" id="contact-open">
+          <span data-lang="cn">联系我</span><span data-lang="en">Contact</span>
+        </button>
+      </div>
+        <div class="contact-revealed" id="contact-revealed" hidden></div>
+      </div>
+      <p class="footer-copy">&copy; 2026 JQ</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
