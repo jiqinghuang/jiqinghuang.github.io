@@ -11,6 +11,7 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 - **项目** — 项目卡片索引页，链接到各项目详情
   - [量化交易策略系统](https://github.com/jiqinghuang/trading_strategy)（10 种趋势跟踪策略回测）
   - [保证金模型](https://github.com/jiqinghuang/margin_model)（黄金 & 白银 Wind 期货指数 VaR）
+  - [前端之路：HTML / CSS 教程](project-frontend-tutorial.html)（离线优先中文前端教程，含实时练习场、无障碍指南和综合项目）
 - **投资专栏** — 交易相关文章
   - [你交易，有人在数钱](article-trading-fees.html) — 手续费复利反噬与机器学习正则化类比
   - [狼与屠夫](article-wolves-butcher.html) — 从《聊斋志异》看交易博弈的两种误判

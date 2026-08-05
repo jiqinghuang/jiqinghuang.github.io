@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front-end Path | JQ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" class="active" data-lang="cn">项目</a><a href="projects.html" class="active" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle">
+            <span data-value="en" class="active">EN</span>
+            <span data-value="cn">CN</span>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-lang="cn">前端之路：HTML / CSS 教程</span><span data-lang="en">Front-end Path: HTML / CSS Tutorial</span></h1>
+      <p><span data-lang="cn">// 为有编程基础者设计的离线优先中文前端入门教程</span><span data-lang="en">// An offline-first Chinese frontend course for programmers</span></p>
+      <div class="tech-tags">
+        <span class="tech-tag">HTML5</span>
+        <span class="tech-tag">CSS3</span>
+        <span class="tech-tag">Vanilla JS</span>
+        <span class="tech-tag">Responsive Design</span>
+        <span class="tech-tag">Accessibility</span>
+        <span class="tech-tag">Static Site</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目简介</span><span data-lang="en">Overview</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">把已有的编程经验迁移到浏览器和网页</span><span data-lang="en">Translating existing programming experience into browser-based development</span></p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <div class="card-icon">&gt;_</div>
+          <h3><span data-lang="cn">为谁而做</span><span data-lang="en">Who It Is For</span></h3>
+          <p><span data-lang="cn">面向已经会 Python、C、MATLAB 或 R 的学习者，不重复讲变量和循环，而是专注于 HTML 结构、CSS 布局和浏览器特有的工作方式。</span><span data-lang="en">Designed for learners who already know Python, C, MATLAB or R. Instead of repeating variables and loops, it focuses on HTML structure, CSS layout and browser-specific ways of working.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">DOM</div>
+          <h3><span data-lang="cn">为什么做它</span><span data-lang="en">Why I Built It</span></h3>
+          <p><span data-lang="cn">HTML 和 CSS 是进入 DOM、JavaScript、TypeScript 以及 AI 网页应用的基础。教程把这些概念连接到树、表格、向量化和数据可视化等已有直觉。</span><span data-lang="en">HTML and CSS are the foundation for the DOM, JavaScript, TypeScript and AI web applications. The tutorial connects them to familiar ideas such as trees, tables, vectorized operations and data visualization.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">CN</div>
+          <h3><span data-lang="cn">语言边界</span><span data-lang="en">Language Scope</span></h3>
+          <p><span data-lang="cn">个人网站的项目介绍支持中英文切换；教程正文暂时保持中文，以保留完整的教学语境和原有表达。</span><span data-lang="en">The project overview is bilingual, while the tutorial content remains in Chinese to preserve its original teaching context and learning flow.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Scope -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目范围</span><span data-lang="en">Project Scope</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">从页面骨架走到可验收的综合项目</span><span data-lang="en">From page structure to a practical, testable capstone</span></p>
+      <div class="stats-row fade-in">
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label"><span data-lang="cn">HTML 章节</span><span data-lang="en">HTML Chapters</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label"><span data-lang="cn">CSS 章节</span><span data-lang="en">CSS Chapters</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1</div>
+          <div class="stat-label"><span data-lang="cn">实时练习场</span><span data-lang="en">Live Playground</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1</div>
+          <div class="stat-label"><span data-lang="cn">综合项目</span><span data-lang="en">Capstone Project</span></div>
+        </div>
+      </div>
+      <div class="card-grid fade-in" style="margin-top:16px">
+        <div class="card">
+          <h3><span data-lang="cn">HTML 篇</span><span data-lang="en">HTML Track</span></h3>
+          <p><span data-lang="cn">文档骨架、文本、链接、图片、列表、表格、语义化、表单、属性和 DOM 树。</span><span data-lang="en">Document structure, text, links, images, lists, tables, semantics, forms, attributes and the DOM tree.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">CSS 篇</span><span data-lang="en">CSS Track</span></h3>
+          <p><span data-lang="cn">选择器、层叠、继承、盒模型、定位、Flexbox、Grid、单位、响应式设计和动效。</span><span data-lang="en">Selectors, cascade, inheritance, the box model, positioning, Flexbox, Grid, units, responsive design and motion.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">配套工具</span><span data-lang="en">Learning Tools</span></h3>
+          <p><span data-lang="cn">实时练习场、学习进度、DevTools 调试、可访问性指南、CSS 速查表和个人主页综合项目。</span><span data-lang="en">A live playground, progress tracker, DevTools guide, accessibility guide, CSS cheatsheet and personal homepage capstone.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Path -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">学习路径</span><span data-lang="en">Learning Path</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">教程当前覆盖前两步，并为下一阶段搭桥</span><span data-lang="en">The current scope covers the first two steps and prepares the next stage</span></p>
+      <div class="arch-flow fade-in">
+        <div class="arch-step">
+          <div class="step-num">01</div>
+          <h4>HTML</h4>
+          <p><span data-lang="cn">结构与语义</span><span data-lang="en">Structure &amp; Semantics</span></p>
+        </div>
+        <span class="arch-arrow">&rarr;</span>
+        <div class="arch-step">
+          <div class="step-num">02</div>
+          <h4>CSS</h4>
+          <p><span data-lang="cn">布局与呈现</span><span data-lang="en">Layout &amp; Presentation</span></p>
+        </div>
+        <span class="arch-arrow">&rarr;</span>
+        <div class="arch-step">
+          <div class="step-num">03</div>
+          <h4>DOM + JS</h4>
+          <p><span data-lang="cn">交互与行为</span><span data-lang="en">Interaction &amp; Behavior</span></p>
+        </div>
+        <span class="arch-arrow">&rarr;</span>
+        <div class="arch-step">
+          <div class="step-num">04</div>
+          <h4>TypeScript</h4>
+          <p><span data-lang="cn">类型与 AI 应用</span><span data-lang="en">Types &amp; AI Apps</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">工程实现</span><span data-lang="en">Implementation</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">教程网站本身也是一个前端实践项目</span><span data-lang="en">The tutorial site is itself a hands-on frontend project</span></p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <h3><span data-lang="cn">离线优先</span><span data-lang="en">Offline First</span></h3>
+          <p><span data-lang="cn">纯 HTML、CSS 和原生 JavaScript，不依赖框架、构建工具、CDN 或外部字体，直接打开即可学习。</span><span data-lang="en">Pure HTML, CSS and vanilla JavaScript with no framework, build tool, CDN or external font dependency. It can be opened directly.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">即时练习</span><span data-lang="en">Immediate Practice</span></h3>
+          <p><span data-lang="cn">练习场使用 sandbox iframe 实时渲染 HTML/CSS，并用浏览器本地存储保留练习代码。</span><span data-lang="en">The playground renders HTML/CSS in a sandboxed iframe and keeps practice code in browser local storage.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">公共组件</span><span data-lang="en">Shared Components</span></h3>
+          <p><span data-lang="cn">公共导航、章节翻页、代码复制、跳到正文和进度数据由共享脚本统一维护。</span><span data-lang="en">Shared scripts provide navigation, chapter paging, code copying, skip links and progress data.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">质量意识</span><span data-lang="en">Quality Mindset</span></h3>
+          <p><span data-lang="cn">内容同时检查响应式、深色模式、打印、键盘焦点、表单语义、图片替代文本和动效偏好。</span><span data-lang="en">The project checks responsive layouts, dark mode, printing, keyboard focus, form semantics, image alternatives and motion preferences.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contribution -->
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">我的工作</span><span data-lang="en">My Role</span></h2>
+      <p class="fade-in" style="max-width:720px;margin:0 auto;color:var(--text-dim);font-size:0.95rem;line-height:1.9">
+        <span data-lang="cn">负责教程的课程结构设计、HTML/CSS 内容编写、示例和练习设计、交互功能实现，以及无障碍、响应式和静态质量检查。</span>
+        <span data-lang="en">Designed the curriculum structure, wrote the HTML/CSS content, created examples and exercises, implemented the interactive features, and performed accessibility, responsive and static QA checks.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Source Link -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">查看项目</span><span data-lang="en">Explore the Project</span></h2>
+      <p class="fade-in" style="color:var(--text-dim);margin-bottom:24px;font-size:0.95rem">
+        <span data-lang="cn">教程仓库独立维护；GitHub Pages 在线入口将在启用后加入。</span>
+        <span data-lang="en">The tutorial is maintained as a separate repository; a GitHub Pages live link will be added once enabled.</span>
+      </p>
+      <a href="https://github.com/jiqinghuang/html-and-css-tutorial" target="_blank" rel="noopener noreferrer" class="btn btn-primary fade-in">
+        <span data-lang="cn">查看教程仓库</span><span data-lang="en">View Repository</span> &rarr;
+      </a>
+      <p class="fade-in" style="margin-top:20px">
+        <a href="projects.html" style="font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim)">
+          &larr; <span data-lang="cn">返回项目列表</span><span data-lang="en">Back to Projects</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <div class="footer-contact">
+        <button type="button" class="contact-reveal-btn" id="contact-open">
+          <span data-lang="cn">联系我</span><span data-lang="en">Contact</span>
+        </button>
+      </div>
+      <div class="contact-revealed" id="contact-revealed" hidden></div>
+      <p class="footer-copy">&copy; 2026 JQ</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
