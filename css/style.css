@@ -595,6 +595,15 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.8rem;
 }
 
+.perf-table caption {
+  caption-side: top;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  padding: 0 0 12px;
+}
+
 .perf-table thead {
   background: var(--bg-elevated);
 }

@@ -147,11 +147,11 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">|收益率| vs 99% / 99.99% VaR &nbsp;·&nbsp; 点击图片可放大</span><span data-lang="en">|Return| vs 99% / 99.99% VaR &nbsp;·&nbsp; Click to enlarge</span></p>
       <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))">
         <div class="gallery-item fade-in">
-          <img src="assets/plots/margin_model_Au.png" alt="Au Backtest" loading="lazy">
+          <img src="assets/plots/margin_model_Au.png" alt="Au Backtest" width="3220" height="1269" loading="lazy">
           <div class="gallery-caption"><span data-lang="cn">黄金 (Au) — 2008-01-09 ~ 2026-08-20</span><span data-lang="en">Gold (Au) — 2008-01-09 ~ 2026-08-20</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <img src="assets/plots/margin_model_Ag.png" alt="Ag Backtest" loading="lazy">
+          <img src="assets/plots/margin_model_Ag.png" alt="Ag Backtest" width="3220" height="1269" loading="lazy">
           <div class="gallery-caption"><span data-lang="cn">白银 (Ag) — 2012-05-10 ~ 2026-08-20</span><span data-lang="en">Silver (Ag) — 2012-05-10 ~ 2026-08-20</span></div>
         </div>
       </div>
@@ -164,14 +164,15 @@
       <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">回测结果</span><span data-lang="en">Backtest Results</span></h2>
       <div class="table-wrapper fade-in" style="margin-top:24px">
         <table class="perf-table">
+          <caption><span data-lang="cn">回测结果：突破计数与 250 日滚动，方法一含阈值、方法二方差放大 1.8 倍</span><span data-lang="en">Backtest breakthrough counts with 250-day rolling; Method 1 with threshold, Method 2 variance x1.8</span></caption>
           <thead>
             <tr>
-              <th><span data-lang="cn">品种</span><span data-lang="en">Product</span></th>
-              <th><span data-lang="cn">方法</span><span data-lang="en">Method</span></th>
-              <th><span data-lang="cn">总突破数</span><span data-lang="en">Total BT</span></th>
-              <th><span data-lang="cn">交易天数</span><span data-lang="en">Trading Days</span></th>
-              <th><span data-lang="cn">突破率</span><span data-lang="en">BT Rate</span></th>
-              <th><span data-lang="cn">250日滚动（最新）</span><span data-lang="en">250d Rolling (Latest)</span></th>
+              <th scope="col"><span data-lang="cn">品种</span><span data-lang="en">Product</span></th>
+              <th scope="col"><span data-lang="cn">方法</span><span data-lang="en">Method</span></th>
+              <th scope="col"><span data-lang="cn">总突破数</span><span data-lang="en">Total BT</span></th>
+              <th scope="col"><span data-lang="cn">交易天数</span><span data-lang="en">Trading Days</span></th>
+              <th scope="col"><span data-lang="cn">突破率</span><span data-lang="en">BT Rate</span></th>
+              <th scope="col"><span data-lang="cn">250日滚动（最新）</span><span data-lang="en">250d Rolling (Latest)</span></th>
             </tr>
           </thead>
           <tbody>
@@ -245,7 +246,6 @@
           <span data-lang="cn">联系我</span><span data-lang="en">Contact</span>
         </button>
       </div>
-        <div class="contact-revealed" id="contact-revealed" hidden></div>
       </div>
       <p class="footer-copy">&copy; 2026 JQ</p>
     </div>
