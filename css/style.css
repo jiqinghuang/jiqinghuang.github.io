@@ -180,23 +180,48 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
   user-select: none;
 }
 
-.lang-toggle span {
+.lang-toggle span,
+.lang-toggle button {
   padding: 4px 10px;
   color: var(--text-dim);
   transition: all var(--transition);
   letter-spacing: 0.05em;
 }
 
-.lang-toggle span.active {
+.lang-toggle button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.lang-toggle span.active,
+.lang-toggle button.active {
   background: var(--green);
   color: #fff;
+}
+
+/* 键盘可见焦点：全站统一，不依赖浏览器默认 */
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.gallery-item:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { transition: none; transform: none; }
+  html { scroll-behavior: auto; }
 }
 
 /* Mobile toggle */
@@ -1086,7 +1111,7 @@ body.lang-cn .nav-links > li > a[data-lang="cn"] { display: inline; }
 body.lang-cn .card[data-lang="en"] { display: none; }
 body.lang-cn .card[data-lang="cn"] { display: block; }
 /* Toggle buttons use data-value, not data-lang */
-.lang-toggle span { display: inline-block !important; }
+.lang-toggle span, .lang-toggle button { display: inline-block !important; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {

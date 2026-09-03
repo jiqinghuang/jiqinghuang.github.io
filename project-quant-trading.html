@@ -16,9 +16,9 @@
         <li><a href="projects.html" class="active" data-lang="cn">项目</a><a href="projects.html" class="active" data-lang="en">Projects</a></li>
         <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
         <li>
-          <div class="lang-toggle">
-            <span data-value="en" class="active">EN</span>
-            <span data-value="cn">CN</span>
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-value="en" class="active" aria-pressed="true">EN</button>
+            <button type="button" data-value="cn" aria-pressed="false">CN</button>
           </div>
         </li>
       </ul>
@@ -215,8 +215,8 @@
         </table>
       </div>
       <p class="fade-in" style="text-align:center;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);margin-top:8px">
-        <span data-lang="cn">执行价格 = (开盘 + 收盘) / 2 &nbsp;·&nbsp; 信号日 T 生成，T+1 执行</span>
-        <span data-lang="en">Execution price = (open + close) / 2 &nbsp;·&nbsp; Signal at day T, executed at T+1</span>
+        <span data-lang="cn">执行价格 = T+1 日开盘价 &nbsp;·&nbsp; T 日收盘生成信号，T+1 日开盘执行</span>
+        <span data-lang="en">Execution price = next-day open &nbsp;·&nbsp; Signal at close on day T, executed at open on T+1</span>
       </p>
     </div>
   </section>

@@ -1,5 +1,26 @@
 // ===== i18n Language Engine =====
 const I18N = {
+  _safeGet(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  },
+  _safeSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* private mode: ignore */ }
+  },
+  // file:// 下重写站内 .html 链接，携带 ?lang= 并保留 #锚点；http 下靠 localStorage，不碰 URL。
+  _carryLang(lang) {
+    if (location.protocol !== 'file:') return;
+    document.querySelectorAll('a[href]').forEach(a => {
+      const raw = a.getAttribute('href');
+      if (!raw || !raw.includes('.html')) return;
+      if (/^(https?:|mailto:|tel:|#)/i.test(raw)) return;
+      const hashIdx = raw.indexOf('#');
+      const hash = hashIdx >= 0 ? raw.slice(hashIdx) : '';
+      const noHash = hashIdx >= 0 ? raw.slice(0, hashIdx) : raw;
+      const qIdx = noHash.indexOf('?');
+      const base = qIdx >= 0 ? noHash.slice(0, qIdx) : noHash;
+      a.setAttribute('href', base + '?lang=' + lang + hash);
+    });
+  },
   init() {
     // file:// 本地预览时 localStorage 按文件隔离无法跨页共享，
     // 改用 URL ?lang= 参数传递语言；http 部署后用 localStorage。
@@ -11,31 +32,41 @@ const I18N = {
     } else if (isFile) {
       saved = 'en';
     } else {
-      saved = localStorage.getItem('lang') || 'en';
+      saved = this._safeGet('lang') || 'en';
     }
     this.set(saved, false);
-    // Bind toggle buttons (use data-value to avoid CSS i18n conflict)
+    // Bind toggle buttons (support legacy span + new button, use data-value)
     document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.querySelectorAll('span').forEach(opt => {
+      btn.querySelectorAll('[data-value]').forEach(opt => {
         opt.addEventListener('click', () => {
           this.set(opt.dataset.value, true);
         });
       });
     });
-    // file:// 下拦截内部导航链接，自动携带 ?lang= 保持语言跨页
+    // file:// 下初始化时直接写好 href（右键新标签/中键也能带语言）；同时保留 click 兜底。
     if (isFile) {
-      document.querySelectorAll('a[href$=".html"]').forEach(a => {
+      this._carryLang(saved);
+      document.querySelectorAll('a[href]').forEach(a => {
+        const raw = a.getAttribute('href');
+        if (!raw || !raw.includes('.html')) return;
+        if (/^(https?:|mailto:|tel:|#)/i.test(raw)) return;
         a.addEventListener('click', () => {
           const cur = document.body.classList.contains('lang-cn') ? 'cn' : 'en';
-          const base = a.getAttribute('href').split('?')[0];
-          a.setAttribute('href', base + '?lang=' + cur);
+          const href = a.getAttribute('href');
+          const hashIdx = href.indexOf('#');
+          const hash = hashIdx >= 0 ? href.slice(hashIdx) : '';
+          const noHash = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
+          const qIdx = noHash.indexOf('?');
+          const base = qIdx >= 0 ? noHash.slice(0, qIdx) : noHash;
+          a.setAttribute('href', base + '?lang=' + cur + hash);
         });
       });
     }
   },
 
   set(lang, animate) {
-    if (animate) {
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (animate && !reduced) {
       document.body.style.transition = 'opacity 0.2s ease';
       document.body.style.opacity = '0';
       setTimeout(() => {
@@ -51,11 +82,14 @@ const I18N = {
   _apply(lang) {
     document.body.classList.toggle('lang-cn', lang === 'cn');
     document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
-    localStorage.setItem('lang', lang);
-    // Update toggle buttons (use data-value)
+    this._safeSet('lang', lang);
+    this._carryLang(lang);
+    // Update toggle buttons (support legacy span + new button)
     document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.querySelectorAll('span').forEach(opt => {
-        opt.classList.toggle('active', opt.dataset.value === lang);
+      btn.querySelectorAll('[data-value]').forEach(opt => {
+        const on = opt.dataset.value === lang;
+        opt.classList.toggle('active', on);
+        if (opt.tagName === 'BUTTON') opt.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
     });
   }
@@ -69,9 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    if (!toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded', 'false');
+    if (!toggle.hasAttribute('aria-label')) toggle.setAttribute('aria-label', 'Menu');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
     links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => links.classList.remove('open'));
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
     });
   }
 
@@ -100,15 +149,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightbox) {
     const lbImg = lightbox.querySelector('img');
     const lbClose = lightbox.querySelector('.lightbox-close');
+    let lastFocus = null;
+
+    const openLb = (item) => {
+      const img = item.querySelector('img');
+      if (!img) return;
+      lastFocus = document.activeElement;
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      if (lbClose) lbClose.focus();
+    };
 
     document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => {
+      // 无需改 HTML：JS 补齐键盘可达性
+      if (!item.hasAttribute('tabindex')) item.setAttribute('tabindex', '0');
+      if (!item.hasAttribute('role')) item.setAttribute('role', 'button');
+      if (!item.hasAttribute('aria-label')) {
         const img = item.querySelector('img');
-        if (img) {
-          lbImg.src = img.src;
-          lbImg.alt = img.alt;
-          lightbox.classList.add('active');
-          document.body.style.overflow = 'hidden';
+        item.setAttribute('aria-label', img && img.alt ? 'Enlarge: ' + img.alt : 'Enlarge chart');
+      }
+      item.addEventListener('click', () => openLb(item));
+      item.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLb(item);
         }
       });
     });
@@ -116,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const close = () => {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
+      if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
     };
 
     lbClose.addEventListener('click', close);
@@ -157,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const eyebrow = overlay.querySelector('.cg-eyebrow');
 
     const open = () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; setTimeout(() => input.focus(), 50); };
-    const close = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; };
+    const close = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; if (document.contains(openBtn)) openBtn.focus(); };
     openBtn.addEventListener('click', open);
     closeBtn.addEventListener('click', close);
     overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
