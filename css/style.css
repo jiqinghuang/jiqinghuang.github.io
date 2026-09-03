@@ -244,7 +244,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ===== HERO ===== */
 .hero {
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -604,9 +604,26 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0 0 12px;
 }
 
+.math-fallback-note {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
+
 .perf-table thead {
   background: var(--bg-elevated);
 }
+.perf-table thead th:first-child,
+.perf-table tbody th:first-child,
+.perf-table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  background: var(--bg-card);
+  z-index: 1;
+}
+.perf-table thead th:first-child { background: var(--bg-elevated); }
 
 .perf-table th {
   padding: 12px 14px;
@@ -669,6 +686,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: 100%;
   height: auto;
 }
+.gallery-item picture { display: block; }
 
 .gallery-caption {
   padding: 10px 14px;
@@ -1151,4 +1169,43 @@ body.lang-cn .card[data-lang="cn"] { display: block; }
   .stats-row { grid-template-columns: repeat(2, 1fr); }
   .page-hero h1 { font-size: 1.5rem; }
   .honor-card { flex-direction: column; gap: 8px; }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .navbar, .nav-toggle, .lightbox, .cg-overlay, .contact-reveal-btn,
+  .hero::before, .hero::after { display: none !important; }
+  .hero { min-height: auto; padding: 32px 0; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
+  .card, .article-card, .gallery-item, .stat-card { break-inside: avoid; }
+  a { color: inherit; }
+  .table-wrapper { overflow: visible; }
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10141a;
+    --bg-alt: #161b22;
+    --bg-card: #1a2029;
+    --bg-elevated: #20262f;
+    --border: #2a3139;
+    --border-soft: #232a32;
+    --text: #d7dce2;
+    --text-dim: #9aa3af;
+    --text-bright: #f0f3f7;
+    --green: #7aa5d2;
+    --green-soft: #7aa5d218;
+    --green-mid: #7aa5d230;
+    --teal: #8fb8dd;
+    --teal-soft: #8fb8dd18;
+    --amber: #c9a86a;
+    --amber-soft: #c9a86a12;
+    --red: #e07a6a;
+    --red-soft: #e07a6a15;
+    color-scheme: dark;
+  }
+  body::before { opacity: 0.15; }
+  .navbar { background: rgba(16, 20, 26, 0.9); }
+  .hero { background: linear-gradient(160deg, #10141a 0%, #161b22 50%, #1a2230 100%); }
 }

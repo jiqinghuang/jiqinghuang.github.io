@@ -155,7 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const img = item.querySelector('img');
       if (!img) return;
       lastFocus = document.activeElement;
-      lbImg.src = img.src;
+      // picture/srcset 下取实际显示的源（一般是 webp），不支持时回退 png。
+      lbImg.src = img.currentSrc || img.src;
       lbImg.alt = img.alt;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -233,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const normalize = s => s.toLowerCase().replace(/\s+/g, '')
       .replace(/√/g, 'sqrt').replace(/π/g, 'pi')
       .replace(/\*\*/g, '^').replace(/\(1\/2\)/g, '^0.5').replace(/\^\(1\/2\)/g, '^0.5');
-    const accept = ['sqrt(pi)', 'sqrtpi', 'pi^0.5', 'pi^.5', '√pi', '1.772', '1.7724', '1.77245'];
+    const accept = ['sqrt(pi)', 'sqrtpi', 'pi^0.5', 'pi^.5', '1.772', '1.7724', '1.77245'];
 
     // Build contact links only after a correct answer, from char codes,
     // so the address never appears in HTML source.
@@ -259,7 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const check = () => {
       const v = normalize(input.value);
-      const num = parseFloat(v);
+      // 严格数字：必须是纯数字串，避免 parseFloat('1.772abc') 误放行。
+      const num = /^[0-9]*\.?[0-9]+$/.test(v) ? parseFloat(v) : NaN;
       const ok = accept.includes(v) || (!isNaN(num) && Math.abs(num - Math.sqrt(Math.PI)) < 0.001);
       if (ok) {
         formula.classList.add('cg-solved');

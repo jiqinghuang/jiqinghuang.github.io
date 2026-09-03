@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Margin Model | JQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="Margin model for gold and silver Wind futures: EWMA volatility + VaR | 黄金白银期货保证金模型">
   <link rel="canonical" href="https://jiqinghuang.github.io/project-margin-model.html">
@@ -27,6 +29,21 @@
   };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  <script>
+  // CDN 失败（离线/被墙）时给出提示，而不是静默留下 $...$ 源码。
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      if (window.MathJax && window.MathJax.typeset) return;
+      document.querySelectorAll('section h2').forEach(function (h2) {
+        if (!/方法说明|Methodology/.test(h2.textContent)) return;
+        var note = document.createElement('p');
+        note.className = 'math-fallback-note';
+        note.innerHTML = '<span data-lang="cn">注：公式需要联网加载 MathJax 才能正常渲染，当前显示为源码。</span><span data-lang="en">Note: formulas need network access (MathJax) to render; showing source.</span>';
+        h2.parentElement.insertBefore(note, h2.nextSibling);
+      });
+    }, 4000);
+  });
+  </script>
 </head>
 <body>
   <nav class="navbar">
@@ -147,11 +164,11 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">|收益率| vs 99% / 99.99% VaR &nbsp;·&nbsp; 点击图片可放大</span><span data-lang="en">|Return| vs 99% / 99.99% VaR &nbsp;·&nbsp; Click to enlarge</span></p>
       <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))">
         <div class="gallery-item fade-in">
-          <img src="assets/plots/margin_model_Au.png" alt="Au Backtest" width="3220" height="1269" loading="lazy">
+          <picture><source srcset="assets/plots/margin_model_Au.webp" type="image/webp"><img src="assets/plots/margin_model_Au.png" alt="Au Backtest" width="3220" height="1269" loading="lazy" decoding="async"></picture>
           <div class="gallery-caption"><span data-lang="cn">黄金 (Au) — 2008-01-09 ~ 2026-08-20</span><span data-lang="en">Gold (Au) — 2008-01-09 ~ 2026-08-20</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <img src="assets/plots/margin_model_Ag.png" alt="Ag Backtest" width="3220" height="1269" loading="lazy">
+          <picture><source srcset="assets/plots/margin_model_Ag.webp" type="image/webp"><img src="assets/plots/margin_model_Ag.png" alt="Ag Backtest" width="3220" height="1269" loading="lazy" decoding="async"></picture>
           <div class="gallery-caption"><span data-lang="cn">白银 (Ag) — 2012-05-10 ~ 2026-08-20</span><span data-lang="en">Silver (Ag) — 2012-05-10 ~ 2026-08-20</span></div>
         </div>
       </div>
