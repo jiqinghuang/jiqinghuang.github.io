@@ -2,7 +2,7 @@
 
 JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 
-> 最后更新: 2026-08-05
+> 最后更新: 2026-09-18
 
 ## 页面结构
 
@@ -26,6 +26,22 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 ## 技术栈
 
 纯静态站点：HTML5 + CSS3 + Vanilla JS，GitHub Pages 部署。无框架，无构建步骤。
+
+## 数据更新（由本地脚本自动完成）
+
+两个项目页的图表与数字**不手改**，由相邻仓库的同步脚本自动刷新（仅本地文件，不自动推送 Git）：
+
+```bash
+# 量化策略页：跑全部策略 → 复制图表 → 更新 project-quant-trading.html
+python ../trading_strategy/update_local_website.py
+
+# 保证金模型页：跑模型管道 → 复制图表 → 更新 project-margin-model.html
+python ../margin_model/sync_to_website.py
+```
+
+- 图表写入 `assets/plots/`，**png 与 webp 成对更新**（页面 `<picture>` 以 webp 优先）
+- 页面统计数字、回测表格、`<img>` 宽高由脚本替换，替换失败会报错而不是静默跳过
+- 数据源为 Wind 商品期货指数 parquet，由 `trading_strategy/excel_to_parquet.py` 增量更新
 
 ## 相关项目
 
