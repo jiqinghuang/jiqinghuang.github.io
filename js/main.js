@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
     };
 
-    lbClose.addEventListener('click', close);
+    if (lbClose) lbClose.addEventListener('click', close);
     lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   }
