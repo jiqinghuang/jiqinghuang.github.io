@@ -42,6 +42,8 @@ python ../margin_model/sync_to_website.py
 - 图表写入 `assets/plots/`，**png 与 webp 成对更新**（页面 `<picture>` 以 webp 优先）
 - 页面统计数字、回测表格、`<img>` 宽高由脚本替换，替换失败会报错而不是静默跳过
 - 数据源为 Wind 商品期货指数 parquet，由 `trading_strategy/excel_to_parquet.py` 增量更新
+- **发布口径**：策略收益为扣除单边 3bps 交易成本的净值（表格 caption 已标注）；
+  绩效表 9 列（含年化波动率、Sharpe），统计卡数值由同步脚本自动计算
 
 ## 相关项目
 
