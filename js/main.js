@@ -6,19 +6,24 @@ const I18N = {
   _safeSet(key, value) {
     try { localStorage.setItem(key, value); } catch (e) { /* private mode: ignore */ }
   },
+  // 把站内 .html 链接改写为携带 ?lang= 并保留 #锚点；不支持/非站内链接返回 null。
+  _rewriteHref(raw, lang) {
+    if (!raw || !raw.includes('.html')) return null;
+    if (/^(https?:|mailto:|tel:|#)/i.test(raw)) return null;
+    const hashIdx = raw.indexOf('#');
+    const hash = hashIdx >= 0 ? raw.slice(hashIdx) : '';
+    const noHash = hashIdx >= 0 ? raw.slice(0, hashIdx) : raw;
+    const qIdx = noHash.indexOf('?');
+    const base = qIdx >= 0 ? noHash.slice(0, qIdx) : noHash;
+    return base + '?lang=' + lang + hash;
+  },
   // file:// 下重写站内 .html 链接，携带 ?lang= 并保留 #锚点；http 下靠 localStorage，不碰 URL。
   _carryLang(lang) {
     if (location.protocol !== 'file:') return;
     document.querySelectorAll('a[href]').forEach(a => {
-      const raw = a.getAttribute('href');
-      if (!raw || !raw.includes('.html')) return;
-      if (/^(https?:|mailto:|tel:|#)/i.test(raw)) return;
-      const hashIdx = raw.indexOf('#');
-      const hash = hashIdx >= 0 ? raw.slice(hashIdx) : '';
-      const noHash = hashIdx >= 0 ? raw.slice(0, hashIdx) : raw;
-      const qIdx = noHash.indexOf('?');
-      const base = qIdx >= 0 ? noHash.slice(0, qIdx) : noHash;
-      a.setAttribute('href', base + '?lang=' + lang + hash);
+      const next = this._rewriteHref(a.getAttribute('href'), lang);
+      if (next === null) return;
+      a.setAttribute('href', next);
     });
   },
   init() {
@@ -47,18 +52,11 @@ const I18N = {
     if (isFile) {
       this._carryLang(saved);
       document.querySelectorAll('a[href]').forEach(a => {
-        const raw = a.getAttribute('href');
-        if (!raw || !raw.includes('.html')) return;
-        if (/^(https?:|mailto:|tel:|#)/i.test(raw)) return;
         a.addEventListener('click', () => {
           const cur = document.body.classList.contains('lang-cn') ? 'cn' : 'en';
-          const href = a.getAttribute('href');
-          const hashIdx = href.indexOf('#');
-          const hash = hashIdx >= 0 ? href.slice(hashIdx) : '';
-          const noHash = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
-          const qIdx = noHash.indexOf('?');
-          const base = qIdx >= 0 ? noHash.slice(0, qIdx) : noHash;
-          a.setAttribute('href', base + '?lang=' + cur + hash);
+          const next = this._rewriteHref(a.getAttribute('href'), cur);
+          if (next === null) return;
+          a.setAttribute('href', next);
         });
       });
     }
