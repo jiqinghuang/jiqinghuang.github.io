@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Step Solver | JQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="A zero-dependency sudoku solver that explains every step in plain Chinese | 零依赖的数独逐步求解器，每一步都给出中文推理理由">
+  <link rel="canonical" href="https://jiqinghuang.github.io/project-sudoku.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JQ">
+  <meta property="og:title" content="Sudoku Step Solver | JQ">
+  <meta property="og:description" content="A zero-dependency sudoku solver that explains every step in plain Chinese | 零依赖的数独逐步求解器，每一步都给出中文推理理由">
+  <meta property="og:url" content="https://jiqinghuang.github.io/project-sudoku.html">
+  <meta property="og:image" content="https://jiqinghuang.github.io/favicon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sudoku Step Solver | JQ">
+  <meta name="twitter:description" content="A zero-dependency sudoku solver that explains every step in plain Chinese | 零依赖的数独逐步求解器，每一步都给出中文推理理由">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" class="active" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-value="en" class="active" aria-pressed="true">EN</button>
+            <button type="button" data-value="cn" aria-pressed="false">CN</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-lang="cn">数独逐步解</span><span data-lang="en">Sudoku Step Solver</span></h1>
+      <p><span data-lang="cn">// 每一步都讲得出理由的数独教学求解器</span><span data-lang="en">// A sudoku solver where every step explains itself</span></p>
+      <div class="tech-tags">
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Vanilla JS</span>
+        <span class="tech-tag">Zero Dependency</span>
+        <span class="tech-tag">Bitwise Engine</span>
+        <span class="tech-tag">GitHub Pages</span>
+      </div>
+      <div class="hero-btns" style="margin-top:28px">
+        <a href="https://jiqinghuang.github.io/sudoku/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span data-lang="cn">在线试玩</span><span data-lang="en">Play Online</span> &rarr;
+        </a>
+        <a href="https://github.com/jiqinghuang/sudoku" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <span data-lang="cn">查看源代码</span><span data-lang="en">View Source</span> &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目简介</span><span data-lang="en">Overview</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">不甩答案，而是把解题思路一步步讲给你听</span><span data-lang="en">Not just answers — the reasoning, one understandable step at a time</span></p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <div class="card-icon">&gt;_</div>
+          <h3><span data-lang="cn">为谁而做</span><span data-lang="en">Who It Is For</span></h3>
+          <p><span data-lang="cn">给想学会数独解题思路的人。大多数求解器只给终盘，这个项目把每一格的来龙去脉用初学者能懂中文讲清楚。</span><span data-lang="en">For anyone who wants to learn how to solve sudoku, not just get the solution. Every cell's reasoning is explained in plain, beginner-friendly Chinese.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">?</div>
+          <h3><span data-lang="cn">为什么做它</span><span data-lang="en">Why I Built It</span></h3>
+          <p><span data-lang="cn">市面上的求解器大多只输出结果。把推理过程拆成可回放、可核对的步骤，既是教学工具，也是对约束传播算法的一次完整实践。</span><span data-lang="en">Most solvers only output the final grid. Turning the reasoning into replayable, verifiable steps makes it both a teaching tool and a hands-on study of constraint propagation.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#10003;</div>
+          <h3><span data-lang="cn">诚实标注</span><span data-lang="en">Honest Labeling</span></h3>
+          <p><span data-lang="cn">逻辑推不动时会明确标出「试填」并自动回溯验证唯一解——绝不把猜测冒充成推理，这是教学工具的底线。</span><span data-lang="en">When logic runs out, guess steps are clearly flagged in amber and uniqueness is verified by backtracking. Guesses are never dressed up as logic.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目范围</span><span data-lang="en">Project Scope</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">从唯一候选到 X-Wing，覆盖入门到进阶的核心技巧</span><span data-lang="en">From naked singles to X-Wing — the core techniques from beginner to intermediate</span></p>
+      <div class="stats-row fade-in">
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label"><span data-lang="cn">推理技巧</span><span data-lang="en">Solving Techniques</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">91</div>
+          <div class="stat-label"><span data-lang="cn">自动化测试</span><span data-lang="en">Automated Tests</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label"><span data-lang="cn">运行时依赖</span><span data-lang="en">Runtime Dependencies</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">220</div>
+          <div class="stat-label"><span data-lang="cn">对拍随机题</span><span data-lang="en">Cross-checked Puzzles</span></div>
+        </div>
+      </div>
+      <div class="card-grid fade-in" style="margin-top:16px">
+        <div class="card">
+          <h3><span data-lang="cn">推理技巧</span><span data-lang="en">Techniques</span></h3>
+          <p><span data-lang="cn">唯一候选数、行/列/宫唯一、区块摒除、显性数对/三数组、隐性数对/三数组、X-Wing，并支持互不依赖的多格批量填数。</span><span data-lang="en">Naked singles, hidden singles, locked candidates, naked &amp; hidden subsets, X-Wing, plus batch placement of independent cells in one step.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">可回放</span><span data-lang="en">Replayable</span></h3>
+          <p><span data-lang="cn">每一步高亮涉及单元、推理格与被划掉的候选（含已消失候选的回显），支持前进、后退、自动播放和点击跳转。</span><span data-lang="en">Every step highlights the units, focus cells and eliminated candidates, with forward/backward stepping, autoplay and click-to-jump.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">可出题</span><span data-lang="en">Puzzle Generator</span></h3>
+          <p><span data-lang="cn">从随机终盘逐格挖空，每挖一格都验证仍是唯一解；简单到专家四档难度，保证可解且解唯一。</span><span data-lang="en">Digs cells from a random solution, verifying uniqueness after every dig. Four difficulty levels, always uniquely solvable.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">工程实现</span><span data-lang="en">Implementation</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">TypeScript 源码 → tsc 编译 → 纯静态产物</span><span data-lang="en">TypeScript source &rarr; tsc build &rarr; purely static output</span></p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <h3><span data-lang="cn">位运算引擎</span><span data-lang="en">Bitwise Engine</span></h3>
+          <p><span data-lang="cn">候选数用 9 位掩码表示，约束传播 + MRV 试填回溯，空盘求解也在毫秒级完成。</span><span data-lang="en">Candidates as 9-bit masks with constraint propagation and MRV backtracking — even an empty board solves in milliseconds.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">双端复用</span><span data-lang="en">Shared on Both Ends</span></h3>
+          <p><span data-lang="cn">求解器以 UMD 形式导出：浏览器 &lt;script&gt; 直接加载，Node 测试直接 require，一份代码两种用法。</span><span data-lang="en">The solver exports via UMD: loaded by the browser via &lt;script&gt; and required by Node tests — one codebase, both environments.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">类型安全</span><span data-lang="en">Type Safety</span></h3>
+          <p><span data-lang="cn">全量 TypeScript strict 模式；编译产物随仓库提交，线上加载的就是测试所验证的那份代码。</span><span data-lang="en">Fully strict-mode TypeScript; the compiled bundle is committed, so the code online is exactly the code the tests verified.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">质量保障</span><span data-lang="en">Quality Assurance</span></h3>
+          <p><span data-lang="cn">91 条测试覆盖求解与界面接线，并与独立的朴素 DFS 对拍 220 道随机题，解数完全一致。</span><span data-lang="en">91 tests cover the solver and UI wiring, cross-checked against an independent brute-force DFS on 220 random puzzles with identical solution counts.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Role -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">我的工作</span><span data-lang="en">My Role</span></h2>
+      <p class="fade-in" style="max-width:720px;margin:0 auto;color:var(--text-dim);font-size:0.95rem;line-height:1.9">
+        <span data-lang="cn">独立完成算法设计（位运算候选管理、约束传播、唯一解搜索）、中文推理文案撰写、界面与回放交互开发、TypeScript 迁移与全量测试建设。</span>
+        <span data-lang="en">Independently designed the algorithm (bitwise candidate management, constraint propagation, uniqueness search), wrote the Chinese reasoning copy, built the UI and replay interactions, and led the TypeScript migration and full test suite.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Back to Projects -->
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <p class="fade-in">
+        <a href="projects.html" style="font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim)">
+          &larr; <span data-lang="cn">返回项目列表</span><span data-lang="en">Back to Projects</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <div class="footer-contact">
+        <button type="button" class="contact-reveal-btn" id="contact-open">
+          <span data-lang="cn">联系我</span><span data-lang="en">Contact</span>
+        </button>
+      </div>
+      <p class="footer-copy">&copy; 2026 JQ</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

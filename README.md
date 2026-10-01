@@ -2,7 +2,7 @@
 
 JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 
-> 最后更新: 2026-09-18
+> 最后更新: 2026-10-01
 
 ## 页面结构
 
@@ -12,6 +12,7 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
   - [量化交易策略系统](https://github.com/jiqinghuang/trading_strategy)（10 种趋势跟踪策略回测）
   - [保证金模型](https://github.com/jiqinghuang/margin_model)（黄金 & 白银 Wind 期货指数 VaR）
   - [前端之路：HTML / CSS 教程](project-frontend-tutorial.html)（离线优先中文前端教程，含实时练习场、无障碍指南和综合项目；[在线教程](https://jiqinghuang.github.io/html-and-css-tutorial/)）
+  - [数独逐步解](https://github.com/jiqinghuang/sudoku)（零依赖数独教学求解器，逐步中文推理回放；[在线试玩](https://jiqinghuang.github.io/sudoku/)）
 - **投资专栏** — 交易相关文章
   - [你交易，有人在数钱](article-trading-fees.html) — 手续费复利反噬与机器学习正则化类比
   - [狼与屠夫](article-wolves-butcher.html) — 从《聊斋志异》看交易博弈的两种误判
