@@ -50,6 +50,8 @@
         <span class="tech-tag">Vanilla JS</span>
         <span class="tech-tag">Zero Dependency</span>
         <span class="tech-tag">Bitwise Engine</span>
+        <span class="tech-tag">Web Worker</span>
+        <span class="tech-tag">GitHub Actions</span>
         <span class="tech-tag">GitHub Pages</span>
       </div>
       <div class="hero-btns" style="margin-top:28px">
@@ -99,7 +101,7 @@
           <div class="stat-label"><span data-lang="cn">推理技巧</span><span data-lang="en">Solving Techniques</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">91</div>
+          <div class="stat-number">110</div>
           <div class="stat-label"><span data-lang="cn">自动化测试</span><span data-lang="en">Automated Tests</span></div>
         </div>
         <div class="stat-card">
@@ -139,16 +141,24 @@
           <p><span data-lang="cn">候选数用 9 位掩码表示，约束传播 + MRV 试填回溯，空盘求解也在毫秒级完成。</span><span data-lang="en">Candidates as 9-bit masks with constraint propagation and MRV backtracking — even an empty board solves in milliseconds.</span></p>
         </div>
         <div class="card">
-          <h3><span data-lang="cn">双端复用</span><span data-lang="en">Shared on Both Ends</span></h3>
-          <p><span data-lang="cn">求解器以 UMD 形式导出：浏览器 &lt;script&gt; 直接加载，Node 测试直接 require，一份代码两种用法。</span><span data-lang="en">The solver exports via UMD: loaded by the browser via &lt;script&gt; and required by Node tests — one codebase, both environments.</span></p>
+          <h3><span data-lang="cn">三端复用</span><span data-lang="en">One Bundle, Three Consumers</span></h3>
+          <p><span data-lang="cn">求解器以 UMD 形式导出：浏览器主线程与 Web Worker 加载同一份产物，Node 测试直接 require，一份代码三种用法。</span><span data-lang="en">The solver exports via UMD: the browser main thread and the Web Worker load the very same artifact, and Node tests require it directly — one codebase, three consumers.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">类型安全</span><span data-lang="en">Type Safety</span></h3>
           <p><span data-lang="cn">全量 TypeScript strict 模式；编译产物随仓库提交，线上加载的就是测试所验证的那份代码。</span><span data-lang="en">Fully strict-mode TypeScript; the compiled bundle is committed, so the code online is exactly the code the tests verified.</span></p>
         </div>
         <div class="card">
+          <h3><span data-lang="cn">后台线程</span><span data-lang="en">Background Thread</span></h3>
+          <p><span data-lang="cn">求解与出题交给 Web Worker 执行，专家题最差 3s 也不会冻结界面；Worker 构造失败、脚本 404 或运行出错时自动退回主线程，两条路径行为一致且都有测试覆盖。</span><span data-lang="en">Solving and generation run in a Web Worker, so even a 3-second expert puzzle never freezes the UI. If the worker cannot be created, 404s or throws, it falls back to the main thread — both paths behave identically and both are covered by tests.</span></p>
+        </div>
+        <div class="card">
           <h3><span data-lang="cn">质量保障</span><span data-lang="en">Quality Assurance</span></h3>
-          <p><span data-lang="cn">91 条测试覆盖求解与界面接线，并与独立的朴素 DFS 对拍 220 道随机题，解数完全一致。</span><span data-lang="en">91 tests cover the solver and UI wiring, cross-checked against an independent brute-force DFS on 220 random puzzles with identical solution counts.</span></p>
+          <p><span data-lang="cn">110 条测试覆盖求解器、界面接线与 Worker 消息协议（含 4 类失败降级），并与独立的朴素 DFS 对拍 220 道随机题，解数完全一致。</span><span data-lang="en">110 tests cover the solver, UI wiring and the worker message contract — including four failure/fallback paths — cross-checked against an independent brute-force DFS on 220 random puzzles with identical solution counts.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">CI 护栏</span><span data-lang="en">CI Guards</span></h3>
+          <p><span data-lang="cn">GitHub Actions 每次推送自动执行类型检查与全量测试，并校验 dist/ 与 src/ 同步——改了源码忘编译、或漏提交新产物都过不了。</span><span data-lang="en">GitHub Actions runs typecheck and the full suite on every push, and verifies that dist/ matches src/ — a forgotten build or a missing artifact cannot ship.</span></p>
         </div>
       </div>
     </div>
