@@ -101,7 +101,7 @@
           <div class="stat-label"><span data-lang="cn">推理技巧</span><span data-lang="en">Solving Techniques</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">110</div>
+          <div class="stat-number">141</div>
           <div class="stat-label"><span data-lang="cn">自动化测试</span><span data-lang="en">Automated Tests</span></div>
         </div>
         <div class="stat-card">
@@ -116,7 +116,7 @@
       <div class="card-grid fade-in" style="margin-top:16px">
         <div class="card">
           <h3><span data-lang="cn">推理技巧</span><span data-lang="en">Techniques</span></h3>
-          <p><span data-lang="cn">唯一候选数、行/列/宫唯一、区块摒除、显性数对/三数组、隐性数对/三数组、X-Wing，并支持互不依赖的多格批量填数。</span><span data-lang="en">Naked singles, hidden singles, locked candidates, naked &amp; hidden subsets, X-Wing, plus batch placement of independent cells in one step.</span></p>
+          <p><span data-lang="cn">唯一候选数、行/列/宫唯一、区块摒除、显性数对/三数组、隐性数对/三数组、X-Wing；默认「一步一格」逐步讲解，也可切换为同类确定格批量填入，「展开逐格理由」让多格步骤依然清晰。</span><span data-lang="en">Naked singles, hidden singles, locked candidates, naked &amp; hidden subsets and X-Wing, with a one-cell-per-step teaching mode by default, an optional same-technique batch view, and collapsible per-cell reasoning that keeps multi-cell steps readable.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">可回放</span><span data-lang="en">Replayable</span></h3>
@@ -150,11 +150,11 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">后台线程</span><span data-lang="en">Background Thread</span></h3>
-          <p><span data-lang="cn">求解与出题交给 Web Worker 执行，专家题最差 3s 也不会冻结界面；Worker 构造失败、脚本 404 或运行出错时自动退回主线程，两条路径行为一致且都有测试覆盖。</span><span data-lang="en">Solving and generation run in a Web Worker, so even a 3-second expert puzzle never freezes the UI. If the worker cannot be created, 404s or throws, it falls back to the main thread — both paths behave identically and both are covered by tests.</span></p>
+          <p><span data-lang="cn">求解与出题交给 Web Worker 执行，主线程始终可交互；Worker 构造失败、脚本 404 或运行出错时自动退回主线程，两条路径行为一致且都有测试覆盖。</span><span data-lang="en">Solving and generation run in a Web Worker so the main thread stays responsive. If the worker cannot be created, 404s or throws, it falls back to the main thread — both paths behave identically and both are covered by tests.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">质量保障</span><span data-lang="en">Quality Assurance</span></h3>
-          <p><span data-lang="cn">110 条测试覆盖求解器、界面接线与 Worker 消息协议（含 4 类失败降级），并与独立的朴素 DFS 对拍 220 道随机题，解数完全一致。</span><span data-lang="en">110 tests cover the solver, UI wiring and the worker message contract — including four failure/fallback paths — cross-checked against an independent brute-force DFS on 220 random puzzles with identical solution counts.</span></p>
+          <p><span data-lang="cn">141 条测试覆盖求解器、界面接线与 Worker 消息协议（含 4 类失败降级、一步一格两种粒度的一致性），并与独立的朴素 DFS 对拍 220 道随机题，解数完全一致。</span><span data-lang="en">141 tests cover the solver, UI wiring and the worker message contract — including four failure/fallback paths and consistency between the two step-granularity modes — cross-checked against an independent brute-force DFS on 220 random puzzles with identical solution counts.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">CI 护栏</span><span data-lang="en">CI Guards</span></h3>
