@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outbound IP Desktop Widget | JQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* style.css 没有给 code 定义样式（站点此前未用过该元素），
+       这里补一条，让行内代码用站点自己的等宽字体而不是浏览器默认的 monospace。 */
+    code { font-family: var(--font-mono); font-size: 0.88em; }
+  </style>
+  <meta name="description" content="A 713 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 713 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN，零运行时依赖、无需安装">
+  <link rel="canonical" href="https://jiqinghuang.github.io/project-ip-float.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JQ">
+  <meta property="og:title" content="Outbound IP Desktop Widget | JQ">
+  <meta property="og:description" content="A 713 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 713 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN">
+  <meta property="og:url" content="https://jiqinghuang.github.io/project-ip-float.html">
+  <meta property="og:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Outbound IP Desktop Widget | JQ">
+  <meta name="twitter:description" content="A 713 KB single-file Windows desktop card showing your outbound IP, geolocation and ASN in two lines — zero runtime dependencies.">
+  <meta name="twitter:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" class="active" data-lang="cn">项目</a><a href="projects.html" class="active" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-value="en" class="active" aria-pressed="true">EN</button>
+            <button type="button" data-value="cn" aria-pressed="false">CN</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-lang="cn">出口 IP 桌面悬浮窗</span><span data-lang="en">Outbound IP Desktop Widget</span></h1>
+      <p><span data-lang="cn">// 两行看清自己从哪个 IP、哪个机房出网 · Windows 原生单文件</span><span data-lang="en">// Two lines that tell you which IP and which datacenter you egress from — one native Windows binary</span></p>
+      <div class="tech-tags">
+        <span class="tech-tag">C++17</span>
+        <span class="tech-tag">Win32 API</span>
+        <span class="tech-tag">GDI+</span>
+        <span class="tech-tag">WinHTTP</span>
+        <span class="tech-tag">MinGW Static</span>
+        <span class="tech-tag">Zero Dependency</span>
+        <span class="tech-tag">Tray Icon</span>
+      </div>
+      <div class="hero-btns" style="margin-top:28px">
+        <a href="https://github.com/jiqinghuang/ip-float/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span data-lang="cn">下载 exe</span><span data-lang="en">Download the exe</span> &rarr;
+        </a>
+        <a href="https://github.com/jiqinghuang/ip-float" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <span data-lang="cn">查看源代码</span><span data-lang="en">View Source</span> &rarr;
+        </a>
+      </div>
+      <p style="margin-top:20px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
+        <span data-lang="cn">单文件 exe（约 713 KB），双击即用 —— 不需要安装、不需要管理员权限。<br>Windows 首次运行可能提示安全警告，处理办法见仓库 README。</span>
+        <span data-lang="en">A single ~713 KB exe — double-click to run. No installer, no admin rights.<br>Windows may warn on first launch; the README covers the fix.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="section" id="shots">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">实机效果</span><span data-lang="en">What It Looks Like</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">桌面应用没法在线试玩，所以先把界面原样摆出来 &nbsp;·&nbsp; 点击图片可放大</span><span data-lang="en">A desktop app cannot be tried in a browser, so here is the interface as it actually renders &nbsp;·&nbsp; Click to enlarge</span></p>
+
+      <div class="fade-in" style="margin-top:32px;background:#1e1f22;border:1px solid var(--border);border-radius:var(--radius-lg);padding:56px 24px;display:flex;justify-content:center">
+        <img src="assets/ip-float/card.png" alt="ip-float 悬浮卡片：上行显示 203.0.113.42 · JP Tokyo Chiyoda，下行显示 AS20473 Vultr · 2分钟前" width="680" height="132" loading="lazy" decoding="async" style="max-width:100%;height:auto;display:block">
+      </div>
+      <p class="fade-in" style="margin-top:14px;text-align:center;font-family:var(--font-mono);font-size:0.76rem;color:var(--text-dim)">
+        <span data-lang="cn">卡片本体 · 340 &times; 66 逻辑像素 · 图为 200% DPI 实拍（示例数据）</span>
+        <span data-lang="en">The card itself · 340 &times; 66 logical pixels · captured at 200% DPI (sample data)</span>
+      </p>
+
+      <div class="card-grid fade-in" style="margin-top:40px;align-items:center">
+        <div class="gallery-item" style="max-width:340px;width:100%;justify-self:center">
+          <picture><source srcset="assets/ip-float/settings.webp" type="image/webp"><img src="assets/ip-float/settings.png" alt="ip-float 设置窗口：刷新间隔 5 分钟、不透明度 100%、窗口总在最前已勾选、开机时自动启动未勾选" width="696" height="774" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption"><span data-lang="cn">设置窗口 · 点击放大</span><span data-lang="en">Settings · click to enlarge</span></div>
+        </div>
+        <div class="card" style="border:none;background:transparent;box-shadow:none;padding:0">
+          <h3><span data-lang="cn">要什么都能改，改完就记住</span><span data-lang="en">Everything Is Configurable, and Remembered</span></h3>
+          <p><span data-lang="cn">刷新间隔 1–1440 分钟、不透明度 0–100%、窗口总在最前、开机自启（写 <code>HKCU\...\Run</code>）。卡片拖到哪、透明度拉到多少，都会一起存进配置。</span><span data-lang="en">Refresh interval from 1 to 1440 minutes, opacity from 0 to 100%, always-on-top, and run-at-login (written to <code>HKCU\...\Run</code>). Where you drag the card and how transparent you make it are saved too.</span></p>
+          <p style="margin-top:12px"><span data-lang="cn">配置默认写在 <code>%APPDATA%\ip-float\settings.ini</code>；那个目录不可写时自动退到 exe 同目录，不会崩也不会丢设置。整个设置窗口的布局由字体度量推导、不硬编码像素，因此换语言、换 DPI 都不会把文字挤断。</span><span data-lang="en">Settings live in <code>%APPDATA%\ip-float\settings.ini</code>; if that directory is not writable it falls back to the exe's own folder without crashing or losing your configuration. The dialog's layout is derived from font metrics rather than hard-coded pixels, so text never gets clipped across languages or DPI settings.</span></p>
+          <p style="margin-top:12px"><span data-lang="cn">不透明度拉到 0 卡片会完全透明（还占着位置、点不到）——这时从托盘图标右键 →「设置…」改回来即可，退出和找回都不依赖卡片本身。</span><span data-lang="en">Drag opacity to 0 and the card becomes fully invisible while still holding its place — recover it from the tray icon's right-click menu. Neither quitting nor recovering depends on the card being visible.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目简介</span><span data-lang="en">Overview</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">该一直看得见的信息，不该用开网页的方式去查</span><span data-lang="en">Information that should always be visible should not require opening a browser tab</span></p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <div class="card-icon">?</div>
+          <h3><span data-lang="cn">为谁而做</span><span data-lang="en">Who It Is For</span></h3>
+          <p><span data-lang="cn">经常切代理、开远程机器、跑抓取脚本的人。出口 IP 和它落在哪个国家/机房，是排查问题和确认链路时最常要确认的一件事，但每次开浏览器去查都很烦。</span><span data-lang="en">Anyone who switches proxies, remotes into machines or runs scraping jobs. Which IP you egress from — and which country or datacenter it belongs to — is the thing you check most often, yet looking it up in a browser every time is tedious.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#9679;</div>
+          <h3><span data-lang="cn">为什么是悬浮小卡片</span><span data-lang="en">Why a Floating Card</span></h3>
+          <p><span data-lang="cn">信息要一直看得见，但不能碍事。所以做成无边框置顶卡片，而且点它<strong>不抢焦点</strong>——你正在打的字不会被打断，看完一眼就能继续。</span><span data-lang="en">The information has to stay visible without getting in the way. Hence a borderless always-on-top card that <strong>never steals focus</strong> when clicked — a glance costs you nothing and your typing is never interrupted.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">0</div>
+          <h3><span data-lang="cn">为什么坚持零依赖</span><span data-lang="en">Why Zero Dependencies</span></h3>
+          <p><span data-lang="cn">只调 Windows 自带库（gdiplus / winhttp / user32 / gdi32 / shell32 / kernel32），MinGW 静态链接，不依赖 Python / .NET / Node / VCRedist。拷到任何一台 Windows 上双击就能跑，不需要安装、不需要管理员。</span><span data-lang="en">It only calls libraries Windows already ships (gdiplus, winhttp, user32, gdi32, shell32, kernel32), statically linked with MinGW — no Python, .NET, Node or VCRedist. Copy it to any Windows machine, double-click, done. No install, no admin rights.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目范围</span><span data-lang="en">Project Scope</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">一个足够小的工具，把该做对的细节都做对</span><span data-lang="en">A deliberately small tool that still gets the details right</span></p>
+      <div class="stats-row fade-in">
+        <div class="stat-card">
+          <div class="stat-number">713 <span style="font-size:1.1rem">KB</span></div>
+          <div class="stat-label"><span data-lang="cn">单文件成品</span><span data-lang="en">Single-File Binary</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label"><span data-lang="cn">运行时依赖</span><span data-lang="en">Runtime Dependencies</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1824</div>
+          <div class="stat-label"><span data-lang="cn">行 C++（单文件）</span><span data-lang="en">Lines of C++ (One File)</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label"><span data-lang="cn">数据源自动切换</span><span data-lang="en">Fallback Data Sources</span></div>
+        </div>
+      </div>
+      <div class="card-grid fade-in" style="margin-top:16px">
+        <div class="card">
+          <h3><span data-lang="cn">单实例</span><span data-lang="en">Single Instance</span></h3>
+          <p><span data-lang="cn">已经有一张卡片在跑时，再双击 exe 只会把已有卡片闪一下提示你它在哪，不会开出第二张，也不会悄悄占掉第二份内存。</span><span data-lang="en">If a card is already running, double-clicking the exe just flashes the existing one to show you where it is — no duplicate window, no second copy quietly holding memory.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">不抢焦点</span><span data-lang="en">Never Steals Focus</span></h3>
+          <p><span data-lang="cn">用 <code>WS_EX_NOACTIVATE</code>：点卡片、拖动它、右键菜单，都不会把你正在编辑的窗口切走。这是这类常驻小工具最容易被忽略、但最影响体感的一点。</span><span data-lang="en">Via <code>WS_EX_NOACTIVATE</code>: clicking, dragging or opening the context menu never pulls focus away from the window you are typing in — the detail most always-on tools get wrong and the one you feel every day.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">多屏 DPI 自适应</span><span data-lang="en">Per-Monitor DPI</span></h3>
+          <p><span data-lang="cn">Per-Monitor V2 DPI 感知，100%–200% 都跟着缩放；把你把卡片拖到另一块缩放比例不同的屏幕上时，字体会重算而不是糊成一片。</span><span data-lang="en">Per-Monitor V2 DPI awareness scales from 100% to 200%; drag the card onto a second monitor with a different scale factor and the text is recomputed instead of smeared.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">托盘 + 右键菜单</span><span data-lang="en">Tray and Context Menu</span></h3>
+          <p><span data-lang="cn">双击托盘图标显示/隐藏；右键菜单含状态行（当前数据源与更新时间）、立即刷新、刷新间隔、设置、复制 IP、总在最前、开机自启、退出——并且会显示当前实际生效的配置文件路径。</span><span data-lang="en">Double-click the tray icon to show or hide the card. The context menu carries a status line (current data source and update time), refresh now, interval presets, settings, copy IP, always-on-top, run at login and quit — and it shows the configuration path actually in effect.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">状态点区分三种状态</span><span data-lang="en">One Dot, Three States</span></h3>
+          <p><span data-lang="cn">绿点=数据正常，灰点=正在查询，橙点=上次刷新失败。不用读文字，扫一眼颜色就知道现在这份数字可不可信。</span><span data-lang="en">Green means fresh data, grey means a query is in flight, amber means the last refresh failed — a glance at the colour tells you whether the number in front of you can be trusted.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">只报该报的</span><span data-lang="en">Data Leaves Only When It Must</span></h3>
+          <p><span data-lang="cn">每 N 分钟向 ipinfo.io / ipapi.co 各发一次请求，等于把出口 IP 报给第三方。介意就调大间隔，或用 <code>--source</code> 换成自建镜像——这一点写在文档里，而不是藏在隐私政策里。</span><span data-lang="en">Every N minutes it queries ipinfo.io or ipapi.co, which means telling a third party your outbound IP. If that bothers you, raise the interval or point <code>--source</code> at your own mirror. This is stated in the README rather than buried in a privacy policy.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Failure handling -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">失败也讲人话</span><span data-lang="en">Failures Explain Themselves</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">不静默、不甩错误码数字，直接告诉你下一步该做什么</span><span data-lang="en">No silence, no bare error numbers — it tells you what to do next</span></p>
+      <p class="fade-in" style="max-width:760px;margin:24px auto 0;color:var(--text-dim);font-size:0.95rem;line-height:1.9;text-align:center">
+        <span data-lang="cn">网络请求失败时，卡片不会变成一个空白框：它保留上一次的结果、把状态点变橙，并在卡片上写明原因。WinHTTP 错误码和 HTTP 状态码都翻成了中文，并附上可操作的建议。</span>
+        <span data-lang="en">When a request fails the card does not turn into a blank box: it keeps the previous result, turns the status dot amber, and states the reason on the card. Both WinHTTP error codes and HTTP status codes are translated into plain language with actionable advice.</span>
+      </p>
+      <div class="table-wrapper fade-in" style="margin-top:28px">
+        <table class="perf-table">
+          <caption><span data-lang="cn">卡片上的失败提示（节选）——括号里是程序给出的建议，不是原始错误码</span><span data-lang="en">Failure messages shown on the card (excerpt) — the parenthetical advice is produced by the app, not the raw error</span></caption>
+          <thead>
+            <tr>
+              <th scope="col"><span data-lang="cn">错误</span><span data-lang="en">Error</span></th>
+              <th scope="col"><span data-lang="cn">卡片上写什么</span><span data-lang="en">What the Card Says</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>12185</code></td>
+              <td><span data-lang="cn">证书用途不匹配（常见于代理 / 中间人拦截）</span><span data-lang="en">Certificate purpose mismatch — common with proxies or TLS interception</span></td>
+            </tr>
+            <tr>
+              <td><code>12029</code></td>
+              <td><span data-lang="cn">无法连接（端口不通、被墙，或该走代理）</span><span data-lang="en">Cannot connect — port blocked, filtered, or a proxy is required</span></td>
+            </tr>
+            <tr>
+              <td><code>429</code></td>
+              <td><span data-lang="cn">请求太频繁，被数据源限流（调大间隔，或用 --source 换源）</span><span data-lang="en">Rate limited by the data source — increase the interval or switch with --source</span></td>
+            </tr>
+            <tr>
+              <td><code>403</code></td>
+              <td><span data-lang="cn">被拒绝（数据源要 token，或你的出口 IP 被限流封禁）</span><span data-lang="en">Rejected — the source wants a token, or your egress IP is blocked</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fade-in" style="margin-top:20px;text-align:center;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
+        <span data-lang="cn">主源挂掉会自动换备源，右键菜单的状态行里能看到当前正在用哪个源。</span>
+        <span data-lang="en">If the primary source fails it switches to the fallback; the context menu's status line shows which one is in use.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Self-check -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">30 秒自检</span><span data-lang="en">Verify It in 30 Seconds</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">没法在线试玩，但你可以不联网、不安装地先确认渲染是好的</span><span data-lang="en">You cannot try it online, but you can confirm the rendering offline without installing anything</span></p>
+      <p class="fade-in" style="max-width:760px;margin:24px auto 0;color:var(--text-dim);font-size:0.95rem;line-height:1.9;text-align:center">
+        <span data-lang="cn">这是这个项目里我最满意的一个设计：exe 自带两个自检模式，用假数据渲染一张卡片或一张设置窗口截图。不联网、不受单实例限制，改完界面可以随时验证。</span>
+        <span data-lang="en">This is the part of the project I am happiest with: the exe ships two self-check modes that render the card, or the settings dialog, with sample data. No network, no single-instance restriction — the UI can be re-verified after any change.</span>
+      </p>
+      <div class="fade-in" data-lang="cn" style="max-width:720px;margin:28px auto 0">
+        <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --demo --shot out.png        # 用假数据渲染一张卡片自检图
+ip-float.exe --demo --shot-dlg dlg.png    # 给设置窗口拍一张自检图</code></pre>
+      </div>
+      <div class="fade-in" data-lang="en" style="max-width:720px;margin:28px auto 0">
+        <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --demo --shot out.png        # render the card with sample data
+ip-float.exe --demo --shot-dlg dlg.png    # render the settings dialog</code></pre>
+      </div>
+      <p class="fade-in" style="margin-top:20px;text-align:center;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
+        <span data-lang="cn">两个 --shot 都不联网、且不受单实例限制；因为是 -mwindows 构建没有控制台，截图会在同名位置写一个 .log 报告成功与否。</span>
+        <span data-lang="en">Both --shot modes skip the network and bypass the single-instance check. Because it is an -mwindows build with no console, each one writes a same-named .log reporting success or failure.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">架构</span><span data-lang="en">Architecture</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">一次刷新要走过的四步，全部在一个 1824 行的源文件里</span><span data-lang="en">Four steps per refresh, all inside a single 1824-line source file</span></p>
+      <div class="arch-flow fade-in">
+        <div class="arch-step">
+          <div class="step-num">1</div>
+          <h4><span data-lang="cn">数据源</span><span data-lang="en">Data Source</span></h4>
+          <p><span data-lang="cn">ipinfo.io/json<br>失败自动换 ipapi.co</span><span data-lang="en">ipinfo.io/json<br>falls back to ipapi.co</span></p>
+        </div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-step">
+          <div class="step-num">2</div>
+          <h4><span data-lang="cn">抓取</span><span data-lang="en">Fetch</span></h4>
+          <p><span data-lang="cn">WinHTTP（schannel）<br>四阶段各 8 秒超时</span><span data-lang="en">WinHTTP / schannel<br>8 s timeout per stage</span></p>
+        </div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-step">
+          <div class="step-num">3</div>
+          <h4><span data-lang="cn">解析</span><span data-lang="en">Parse</span></h4>
+          <p><span data-lang="cn">手写 JSON 解析<br>1 MiB 响应上限</span><span data-lang="en">Hand-written JSON<br>1 MiB response cap</span></p>
+        </div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-step">
+          <div class="step-num">4</div>
+          <h4><span data-lang="cn">渲染</span><span data-lang="en">Render</span></h4>
+          <p><span data-lang="cn">GDI+ 双缓冲<br>半透明圆角卡片</span><span data-lang="en">GDI+ double-buffered<br>translucent rounded card</span></p>
+        </div>
+      </div>
+      <div class="card-grid fade-in" style="margin-top:16px">
+        <div class="card">
+          <h3><span data-lang="cn">手写 JSON，而不是引库</span><span data-lang="en">A Hand-Written JSON Reader</span></h3>
+          <p><span data-lang="cn">为了守住"单文件零依赖"，解析器自己实现：正确处理 UTF-16 代理对（emoji、生僻字），非法 <code>\uXXXX</code> 原样回退而不是崩掉，并对响应体设了 1 MiB 上限防止跑飞。</span><span data-lang="en">To keep the binary single-file and dependency-free the parser is written by hand: UTF-16 surrogate pairs (emoji, rare CJK) are combined correctly, malformed <code>\uXXXX</code> escapes degrade gracefully instead of crashing, and the response body is capped at 1 MiB so it cannot run away.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">单实例用命名互斥体</span><span data-lang="en">Single Instance via Named Mutex</span></h3>
+          <p><span data-lang="cn">一个命名互斥体判定是否已有实例；已有实例时，新进程用 <code>PostMessage</code> 让旧卡片闪一下再退出，而不是弹一个"已经在运行"的对话框。</span><span data-lang="en">A named mutex decides whether an instance already exists; if so, the new process uses <code>PostMessage</code> to make the existing card flash before exiting, rather than popping an "already running" dialog.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">抓取在工作线程</span><span data-lang="en">Fetching Off the UI Thread</span></h3>
+          <p><span data-lang="cn">网络请求跑在独立线程，完成后把结果 <code>PostMessage</code> 回窗口线程；界面从不卡住。抓取途中又收到刷新请求会记一笔，抓完自动补一次，不会把请求静默吃掉。</span><span data-lang="en">Requests run on a worker thread and post their result back to the window thread, so the UI never blocks. A refresh request that arrives mid-fetch is recorded and re-run afterwards rather than silently dropped.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">定时器兜底</span><span data-lang="en">Timer Fallback</span></h3>
+          <p><span data-lang="cn">极端情况（句柄耗尽等）导致 <code>SetTimer</code> 失败时，退回每分钟醒一次，并在卡片上写明"定时器异常，已退回 1 分钟"——而不是安静地再也不刷新。</span><span data-lang="en">If <code>SetTimer</code> fails in an extreme case such as handle exhaustion, it falls back to a one-minute tick and says so on the card, instead of quietly never refreshing again.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">静态链接</span><span data-lang="en">Statically Linked</span></h3>
+          <p><span data-lang="cn"><code>-static -static-libgcc -static-libstdc++</code>，只依赖 7 个 Windows 自带系统库。构建用 <code>-Wall -Wextra</code> 且要求零警告，编译失败即中断，不会留下半个产物。</span><span data-lang="en">Built with <code>-static -static-libgcc -static-libstdc++</code> against seven system libraries Windows already provides. The build uses <code>-Wall -Wextra</code> and is expected to be warning-free; a compile failure aborts instead of leaving a half-written artifact.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">双缓冲绘制</span><span data-lang="en">Double-Buffered Drawing</span></h3>
+          <p><span data-lang="cn">先在内存 DC 上完成整帧绘制再一次性 <code>BitBlt</code>，避免每次刷新时卡片闪一下。半透明、圆角、抗锯齿文字都在同一帧里完成。</span><span data-lang="en">The whole frame is composed on a memory DC and blitted in one call, so the card never flickers on refresh. Transparency, rounded corners and anti-aliased text all happen within that one frame.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Windows warnings -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">双击被拦？那是两套独立机制</span><span data-lang="en">Blocked on Double-Click? That Is Two Separate Systems</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">自研 exe 分发的真实门槛，也是这个项目里最花时间的一块</span><span data-lang="en">The real cost of shipping your own exe — and the most time-consuming part of this project</span></p>
+      <p class="fade-in" style="max-width:780px;margin:24px auto 0;color:var(--text-dim);font-size:0.95rem;line-height:1.9;text-align:center">
+        <span data-lang="cn">自己编译的 exe 第一次双击往往要点两次才能运行。这里有两层<strong>互相独立</strong>的拦截，只解决一层，另一层会立刻顶上来，表现为"弹窗换了个样子"，很容易误以为方法无效。</span>
+        <span data-lang="en">A freshly built exe usually takes two clicks to run. There are two <strong>independent</strong> interceptors here; fixing only one makes the other appear immediately, which looks like your fix did not work at all.</span>
+      </p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <div class="card-icon">&#9888;</div>
+          <h3><span data-lang="cn">第一层：SmartScreen</span><span data-lang="en">Layer 1: SmartScreen</span></h3>
+          <p><span data-lang="cn">「Windows 已保护你的电脑」。按<strong>文件哈希</strong>做云端信誉判定：刚编译出来的 exe 微软服务器从没见过，所以每次重编（哈希变了）都会拦。关键在于——<strong>这一层自签名挡不住</strong>。</span><span data-lang="en">"Windows protected your PC." Reputation is judged by <strong>file hash</strong>, so a freshly built exe has never been seen by Microsoft's servers and is blocked every time the hash changes. Crucially, a <strong>self-signed certificate does nothing here</strong>.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#10003;</div>
+          <h3><span data-lang="cn">第二层：附件管理器</span><span data-lang="en">Layer 2: Attachment Manager</span></h3>
+          <p><span data-lang="cn">「打开文件 - 安全警告 · 无法验证发布者」。这是<strong>另一套</strong>机制，而它<strong>认本机信任的证书</strong>：自签名证书装进 <code>CurrentUser\Root</code> 之后，「发行商」就从"未知发布者"变成证书主体，警告随之消失。</span><span data-lang="en">"Open File — Security Warning: the publisher could not be verified." This is a <strong>different</strong> system, and it <strong>does trust locally installed certificates</strong>: once a self-signed cert is in <code>CurrentUser\Root</code>, the publisher stops reading "Unknown Publisher" and the warning goes away.</span></p>
+        </div>
+      </div>
+      <p class="fade-in" style="margin-top:20px;text-align:center;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
+        <span data-lang="cn">两者恰好相反：自签名对附件管理器有效、对 SmartScreen 无效。</span>
+        <span data-lang="en">They are exact opposites: a self-signed certificate works for the Attachment Manager and does nothing for SmartScreen.</span>
+      </p>
+      <div class="table-wrapper fade-in" style="margin-top:32px">
+        <table class="perf-table">
+          <caption><span data-lang="cn">排查过程中走过的弯路——这些做法对这个弹窗都无效，记下来免得再试一遍</span><span data-lang="en">Dead ends from the investigation — none of these fix this dialog; recorded so they are not retried</span></caption>
+          <thead>
+            <tr>
+              <th scope="col"><span data-lang="cn">试过的做法</span><span data-lang="en">What Was Tried</span></th>
+              <th scope="col"><span data-lang="cn">为什么没用</span><span data-lang="en">Why It Did Nothing</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span data-lang="cn">只清 MOTW（<code>Unblock-File</code>）</span><span data-lang="en">Clearing MOTW only (<code>Unblock-File</code>)</span></td>
+              <td><span data-lang="cn">这个 exe 本来就没有 <code>Zone.Identifier</code>，此弹窗不是 MOTW 触发的</span><span data-lang="en">The exe never had a <code>Zone.Identifier</code> stream — this dialog is not MOTW-driven</span></td>
+            </tr>
+            <tr>
+              <td><span data-lang="cn">加 Defender 排除项</span><span data-lang="en">Defender exclusions (folder or exe)</span></td>
+              <td><span data-lang="cn">与 SmartScreen、附件管理器都是彼此独立的机制</span><span data-lang="en">Independent of both SmartScreen and the Attachment Manager</span></td>
+            </tr>
+            <tr>
+              <td><span data-lang="cn">改 <code>Policies\...\Defender\SmartScreen</code></span><span data-lang="en">Editing <code>Policies\...\Defender\SmartScreen</code></span></td>
+              <td><span data-lang="cn">改错键了——那是 Defender / Edge 的策略，对这个弹窗无效</span><span data-lang="en">Wrong key entirely — that is the Defender/Edge policy and does not affect this dialog</span></td>
+            </tr>
+            <tr>
+              <td><span data-lang="cn">改完注册表不重启资源管理器</span><span data-lang="en">Not restarting Explorer after the registry change</span></td>
+              <td><span data-lang="cn"><code>LowRiskFileTypes</code> 是策略值，Explorer <strong>只在启动时读一次</strong></span><span data-lang="en"><code>LowRiskFileTypes</code> is a policy read by Explorer <strong>only at startup</strong></span></td>
+            </tr>
+            <tr>
+              <td><span data-lang="cn">反复重编 exe</span><span data-lang="en">Rebuilding the exe repeatedly</span></td>
+              <td><span data-lang="cn">每重编一次哈希就变一次，SmartScreen 那层的信誉归零</span><span data-lang="en">Every rebuild changes the hash and resets SmartScreen reputation to zero</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fade-in" style="max-width:780px;margin:24px auto 0;color:var(--text-dim);font-size:0.95rem;line-height:1.9;text-align:center">
+        <span data-lang="cn">完整的处置步骤（含注册表位置、界面路径和"必须重启资源管理器"这一步的说明）都写在了仓库 README 里，构建脚本在编译完成后会自动重新签名。</span>
+        <span data-lang="en">The complete fix — registry locations, UI paths and why restarting Explorer is mandatory — is documented in the repository README, and the build script re-signs the binary automatically after compiling.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- My Role -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">我的工作</span><span data-lang="en">My Role</span></h2>
+      <p class="fade-in" style="max-width:760px;margin:0 auto;color:var(--text-dim);font-size:0.95rem;line-height:1.9">
+        <span data-lang="cn">独立完成全部 C++ / Win32 实现（WinHTTP 抓取与主备源轮换、手写 JSON 解析、GDI+ 半透明渲染、托盘与右键菜单、字体度量驱动的设置窗口、Per-Monitor DPI 适配），以及构建、自签名与分发链路和踩坑文档。</span>
+        <span data-lang="en">Independently implemented the entire C++/Win32 application — WinHTTP fetching with source fallback, the hand-written JSON parser, GDI+ translucent rendering, the tray icon and context menu, the font-metrics-driven settings dialog and Per-Monitor DPI handling — plus the build, self-signing and distribution pipeline and the troubleshooting documentation.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Back to Projects -->
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <p class="fade-in">
+        <a href="projects.html" style="font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim)">
+          &larr; <span data-lang="cn">返回项目列表</span><span data-lang="en">Back to Projects</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <div class="footer-contact">
+        <button type="button" class="contact-reveal-btn" id="contact-open">
+          <span data-lang="cn">联系我</span><span data-lang="en">Contact</span>
+        </button>
+      </div>
+      <p class="footer-copy">&copy; 2026 JQ</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
