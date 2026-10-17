@@ -9,16 +9,16 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 - **首页** — 个人简介与导航入口
 - **关于我** — 简历、技能、工作经历、教育背景
 - **项目** — 项目卡片索引页，链接到各项目详情
-  - [量化交易策略系统](https://github.com/jiqinghuang/trading_strategy)（10 种趋势跟踪策略回测）
-  - [保证金模型](https://github.com/jiqinghuang/margin_model)（黄金 & 白银 Wind 期货指数 VaR）
-  - [前端之路：HTML / CSS 教程](project-frontend-tutorial.html)（离线优先中文前端教程，含实时练习场、无障碍指南和综合项目；[在线教程](https://jiqinghuang.github.io/html-and-css-tutorial/)）
-  - [数独逐步解](https://github.com/jiqinghuang/sudoku)（零依赖数独教学求解器，默认批量讲清中文推理并支持逐格展开（一键切一步一格），求解跑在 Web Worker 上不卡界面，185 条自动化测试；[在线试玩](https://jiqinghuang.github.io/sudoku/)）
-  - [出口 IP 桌面悬浮窗](project-ip-float.html)（713 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖；[下载 exe](https://github.com/jiqinghuang/ip-float/releases/latest) · [源码](https://github.com/jiqinghuang/ip-float)）
-  - [经典扫雷复刻](project-minesweeper.html)（零依赖 Win95 扫雷，规则/手势/终局图块对照原版，纯 CSS + 内联 SVG，2631 条自动化测试；[在线试玩](https://jiqinghuang.github.io/minesweeper/) · [源码](https://github.com/jiqinghuang/minesweeper)）
+  - 量化交易策略系统（10 种趋势跟踪策略回测）
+  - 保证金模型（黄金 & 白银 Wind 期货指数 VaR）
+  - 前端之路：HTML / CSS 教程（离线优先中文前端教程，含实时练习场、无障碍指南和综合项目）
+  - 数独逐步解（零依赖数独教学求解器，默认批量讲清中文推理并支持逐格展开（一键切一步一格），求解跑在 Web Worker 上不卡界面，185 条自动化测试）
+  - 出口 IP 桌面悬浮窗（713 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖）
+  - 经典扫雷复刻（零依赖 Win95 扫雷，规则/手势/终局图块对照原版，纯 CSS + 内联 SVG，2631 条自动化测试）
 - **投资专栏** — 交易相关文章
-  - [你交易，有人在数钱](article-trading-fees.html) — 手续费复利反噬与机器学习正则化类比
-  - [狼与屠夫](article-wolves-butcher.html) — 从《聊斋志异》看交易博弈的两种误判
-  - [纹丝不动的艺术](article-sitting-still.html) — 大涨大跌中持有不动的好坏论证
+  - [你交易，有人在数钱](https://jiqinghuang.github.io/article-trading-fees.html) — 手续费复利反噬与机器学习正则化类比
+  - [狼与屠夫](https://jiqinghuang.github.io/article-wolves-butcher.html) — 从《聊斋志异》看交易博弈的两种误判
+  - [纹丝不动的艺术](https://jiqinghuang.github.io/article-sitting-still.html) — 大涨大跌中持有不动的好坏论证
 
 ## 特色
 
