@@ -69,11 +69,11 @@
           <div class="stat-label"><span data-lang="cn">商品品种</span><span data-lang="en">Symbols</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">6.7<span style="font-size:1.2rem">yr</span></div>
+          <div class="stat-number">6.8<span style="font-size:1.2rem">yr</span></div>
           <div class="stat-label"><span data-lang="cn">回测周期</span><span data-lang="en">Backtest Period</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">160<span style="font-size:1.2rem">%</span></div>
+          <div class="stat-number">138<span style="font-size:1.2rem">%</span></div>
           <div class="stat-label"><span data-lang="cn">最高累积收益</span><span data-lang="en">Best Cumulative Return</span></div>
         </div>
       </div>
@@ -123,7 +123,7 @@
       </p>
       <div class="table-wrapper fade-in">
         <table class="perf-table" id="perf-table">
-          <caption><span data-lang="cn">策略性能对比：AUFI.WI 黄金指数回测，信号日 T 收盘生成、T+1 日开盘执行，收益已扣单边 3bps 交易成本</span><span data-lang="en">Strategy performance on AUFI.WI gold index; signals at close on day T, executed at open on T+1; returns net of 3 bps per-side transaction costs</span></caption>
+          <caption><span data-lang="cn">策略性能对比：AUFI.WI 黄金指数回测，信号日 T 收盘生成、T+1 日开盘执行，收益已扣单边 3bps 交易成本（胜率 / 平均交易收益为未扣费毛收益）；指标预热期不出信号</span><span data-lang="en">Strategy performance on AUFI.WI gold index; signals at close on day T, executed at open on T+1; returns net of 3 bps per-side transaction costs (win rate / avg trade return are gross of fees); no signals during indicator warm-up</span></caption>
           <thead>
             <tr>
               <th scope="col"><span data-lang="cn">策略</span><span data-lang="en">Strategy</span></th>
@@ -140,113 +140,113 @@
           <tbody>
             <tr>
               <td><strong>TMA (10/30/90)</strong></td>
-              <td class="highlight">160.16%</td>
-              <td class="highlight">15.31%</td>
-              <td class="highlight">16.51%</td>
-              <td class="highlight">0.98</td>
+              <td class="highlight">137.96%</td>
+              <td class="highlight">13.62%</td>
+              <td class="highlight">15.02%</td>
+              <td class="highlight">0.96</td>
               <td class="negative">-25.99%</td>
-              <td>10</td>
-              <td class="highlight">50.00%</td>
-              <td class="highlight">16.29%</td>
+              <td>9</td>
+              <td class="highlight">44.44%</td>
+              <td class="highlight">16.95%</td>
             </tr>
             <tr>
               <td><strong>TMA (5/20/60)</strong></td>
-              <td class="highlight">118.19%</td>
-              <td class="highlight">12.33%</td>
-              <td class="highlight">16.52%</td>
-              <td class="highlight">0.81</td>
-              <td class="negative">-26.50%</td>
-              <td>15</td>
-              <td class="highlight">40.00%</td>
-              <td class="highlight">9.60%</td>
+              <td class="highlight">126.70%</td>
+              <td class="highlight">12.82%</td>
+              <td class="highlight">15.47%</td>
+              <td class="highlight">0.89</td>
+              <td class="negative">-27.09%</td>
+              <td>14</td>
+              <td class="highlight">50.00%</td>
+              <td class="highlight">10.52%</td>
             </tr>
             <tr>
               <td><strong>EWMA Long-Only</strong></td>
-              <td class="highlight">112.07%</td>
-              <td class="highlight">11.85%</td>
-              <td class="highlight">13.67%</td>
-              <td class="highlight">0.92</td>
+              <td class="highlight">102.29%</td>
+              <td class="highlight">10.94%</td>
+              <td class="highlight">13.30%</td>
+              <td class="highlight">0.88</td>
               <td class="negative">-16.24%</td>
-              <td>93</td>
-              <td class="highlight">47.31%</td>
-              <td class="highlight">0.98%</td>
+              <td>90</td>
+              <td class="highlight">47.78%</td>
+              <td class="highlight">0.96%</td>
             </tr>
             <tr>
               <td><strong>Donchian (50)</strong></td>
-              <td class="highlight">74.39%</td>
-              <td class="highlight">8.64%</td>
-              <td class="highlight">16.52%</td>
-              <td class="highlight">0.60</td>
-              <td class="negative">-28.02%</td>
-              <td>13</td>
-              <td class="highlight">46.15%</td>
-              <td class="highlight">7.23%</td>
-            </tr>
-            <tr>
-              <td><strong>Donchian (20)</strong></td>
-              <td class="highlight">68.56%</td>
-              <td class="highlight">8.09%</td>
-              <td class="highlight">16.53%</td>
-              <td class="highlight">0.57</td>
-              <td class="negative">-22.77%</td>
-              <td>23</td>
-              <td class="highlight">47.83%</td>
-              <td class="highlight">2.80%</td>
+              <td class="highlight">90.25%</td>
+              <td class="highlight">9.94%</td>
+              <td class="highlight">15.59%</td>
+              <td class="highlight">0.71</td>
+              <td class="negative">-26.07%</td>
+              <td>11</td>
+              <td class="highlight">54.55%</td>
+              <td class="highlight">9.31%</td>
             </tr>
             <tr>
               <td><strong>EWMA Long-Short</strong></td>
-              <td class="highlight">57.84%</td>
-              <td class="highlight">7.04%</td>
-              <td class="highlight">16.53%</td>
-              <td class="highlight">0.51</td>
+              <td class="highlight">59.68%</td>
+              <td class="highlight">7.14%</td>
+              <td class="highlight">16.27%</td>
+              <td class="highlight">0.52</td>
               <td class="negative">-19.67%</td>
-              <td>186</td>
-              <td class="highlight">37.10%</td>
-              <td class="highlight">0.38%</td>
+              <td>181</td>
+              <td class="highlight">37.57%</td>
+              <td class="highlight">0.39%</td>
+            </tr>
+            <tr>
+              <td><strong>Donchian (20)</strong></td>
+              <td class="highlight">55.07%</td>
+              <td class="highlight">6.68%</td>
+              <td class="highlight">16.42%</td>
+              <td class="highlight">0.49</td>
+              <td class="negative">-22.77%</td>
+              <td>24</td>
+              <td class="highlight">45.83%</td>
+              <td class="highlight">2.35%</td>
             </tr>
             <tr>
               <td><strong>MACD</strong></td>
-              <td class="highlight">15.17%</td>
-              <td class="highlight">2.13%</td>
-              <td class="highlight">16.54%</td>
-              <td class="highlight">0.22</td>
+              <td class="highlight">25.02%</td>
+              <td class="highlight">3.34%</td>
+              <td class="highlight">16.27%</td>
+              <td class="highlight">0.29</td>
               <td class="negative">-23.56%</td>
-              <td>136</td>
-              <td class="highlight">37.50%</td>
-              <td class="highlight">0.24%</td>
+              <td>133</td>
+              <td class="highlight">38.35%</td>
+              <td class="highlight">0.31%</td>
             </tr>
             <tr>
               <td><strong>RSI</strong></td>
-              <td class="negative">-37.29%</td>
-              <td class="negative">-6.72%</td>
+              <td class="negative">-33.78%</td>
+              <td class="negative">-5.89%</td>
               <td class="highlight">16.37%</td>
-              <td class="negative">-0.36</td>
+              <td class="negative">-0.30</td>
               <td class="negative">-62.49%</td>
               <td>11</td>
               <td class="highlight">54.55%</td>
-              <td class="negative">-5.42%</td>
+              <td class="negative">-4.93%</td>
             </tr>
             <tr>
               <td><strong>Bollinger (20, 2.0)</strong></td>
-              <td class="negative">-47.24%</td>
-              <td class="negative">-9.09%</td>
-              <td class="highlight">16.53%</td>
+              <td class="negative">-47.43%</td>
+              <td class="negative">-9.04%</td>
+              <td class="highlight">16.36%</td>
               <td class="negative">-0.52</td>
               <td class="negative">-60.14%</td>
               <td>26</td>
               <td class="highlight">57.69%</td>
-              <td class="negative">-2.21%</td>
+              <td class="negative">-2.24%</td>
             </tr>
             <tr>
               <td><strong>Bollinger (20, 1.5)</strong></td>
-              <td class="negative">-63.12%</td>
-              <td class="negative">-13.81%</td>
-              <td class="highlight">16.51%</td>
-              <td class="negative">-0.85</td>
+              <td class="negative">-60.94%</td>
+              <td class="negative">-12.93%</td>
+              <td class="highlight">16.29%</td>
+              <td class="negative">-0.80</td>
               <td class="negative">-69.64%</td>
               <td>34</td>
-              <td class="highlight">52.94%</td>
-              <td class="negative">-2.75%</td>
+              <td class="highlight">50.00%</td>
+              <td class="negative">-2.58%</td>
             </tr>
           </tbody>
         </table>
@@ -265,44 +265,44 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">点击图片可放大查看</span><span data-lang="en">Click to enlarge</span></p>
       <div class="gallery">
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/TMA_5_20_60.webp" type="image/webp"><img src="assets/plots/TMA_5_20_60.png" alt="TMA 5/20/60" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">TMA (5/20/60) — <span data-lang="cn">累积收益 118.19%</span><span data-lang="en">Cumulative Return 118.19%</span></div>
+          <picture><source srcset="assets/plots/TMA_5_20_60.webp" type="image/webp"><img src="assets/plots/TMA_5_20_60.png" alt="TMA 5/20/60" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">TMA (5/20/60) — <span data-lang="cn">累积收益 126.70%</span><span data-lang="en">Cumulative Return 126.70%</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/TMA_10_30_90.webp" type="image/webp"><img src="assets/plots/TMA_10_30_90.png" alt="TMA 10/30/90" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">TMA (10/30/90) — <span data-lang="cn">累积收益 160.16%</span><span data-lang="en">Cumulative Return 160.16%</span></div>
+          <picture><source srcset="assets/plots/TMA_10_30_90.webp" type="image/webp"><img src="assets/plots/TMA_10_30_90.png" alt="TMA 10/30/90" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">TMA (10/30/90) — <span data-lang="cn">累积收益 137.96%</span><span data-lang="en">Cumulative Return 137.96%</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/EWMA_LONG_ONLY_30.webp" type="image/webp"><img src="assets/plots/EWMA_LONG_ONLY_30.png" alt="EWMA Long-Only" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">EWMA Long-Only — <span data-lang="cn">累积收益 112.07%</span><span data-lang="en">Cumulative Return 112.07%</span></div>
+          <picture><source srcset="assets/plots/EWMA_LONG_ONLY_30.webp" type="image/webp"><img src="assets/plots/EWMA_LONG_ONLY_30.png" alt="EWMA Long-Only" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">EWMA Long-Only — <span data-lang="cn">累积收益 102.29%</span><span data-lang="en">Cumulative Return 102.29%</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/DONCHIAN_20.webp" type="image/webp"><img src="assets/plots/DONCHIAN_20.png" alt="Donchian 20" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">Donchian (20) — <span data-lang="cn">累积收益 68.56%</span><span data-lang="en">Cumulative Return 68.56%</span></div>
+          <picture><source srcset="assets/plots/DONCHIAN_20.webp" type="image/webp"><img src="assets/plots/DONCHIAN_20.png" alt="Donchian 20" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">Donchian (20) — <span data-lang="cn">累积收益 55.07%</span><span data-lang="en">Cumulative Return 55.07%</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/DONCHIAN_50.webp" type="image/webp"><img src="assets/plots/DONCHIAN_50.png" alt="Donchian 50" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">Donchian (50) — <span data-lang="cn">累积收益 74.39%</span><span data-lang="en">Cumulative Return 74.39%</span></div>
+          <picture><source srcset="assets/plots/DONCHIAN_50.webp" type="image/webp"><img src="assets/plots/DONCHIAN_50.png" alt="Donchian 50" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">Donchian (50) — <span data-lang="cn">累积收益 90.25%</span><span data-lang="en">Cumulative Return 90.25%</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/EWMA_30.webp" type="image/webp"><img src="assets/plots/EWMA_30.png" alt="EWMA Long-Short" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">EWMA Long-Short — <span data-lang="cn">累积收益 57.84%</span><span data-lang="en">Cumulative Return 57.84%</span></div>
+          <picture><source srcset="assets/plots/EWMA_30.webp" type="image/webp"><img src="assets/plots/EWMA_30.png" alt="EWMA Long-Short" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">EWMA Long-Short — <span data-lang="cn">累积收益 59.68%</span><span data-lang="en">Cumulative Return 59.68%</span></div>
         </div>
         <div class="gallery-item fade-in">
           <picture><source srcset="assets/plots/MACD_12_26_9.webp" type="image/webp"><img src="assets/plots/MACD_12_26_9.png" alt="MACD" width="2084" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">MACD (12/26/9) — <span data-lang="cn">累积收益 15.17%</span><span data-lang="en">Cumulative Return 15.17%</span></div>
+          <div class="gallery-caption">MACD (12/26/9) — <span data-lang="cn">累积收益 25.02%</span><span data-lang="en">Cumulative Return 25.02%</span></div>
         </div>
         <div class="gallery-item fade-in">
           <picture><source srcset="assets/plots/RSI_14_30_70.webp" type="image/webp"><img src="assets/plots/RSI_14_30_70.png" alt="RSI" width="2085" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">RSI (14, 30/70) — <span data-lang="cn">累积收益 -37.29%</span><span data-lang="en">Cumulative Return -37.29%</span></div>
+          <div class="gallery-caption">RSI (14, 30/70) — <span data-lang="cn">累积收益 -33.78%</span><span data-lang="en">Cumulative Return -33.78%</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/BOLLINGER_20_2.webp" type="image/webp"><img src="assets/plots/BOLLINGER_20_2.png" alt="Bollinger 2.0" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">Bollinger (20, 2.0) — <span data-lang="cn">累积收益 -47.24%</span><span data-lang="en">Cumulative Return -47.24%</span></div>
+          <picture><source srcset="assets/plots/BOLLINGER_20_2.webp" type="image/webp"><img src="assets/plots/BOLLINGER_20_2.png" alt="Bollinger 2.0" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">Bollinger (20, 2.0) — <span data-lang="cn">累积收益 -47.43%</span><span data-lang="en">Cumulative Return -47.43%</span></div>
         </div>
         <div class="gallery-item fade-in">
-          <picture><source srcset="assets/plots/BOLLINGER_20_1.5.webp" type="image/webp"><img src="assets/plots/BOLLINGER_20_1.5.png" alt="Bollinger 1.5" width="2082" height="1785" loading="lazy" decoding="async"></picture>
-          <div class="gallery-caption">Bollinger (20, 1.5) — <span data-lang="cn">累积收益 -63.12%</span><span data-lang="en">Cumulative Return -63.12%</span></div>
+          <picture><source srcset="assets/plots/BOLLINGER_20_1.5.webp" type="image/webp"><img src="assets/plots/BOLLINGER_20_1.5.png" alt="Bollinger 1.5" width="2085" height="1785" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption">Bollinger (20, 1.5) — <span data-lang="cn">累积收益 -60.94%</span><span data-lang="en">Cumulative Return -60.94%</span></div>
         </div>
       </div>
     </div>
