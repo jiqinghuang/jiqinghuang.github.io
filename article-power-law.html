@@ -80,6 +80,31 @@
       color: var(--text-bright);
       border-radius: 0 var(--radius) var(--radius) 0;
     }
+    /* 金句卡：全站唯一的反色块（深底白字），与 callout / math-block 彻底区分 */
+    .article-body .pull-quote {
+      font-family: var(--font-mono);
+      background: var(--green);
+      color: #fff;
+      font-size: 1.22rem;
+      font-weight: 700;
+      line-height: 1.9;
+      letter-spacing: 0.05em;
+      text-align: center;
+      padding: 34px 32px 30px;
+      margin: 40px 0;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 28px rgba(30, 58, 95, 0.28);
+    }
+    .article-body .pull-quote::before {
+      content: '\201C';
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 0.6;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 14px;
+    }
     .article-body .closing {
       margin-top: 48px;
       padding: 24px;
@@ -200,7 +225,9 @@
         <h2>五、那么怎么下注：三种合法姿势</h2>
         <p>既然右尾决定一切，普通人想参与右尾，姿势只有三种。注意它们的共同点：<strong>没有一种是「单押一只牛股」。</strong></p>
         <h3>姿势一：买整个分布——指数化</h3>
-        <p>不选点，买全场。买下指数，你就买下了整个幂律分布，那 4% 的赢家无论花落谁家都会落到你头上。这是幂律世界给普通人的最大免费午餐：你不需要有识别牛股的眼光，你只需要有不缺席的纪律。这也是《纹丝不动的艺术》的资产版——上一篇躲开时间的平均数，这一篇躲开资产的平均数。</p>
+        <p>不选点，买全场。买下指数，你就买下了整个幂律分布，那 4% 的赢家无论花落谁家都会落到你头上。这是幂律世界给普通人的最大免费午餐。</p>
+        <div class="pull-quote">你不需要有识别牛股的眼光，<br>你只需要有不缺席的纪律。</div>
+        <p>这也是《纹丝不动的艺术》的资产版——上一篇躲开时间的平均数，这一篇躲开资产的平均数。</p>
         <h3>姿势二：像风险投资一样下注——组合化</h3>
         <p>风险投资的真面目，经常被误读。它从来不是「押注特斯拉」，它是<strong>买下一整个书架的书号</strong>：同一类观点下几十注，每一注小到可以归零，持有期长到可以让幂律显形，接受十九注平庸换一注封神。出版社不会逼编辑写出「下一本哈利·波特」，它出版一百本书，让畅销榜自己挑。<strong>VC 是出版社，不是买彩票的读者。</strong></p>
         <h3>姿势三：把个股当期权，不当信仰——仓位化</h3>
@@ -291,7 +318,9 @@
         <h2>V. So How Should You Bet: Three Legal Postures</h2>
         <p>If the right tail decides everything, ordinary people have exactly three legitimate ways to participate. Note what they have in common: <strong>none of them is "concentrate on one hot stock".</strong></p>
         <h3>Posture 1: Buy the Whole Distribution — Index It</h3>
-        <p>Pick no points; buy the field. Own the index and you own the entire power-law distribution — whoever the 4% turn out to be, their gains land on your head. This is the greatest free lunch the power-law world offers ordinary investors: you don't need the eye to spot winners, only the discipline to never be absent. It is also the asset-side twin of my earlier essay on sitting still — that one dodges the average in time, this one dodges the average in assets.</p>
+        <p>Pick no points; buy the field. Own the index and you own the entire power-law distribution — whoever the 4% turn out to be, their gains land on your head. This is the greatest free lunch the power-law world offers ordinary investors.</p>
+        <div class="pull-quote">You don't need the eye to spot winners.<br>Only the discipline to never be absent.</div>
+        <p>It is also the asset-side twin of my earlier essay on sitting still — that one dodges the average in time, this one dodges the average in assets.</p>
         <h3>Posture 2: Bet Like a Venture Capitalist — Portfolio It</h3>
         <p>Venture capital is routinely misread. It never "bets on Tesla" — it <strong>buys an entire shelf of lottery tickets for one thesis</strong>: dozens of positions, each small enough to go to zero, held long enough for the power law to reveal itself, accepting nineteen mediocre outcomes for one legend. No publisher demands an editor produce "the next Harry Potter" — they publish a hundred books and let the bestseller list pick the winner. <strong>A VC is a publisher, not a reader buying lottery tickets.</strong></p>
         <h3>Posture 3: Treat Single Stocks as Options, Not Faith — Size It</h3>
