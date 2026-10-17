@@ -2,7 +2,7 @@
 
 JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 
-> 最后更新: 2026-10-10
+> 最后更新: 2026-10-17
 
 ## 页面结构
 
@@ -14,6 +14,7 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
   - [前端之路：HTML / CSS 教程](project-frontend-tutorial.html)（离线优先中文前端教程，含实时练习场、无障碍指南和综合项目；[在线教程](https://jiqinghuang.github.io/html-and-css-tutorial/)）
   - [数独逐步解](https://github.com/jiqinghuang/sudoku)（零依赖数独教学求解器，默认批量讲清中文推理并支持逐格展开（一键切一步一格），求解跑在 Web Worker 上不卡界面，185 条自动化测试；[在线试玩](https://jiqinghuang.github.io/sudoku/)）
   - [出口 IP 桌面悬浮窗](project-ip-float.html)（713 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖；[下载 exe](https://github.com/jiqinghuang/ip-float/releases/latest) · [源码](https://github.com/jiqinghuang/ip-float)）
+  - [经典扫雷复刻](project-minesweeper.html)（零依赖 Win95 扫雷，规则/手势/终局图块对照原版，纯 CSS + 内联 SVG，2631 条自动化测试；[在线试玩](https://jiqinghuang.github.io/minesweeper/) · [源码](https://github.com/jiqinghuang/minesweeper)）
 - **投资专栏** — 交易相关文章
   - [你交易，有人在数钱](article-trading-fees.html) — 手续费复利反噬与机器学习正则化类比
   - [狼与屠夫](article-wolves-butcher.html) — 从《聊斋志异》看交易博弈的两种误判
@@ -55,6 +56,10 @@ python ../margin_model/sync_to_website.py
 自带的自检模式（`ip-float.exe --demo --shot` / `--demo --shot-dlg`）抓屏后合成圆角透明素材。
 界面改动后需要重新生成，页面上的功能描述也应随之核对。
 
+`project-minesweeper.html` 也不在此列：统计数字（2631 条测试 = 引擎 2489 + UI 142）为**手写**，
+需随 [minesweeper](https://github.com/jiqinghuang/minesweeper) 仓库人工同步，以该仓库 `npm test`
+的实际输出为准。
+
 ## 相关项目
 
 - **[量化交易策略系统](https://github.com/jiqinghuang/trading_strategy)** — 10 种趋势跟踪策略回测框架
@@ -62,3 +67,4 @@ python ../margin_model/sync_to_website.py
 - **[前端之路：HTML / CSS 教程](https://github.com/jiqinghuang/html-and-css-tutorial)** — 离线优先中文前端教程；[在线教程](https://jiqinghuang.github.io/html-and-css-tutorial/)
 - **[数独逐步解](https://github.com/jiqinghuang/sudoku)** — 每步讲得出理由的教学型数独求解器，Web Worker 后台求解；[在线试玩](https://jiqinghuang.github.io/sudoku/)
 - **[出口 IP 桌面悬浮窗](https://github.com/jiqinghuang/ip-float)** — 713 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖；[下载 exe](https://github.com/jiqinghuang/ip-float/releases/latest)
+- **[经典扫雷复刻](https://github.com/jiqinghuang/minesweeper)** — 零依赖 Win95 扫雷复刻，引擎/UI 分离 + 双套测试 + CI 闭环；[在线试玩](https://jiqinghuang.github.io/minesweeper/)

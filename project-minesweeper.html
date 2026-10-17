@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Minesweeper | JQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="A zero-dependency Win95 minesweeper replica — rules, gestures and endgame tiles faithful to the original | 零依赖的 Win95 扫雷复刻，规则、手势与终局图块严格对齐原版">
+  <link rel="canonical" href="https://jiqinghuang.github.io/project-minesweeper.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JQ">
+  <meta property="og:title" content="Classic Minesweeper | JQ">
+  <meta property="og:description" content="A zero-dependency Win95 minesweeper replica — rules, gestures and endgame tiles faithful to the original | 零依赖的 Win95 扫雷复刻，规则、手势与终局图块严格对齐原版">
+  <meta property="og:url" content="https://jiqinghuang.github.io/project-minesweeper.html">
+  <meta property="og:image" content="https://jiqinghuang.github.io/favicon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Classic Minesweeper | JQ">
+  <meta name="twitter:description" content="A zero-dependency Win95 minesweeper replica — rules, gestures and endgame tiles faithful to the original | 零依赖的 Win95 扫雷复刻，规则、手势与终局图块严格对齐原版">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" class="active" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-value="en" class="active" aria-pressed="true">EN</button>
+            <button type="button" data-value="cn" aria-pressed="false">CN</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span data-lang="cn">经典扫雷复刻</span><span data-lang="en">Classic Minesweeper</span></h1>
+      <p><span data-lang="cn">// 规则与手感都对齐原版的 Win95 扫雷</span><span data-lang="en">// Win95 minesweeper — faithful in rules and in feel</span></p>
+      <div class="tech-tags">
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Vanilla JS</span>
+        <span class="tech-tag">Zero Dependency</span>
+        <span class="tech-tag">Win95 Replica</span>
+        <span class="tech-tag">GitHub Actions</span>
+        <span class="tech-tag">GitHub Pages</span>
+      </div>
+      <div class="hero-btns" style="margin-top:28px">
+        <a href="https://jiqinghuang.github.io/minesweeper/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span data-lang="cn">在线试玩</span><span data-lang="en">Play Online</span> &rarr;
+        </a>
+        <a href="https://github.com/jiqinghuang/minesweeper" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <span data-lang="cn">查看源代码</span><span data-lang="en">View Source</span> &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目简介</span><span data-lang="en">Overview</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">复刻的不只是像素外观，还有手势与规则的每个细节</span><span data-lang="en">Not just the pixel look — every gesture and rule detail matters</span></p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <div class="card-icon">&gt;_</div>
+          <h3><span data-lang="cn">为谁而做</span><span data-lang="en">Who It Is For</span></h3>
+          <p><span data-lang="cn">给怀念经典扫雷的人，也给想看一个小型工程如何做到「引擎、界面、测试、CI 俱全」的开发者。浏览器打开即玩，无需安装任何东西。</span><span data-lang="en">For anyone nostalgic for the classic, and for developers who want to see a small project done end to end — engine, UI, tests and CI. Open the page and play, nothing to install.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">?</div>
+          <h3><span data-lang="cn">为什么做它</span><span data-lang="en">Why I Built It</span></h3>
+          <p><span data-lang="cn">扫雷的乐趣藏在细节里：双键和弦、按压预览、首点保雷。把这些手感复刻出来，再顺手把架构做成可测试、可回归的小型范本，一举两得。</span><span data-lang="en">The joy of minesweeper lives in the details: two-button chords, press previews, first-click safety. Reproducing that feel — while building a testable, regression-proof architecture along the way — kills two birds with one stone.</span></p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#10003;</div>
+          <h3><span data-lang="cn">严格经典规则</span><span data-lang="en">Strictly Classic Rules</span></h3>
+          <p><span data-lang="cn">首点保雷（严格经典：首点仍可能直接翻出数字）、旗挡 flood 展开而问号不挡、和弦翻错旗会踩雷判负、剩余雷数可为负——行为逐条对照原版考证。</span><span data-lang="en">First-click safety (strict classic — the first click may still open a number), flags block flood while question marks don't, a wrong flag in a chord detonates, and the mine counter can go negative. Every behavior verified against the original.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">项目范围</span><span data-lang="en">Project Scope</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">从手势状态机到终局图块，一格一格对齐原版</span><span data-lang="en">From the gesture state machine to the endgame tiles — matched cell by cell</span></p>
+      <div class="stats-row fade-in">
+        <div class="stat-card">
+          <div class="stat-number">2631</div>
+          <div class="stat-label"><span data-lang="cn">自动化测试</span><span data-lang="en">Automated Tests</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label"><span data-lang="cn">运行时依赖</span><span data-lang="en">Runtime Dependencies</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label"><span data-lang="cn">经典级别</span><span data-lang="en">Classic Levels</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label"><span data-lang="cn">图片资源</span><span data-lang="en">Image Assets</span></div>
+        </div>
+      </div>
+      <div class="card-grid fade-in" style="margin-top:16px">
+        <div class="card">
+          <h3><span data-lang="cn">经典三级</span><span data-lang="en">Three Classic Levels</span></h3>
+          <p><span data-lang="cn">初级 9×9×10、中级 16×16×40、高级 16×30×99；七段 LED 计数器支持负数（经典的 -01 式显示），计时首翻启动、胜负冻结、上限 999 秒。</span><span data-lang="en">Beginner 9×9×10, Intermediate 16×16×40, Expert 16×30×99. The seven-segment LED counter goes negative (classic -01 style); the clock starts on the first reveal, freezes on win/loss and caps at 999 seconds.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">手势手感</span><span data-lang="en">Gesture Feel</span></h3>
+          <p><span data-lang="cn">按住拖动时按压跟随、拖出取消；双键/中键和弦预压邻居且两种按键顺序都能触发；窗口失焦自动复位手势。键盘 Alt+G 菜单 / F2 重开，触屏点按翻开、长按插旗。</span><span data-lang="en">Press-and-drag previews follow the pointer and cancel on exit; two-button and middle-button chords work in either press order with neighbor previews; losing window focus resets all gestures. Keyboard: Alt+G menu, F2 restart. Touch: tap to reveal, long-press to flag.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">终局图块</span><span data-lang="en">Endgame Tiles</span></h3>
+          <p><span data-lang="cn">对照原版 winmine 的 DrawMine 图块表逐格复刻：踩中的雷红底、未标出的雷亮出、错旗显示被红叉划掉的雷、问号保持原样；胜利时旗稳稳落在雷上。</span><span data-lang="en">Reproduced tile by tile from the original winmine DrawMine table: the detonated mine on red, unflagged mines revealed, wrong flags struck through with a red cross, question marks left untouched — and on victory every flag sits on a mine.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">工程实现</span><span data-lang="en">Implementation</span></h2>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">TypeScript 源码 → tsc 编译 → 纯静态产物，零图片零字体</span><span data-lang="en">TypeScript source &rarr; tsc build &rarr; purely static output — no images, no fonts</span></p>
+      <div class="card-grid fade-in" style="margin-top:32px">
+        <div class="card">
+          <h3><span data-lang="cn">引擎与 UI 分离</span><span data-lang="en">Engine / UI Separation</span></h3>
+          <p><span data-lang="cn">engine 不知道 DOM 的存在，以 UMD 双端加载；浏览器加载的 dist 产物与 Node 测试 require 的是同一份代码，规则可被完全自动化验证。</span><span data-lang="en">The engine knows nothing about the DOM and loads via UMD. The dist artifact the browser loads is the very same file the Node tests require, so every rule is fully automatable.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">可测试性设计</span><span data-lang="en">Testability by Design</span></h3>
+          <p><span data-lang="cn">随机源与计时器全部可注入：种子 PRNG 复现任意局面，测试直接指定雷位；计时对时钟回拨免疫，胜负时刻精确冻结。</span><span data-lang="en">Random source and clock are both injectable: a seeded PRNG reproduces any board, tests can plant exact mine layouts, and the timer is immune to clock rollbacks and freezes exactly at game over.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">独立对拍</span><span data-lang="en">Independent Cross-checking</span></h3>
+          <p><span data-lang="cn">测试不信任被测代码：flood 展开与邻雷计数各有一份独立实现做对拍，300 种子 × 3 级别验证首点保雷，50 种子整局自洽对拍胜负判定。</span><span data-lang="en">The tests do not trust the code under test: flood expansion and adjacency counts are cross-checked against independent implementations, 300 seeds × 3 levels verify first-click safety, and 50 full random games check win/loss consistency.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">回归测试即文档</span><span data-lang="en">Regression Tests as Documentation</span></h3>
+          <p><span data-lang="cn">每条回归用例的注释都记录着历史 bug 的根因——越界下标凑出的假胜利、错旗图形拼出外壳的红叉、和弦手势泄漏的误翻……测试就是这份复刻的设计文档。</span><span data-lang="en">Every regression test documents the root cause of a real historical bug — fake wins from out-of-range indices, the red cross rendered outside its SVG shell, a leaked mis-click from the chord gesture. The test suite is the design document.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">UI 接线测试</span><span data-lang="en">UI Wiring Tests</span></h3>
+          <p><span data-lang="cn">用最小 DOM stub 真正执行 dist/ui.js（线上同一份），覆盖手势状态机的按键顺序、拖动跟随、失焦复位、终局渲染与计时器生命周期；渲染断言拆到 SVG 结构级，抓「有字符串但不显示」的 bug。</span><span data-lang="en">A minimal DOM stub executes the real dist/ui.js — the same file served online — covering gesture press orders, drag following, focus-loss resets, endgame rendering and timer lifecycle. Rendering asserts go down to SVG structure to catch "the string is there but nothing shows" bugs.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">CI 护栏</span><span data-lang="en">CI Guards</span></h3>
+          <p><span data-lang="cn">GitHub Actions 每次推送执行类型检查、构建与双套测试，并校验 dist/ 与 src/ 同步；关键用例经变异测试验证——临时还原旧 bug 必须让测试变红，确保用例都是「活的」。</span><span data-lang="en">GitHub Actions runs typecheck, build and both suites on every push, and verifies dist/ matches src/. Key tests are mutation-verified: temporarily reintroducing an old bug must turn the suite red.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Role -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center">
+      <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">我的工作</span><span data-lang="en">My Role</span></h2>
+      <p class="fade-in" style="max-width:720px;margin:0 auto;color:var(--text-dim);font-size:0.95rem;line-height:1.9">
+        <span data-lang="cn">独立完成规则考证（逐项对照原版 winmine 行为）、引擎与界面开发、双套测试体系建设与 CI 闭环；并组织双模型 AI 代码审阅交叉验证、用变异测试验证修复的有效性。</span>
+        <span data-lang="en">Independently researched the original winmine behavior, built the engine and UI, established both test suites and the CI loop, and organized a dual-model AI code review with cross-validation — verifying every fix with mutation testing.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Back to Projects -->
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <p class="fade-in">
+        <a href="projects.html" style="font-family:var(--font-mono);font-size:0.85rem;color:var(--text-dim)">
+          &larr; <span data-lang="cn">返回项目列表</span><span data-lang="en">Back to Projects</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <div class="footer-contact">
+        <button type="button" class="contact-reveal-btn" id="contact-open">
+          <span data-lang="cn">联系我</span><span data-lang="en">Contact</span>
+        </button>
+      </div>
+      <p class="footer-copy">&copy; 2026 JQ</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
