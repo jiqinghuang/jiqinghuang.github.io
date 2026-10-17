@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>从畅销书榜到市值榜：为什么押中特斯拉救不了你 | JQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Normal vs power law distributions in markets: why a single lucky stock cannot save you | 从畅销书榜到市值榜，为什么押中特斯拉救不了你">
+  <link rel="canonical" href="https://jiqinghuang.github.io/article-power-law.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JQ">
+  <meta property="og:title" content="从畅销书榜到市值榜：为什么押中特斯拉救不了你 | JQ">
+  <meta property="og:description" content="Normal vs power law distributions in markets: why a single lucky stock cannot save you | 从畅销书榜到市值榜，为什么押中特斯拉救不了你">
+  <meta property="og:url" content="https://jiqinghuang.github.io/article-power-law.html">
+  <meta property="og:image" content="https://jiqinghuang.github.io/favicon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="从畅销书榜到市值榜：为什么押中特斯拉救不了你 | JQ">
+  <meta name="twitter:description" content="Normal vs power law distributions in markets: why a single lucky stock cannot save you | 从畅销书榜到市值榜，为什么押中特斯拉救不了你">
+  <style>
+    .article-body { max-width: 720px; margin: 0 auto; }
+    .article-body h2 {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-soft);
+      font-weight: 600;
+    }
+    .article-body h3 {
+      font-size: 1rem;
+      color: var(--text-bright);
+      margin: 32px 0 12px;
+      font-weight: 600;
+    }
+    .article-body p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .article-body strong { color: var(--text-bright); }
+    .article-body .math-block {
+      font-family: var(--font-mono);
+      background: var(--bg-alt);
+      border-left: 3px solid var(--green);
+      padding: 12px 16px;
+      margin: 20px 0;
+      font-size: 0.88rem;
+      color: var(--text-bright);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      line-height: 1.9;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.88rem;
+    }
+    .article-body th, .article-body td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .article-body th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+    .article-body td { color: var(--text); }
+    .article-body .callout {
+      font-family: var(--font-mono);
+      background: var(--bg-alt);
+      border-left: 3px solid var(--amber);
+      padding: 10px 14px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: var(--text-bright);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .article-body .closing {
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border-left: 3px solid var(--amber);
+    }
+    .article-body .closing p { color: var(--text-bright); font-weight: 500; }
+    .article-info {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .article-info .meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .article-info h1 {
+      font-size: 1.8rem;
+      color: var(--text-bright);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JQ<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" class="active" data-lang="cn">投资</a><a href="investment.html" class="active" data-lang="en">Trading</a></li>
+        <li>
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-value="en" class="active" aria-pressed="true">EN</button>
+            <button type="button" data-value="cn" aria-pressed="false">CN</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px">
+    <div class="container article-body">
+
+      <!-- Chinese Version -->
+      <div data-lang="cn">
+        <div class="article-info">
+          <div class="meta">2026.10.17 &nbsp;·&nbsp; JQ</div>
+          <h1>从畅销书榜到市值榜：为什么押中特斯拉救不了你</h1>
+        </div>
+
+        <p>2010 年 6 月，特斯拉上市，拆股调整后的发行价不到 2 美元。到 2021 年的高点，它涨了一百多倍。从那以后，投资圈流传最广的悔恨句式是：「我当初要是买了特斯拉……」</p>
+        <p>但今天我想把这个问题反过来问：<strong>就算你真的押中了，救得了你吗？</strong></p>
+        <p>要回答它，我们得先离开股票市场，去看一个离钱很远的地方——畅销书榜。</p>
+
+        <h2>一、两个世界：正态与幂律</h2>
+        <p>人的身高服从正态分布。绝大多数人在平均值附近，比平均高两厘米不算本事，但高两米就是新闻了。在这个世界里，<strong>「平均」就是「典型」</strong>——知道平均身高，你就知道你大概率站在哪里。</p>
+        <p>畅销书的销量完全是另一个世界。J.K. 罗琳一年的版税，可能超过一万个默默无闻的作者之和。财富、城市人口、公司市值、视频播放量，都是这个形状：极小的一撮拿走几乎一切，剩下绝大多数分食残渣。这叫<strong>幂律分布</strong>。</p>
+        <p>这两个世界的差别，不是「谁更不公平」，而是数学结构根本不同：</p>
+        <p><strong>正态世界</strong>：均值、中位数、典型值是同一个数。偏离平均越远越罕见，一辈子见不到一次的「六西格玛」，在新闻里能上头版。<br>
+        <strong>幂律世界</strong>：均值被尾巴拽得极高，中位数却趴在地上。极端不是罕见，极端是家常便饭——「六西格玛」天天发生。</p>
+        <div class="math-block">
+          正态世界：平均 ≈ 你将得到的<br>
+          幂律世界：平均 ≈ 别人的故事；中位数，才是你的结局
+        </div>
+        <p>打个比方。一个房间里十个人，其中一位是亿万富翁。这个房间的「平均身价」是千万级，但你随机走进去，你多半不是那个千万富翁。<strong>平均数被一个人拉走了，而你活在中位数里。</strong></p>
+        <div class="callout">在正态世界里，努力提高均值；在幂律世界里，先搞清楚你站在分布的哪一边。</div>
+
+        <h2>二、金融市场的分布真相：钱在哪里</h2>
+        <p>现在回到市场。金融市场几乎是幂律的博览会：</p>
+        <p><strong>市值服从幂律。</strong>经济学家 Gabaix 的经典研究证实，公司规模（销售额、员工数、市值）近似服从「Zipf 律」——幂律指数约等于 1。直观地说：第一名的规模大约是第二名的两倍、第十名的十倍、第 N 名的 N 倍。头部不是「大一点」，是「大几个数量级」。</p>
+        <p><strong>个股长期回报服从幂律，而且比你想的残酷。</strong>Bessembinder 统计了 1926–2016 年全部美股（两万六千多只）：<strong>全部净财富创造（超出一个月国债的部分）来自表现最好的约 4% 的股票</strong>；而约 57% 的股票，终生回报跑不赢一个月期国债。换句话说，「随便买一只股票」的典型结局，不是小赚，是输给现金。</p>
+        <p><strong>散户盈亏服从幂律。</strong>对台湾约 45 万名日内交易者的研究发现，能持续赚取正超额收益的<strong>不到 1%</strong>；巴西股指期货的研究更狠：坚持交易 300 天以上的人里，<strong>约 97% 亏钱</strong>。极少数人拿走几乎全部利润，其余人负责贡献这些利润。</p>
+        <p><strong>畅销书榜、音乐流媒体，同一形状。</strong>头部约 1% 的作者和艺人，拿走约九成的版税与播放量。你在股票市场里看到的一切，在图书市场里一模一样。</p>
+        <div class="callout">幂律世界的残酷不在于你赢不了，而在于「平均收益」是牛股们的，不是你的。你以为的 10% 年化，是它们替你平均出来的。</div>
+
+        <h2>三、幂律的三个陷阱</h2>
+
+        <h3>陷阱一：平均数陷阱</h3>
+        <p>「股票长期年化 10%」这句话没有错——但它描述的是指数的均值，而均值在幂律世界里被 4% 的极端赢家拉飞。你去买<strong>一只</strong>股票，你参与的是中位数的抽签，不是均值的盛宴。</p>
+        <div class="math-block">
+          买指数 = 买下整个分布，让 4% 的赢家替你打工（均值）<br>
+          买个股 = 一次抽签，大概率抽到那 57%（中位数）<br>
+          同一个市场，两种命运
+        </div>
+
+        <h3>陷阱二：事后偏差</h3>
+        <p>牛股是回头看才看见的。2010 年的特斯拉不是「确定会赢的特斯拉」，它是当年一众电动车新势力里烧钱最凶、破产概率看起来一点也不低的一家。你知道它赢了，是因为现在已经是 2026 年。</p>
+        <p>换个方向看：今天市值榜前列的名字，十年后还剩几个？上一个十年已经演示过一次了——2000 年最风光的那批科技巨头，此后十几年里大半跑输指数。<strong>你羡慕的特斯拉是后视镜里的特斯拉，而你永远只能买挡风玻璃前面的东西。</strong></p>
+
+        <h3>陷阱三：赔率幻觉</h3>
+        <p>幂律的暴利藏在「从 0 到 1」，而不是「从 1 到 100」。风险投资在没人知道特斯拉的时候买入；你在它已经是全球头条、市值已是行业第一的时候买入。同一个名字，赔率完全不同——<strong>出名的那一刻，右尾已经进了价格</strong>。你付的是全价，接的是别人十年的利润。</p>
+        <div class="callout">你以为你在押幂律，其实你在买一个已经兑现过的幂律故事。故事是真的，价格也是真的——贵的那个真。</div>
+
+        <h2>四、强者恒强：机制是真的，边界也是真的</h2>
+        <p>讲到这里，必须给「强者恒强」一个公正的审判。它是真的，但它不是永动机。</p>
+        <h3>它为什么成立</h3>
+        <p>马太效应有真实的微观基础：<strong>优先连接</strong>——钱流向已经证明过自己的公司；<strong>网络效应</strong>——用户越多越值钱，越值钱用户越多；<strong>规模成本优势</strong>——大的比小的便宜。而且 2020 年代多了一个放大器：<strong>指数基金本身就是一台「强者恒强」机器</strong>——公司被纳入指数，被动资金被迫买入，市值变得更大，于是继续留在指数里，循环往复。</p>
+        <h3>它在哪里失效</h3>
+        <p>第一，<strong>幂律稳定，赢家流动</strong>。分布的形状十年如一日，但榜单上的名字十年一大换。上一个十年的巨头名单，和今天的重合度低得惊人。第二，<strong>创新者的窘境与平台迁移</strong>。今天的巨头是上一次平台迁移的赢家，恰恰是下一次迁移里最先被颠覆的候选。第三，<strong>估值锚</strong>。「强者恒强」已经是全民共识时，这个预期早已标进价格——你以为你在买成长，其实你在买「成长已经被买过」。</p>
+        <table>
+          <thead><tr><th>维度</th><th>强者恒强成立时</th><th>强者恒强失效时</th></tr></thead>
+          <tbody>
+            <tr><td>驱动力</td><td>网络效应、优先连接、规模优势仍在加强</td><td>技术迁移、反垄断、市场饱和</td></tr>
+            <tr><td>榜单</td><td>头部名单稳定</td><td>十年大换血（上个十年已演示）</td></tr>
+            <tr><td>价格</td><td>预期尚未被充分定价</td><td>共识已形成，右尾已进价格</td></tr>
+            <tr><td>你的处境</td><td>买的是成长</td><td>买的是「成长的纪念品」</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">幂律是稳定的，赢家是流动的。买「强者」，押的是排名不变；押「幂律」，拥抱的是右尾存在。这是两个完全不同的赌注。</div>
+
+        <h2>五、那么怎么下注：三种合法姿势</h2>
+        <p>既然右尾决定一切，普通人想参与右尾，姿势只有三种。注意它们的共同点：<strong>没有一种是「单押一只牛股」。</strong></p>
+        <h3>姿势一：买整个分布——指数化</h3>
+        <p>不选点，买全场。买下指数，你就买下了整个幂律分布，那 4% 的赢家无论花落谁家都会落到你头上。这是幂律世界给普通人的最大免费午餐：你不需要有识别牛股的眼光，你只需要有不缺席的纪律。这也是《纹丝不动的艺术》的资产版——上一篇躲开时间的平均数，这一篇躲开资产的平均数。</p>
+        <h3>姿势二：像风险投资一样下注——组合化</h3>
+        <p>风险投资的真面目，经常被误读。它从来不是「押注特斯拉」，它是<strong>买下一整个书架的书号</strong>：同一类观点下几十注，每一注小到可以归零，持有期长到可以让幂律显形，接受十九注平庸换一注封神。出版社不会逼编辑写出「下一本哈利·波特」，它出版一百本书，让畅销榜自己挑。<strong>VC 是出版社，不是买彩票的读者。</strong></p>
+        <h3>姿势三：把个股当期权，不当信仰——仓位化</h3>
+        <p>你实在想买特斯拉？可以，但请按期权的规则来：<strong>仓位就是权利金</strong>。这笔钱要小到全亏了不影响生活，你要想清楚「如果它十年不涨，我受不受得了」，并且这样的注要多下几只。期权的规则只有两条：错了归零，对了加零。规则里没有「重仓死扛」这个选项——那不是买期权，是卖期权。</p>
+        <div class="callout">押中特斯拉救不了你——除非你像风险投资一样下注。而风险投资从不「押注」，他们播种分布。</div>
+
+        <h2>六、说到底</h2>
+        <p>回到最初的问题：在二级市场押注特斯拉这种行为，是绝对错误吗？</p>
+        <p><strong>从分布看，它不是错误。</strong>右尾真实存在，市场的全部超额收益都从那里来。拒绝右尾，等于拒绝市场本身。</p>
+        <p><strong>从结构看，对绝大多数人它是错误。</strong>单注、事后、重仓、短钱——这四个条件里但凡占上两个，就算真的给你一只特斯拉，你也拿不住、拿不满，甚至拿反。绝大多数人不是输在选票上，是输在姿势上。</p>
+        <p>畅销书榜给我们的启示其实很温柔：<strong>没有人能计划成为 J.K. 罗琳，但出版社可以系统性地赚钱。</strong>你不必押中特斯拉。你要做的，是成为那个开出版社的人——或者，干脆买下整个书店。</p>
+
+        <div class="closing">
+          <p>强者恒强是真的，但看到强者就买强者，是被包装成智慧的追高。</p>
+          <p>幂律世界的平均数是陷阱，中位数才是发给你的那张牌。</p>
+          <p>你不必成为那个押中特斯拉的人。你只需要做对一件事：</p>
+          <p>别在幂律的世界里，用正态的方式下注。</p>
+        </div>
+      </div>
+
+      <!-- English Version -->
+      <div data-lang="en">
+        <div class="article-info">
+          <div class="meta">2026.10.17 &nbsp;&middot;&nbsp; JQ</div>
+          <h1>From Bestsellers to Market Caps: Why Picking Tesla Can't Save You</h1>
+        </div>
+
+        <p>In June 2010, Tesla went public at under $2 a share (split-adjusted). By its 2021 peak it had risen more than a hundredfold. Since then, the most popular regret in investing circles goes: "If only I had bought Tesla..."</p>
+        <p>Today I want to flip that question around: <strong>even if you had picked it, would it have saved you?</strong></p>
+        <p>To answer, we need to leave the stock market for a place far away from money — the bestseller list.</p>
+
+        <h2>I. Two Worlds: Normal and Power Law</h2>
+        <p>Human height follows a normal distribution. Most people cluster around the average; being two centimeters taller than average is nothing, but being two meters tall is news. In this world, <strong>the average is the typical</strong> — know the average height, and you know roughly where you stand.</p>
+        <p>Book sales are a different world entirely. J.K. Rowling's annual royalties may exceed those of ten thousand unknown authors combined. Wealth, city populations, market capitalizations, video views — all share this shape: a tiny sliver takes almost everything, and the vast majority scraps over the remainder. This is a <strong>power law distribution</strong>.</p>
+        <p>The difference between the two worlds is not "which is less fair" — it is a fundamentally different mathematical structure:</p>
+        <p><strong>The normal world</strong>: mean, median and typical value are the same number. The further from average, the rarer — a six-sigma event makes the front page.<br>
+        <strong>The power law world</strong>: the mean is dragged skyward by the tail while the median lies on the floor. Extremes are not rare — they are routine. Six-sigma happens every day.</p>
+        <div class="math-block">
+          Normal world: average &asymp; what you will get<br>
+          Power law world: average &asymp; someone else's story; the median is your ending
+        </div>
+        <p>Picture ten people in a room, one of them a billionaire. The "average net worth" in that room is in the tens of millions — but walk in at random, and you are almost certainly not that millionaire. <strong>The average was dragged away by one person; you live in the median.</strong></p>
+        <div class="callout">In a normal world, work to raise the average. In a power law world, first find out which side of the distribution you are standing on.</div>
+
+        <h2>II. The Distribution of Money in Markets</h2>
+        <p>Now back to the market. The financial market is practically an exhibition of power laws:</p>
+        <p><strong>Market caps follow a power law.</strong> Xavier Gabaix's classic research shows that firm size — sales, headcount, market cap — approximately follows Zipf's law, a power law with exponent near 1. Intuitively: number one is roughly twice number two, ten times number ten, N times number N. The top is not "a bit bigger" — it is orders of magnitude bigger.</p>
+        <p><strong>Individual stock returns follow a power law, and it is crueller than you think.</strong> Hendrik Bessembinder examined every U.S. stock from 1926 to 2016 (over 26,000): <strong>all net wealth creation above one-month Treasury bills came from the best-performing ~4% of stocks</strong>, while ~57% of stocks did worse than Treasury bills over their entire lives. In other words, the typical outcome of "buy any random stock" is not a small gain — it is losing to cash.</p>
+        <p><strong>Trader P&amp;L follows a power law.</strong> A study of roughly 450,000 Taiwanese day traders found that <strong>fewer than 1%</strong> reliably earned positive abnormal returns. A study of Brazilian index-futures traders was harsher: among those who persisted for 300+ trading days, <strong>about 97% lost money</strong>. A tiny minority takes nearly all the profits; everyone else supplies those profits.</p>
+        <p><strong>Bestseller lists and music streaming show the same shape.</strong> The top ~1% of authors and artists collect roughly ninety percent of royalties and streams. Everything you see in the stock market, you can see in the book market.</p>
+        <div class="callout">The cruelty of a power law is not that you cannot win. It is that "average returns" belong to the winners, not to you. That 10% a year you were promised was averaged up by them.</div>
+
+        <h2>III. Three Traps of the Power Law</h2>
+
+        <h3>Trap 1: The Average Trap</h3>
+        <p>"Stocks return 10% a year in the long run" is not false — but it describes the index mean, and in a power law world the mean is inflated by the extreme 4%. Buy <strong>a</strong> stock, and you are entering the median lottery, not the mean banquet.</p>
+        <div class="math-block">
+          Buy the index = buy the whole distribution; let the 4% work for you (mean)<br>
+          Buy one stock = one draw, most likely from the 57% (median)<br>
+          Same market, two destinies
+        </div>
+
+        <h3>Trap 2: Hindsight Bias</h3>
+        <p>Winners are visible only in the rear-view mirror. The Tesla of 2010 was not "the Tesla that was bound to win" — it was the cash-hungriest of a dozen EV hopefuls, with a bankruptcy probability that looked anything but remote. You know it won because it is already 2026.</p>
+        <p>Now flip it around: of today's top market-cap names, how many will still be there in ten years? The last decade already gave the demonstration — most of the celebrated tech giants of 2000 lagged the index for the next fifteen years. <strong>The Tesla you envy is the Tesla in the rear-view mirror; you can only ever buy what is behind the windshield.</strong></p>
+
+        <h3>Trap 3: The Odds Illusion</h3>
+        <p>Power-law riches live in the "0 to 1", not the "1 to 100". Venture capital buys Tesla when nobody has heard of it; you buy it when it is global headlines and the most valuable name in its industry. Same name, completely different odds — <strong>the moment it became famous, the right tail was already in the price</strong>. You pay full price and take over someone else's ten years of profit.</p>
+        <div class="callout">You think you are betting on the power law. You are buying an already-collected power-law story. The story is real — and so is the price. The expensive kind of real.</div>
+
+        <h2>IV. The Strong Get Stronger: True Mechanism, Real Boundaries</h2>
+        <p>At this point, "the strong get stronger" deserves a fair trial. It is real — but it is not a perpetual motion machine.</p>
+        <h3>Why It Holds</h3>
+        <p>Matthew effects have genuine micro-foundation: <strong>preferential attachment</strong> — money flows to companies that have already proven themselves; <strong>network effects</strong> — more users make a product more valuable, which attracts more users; <strong>scale economies</strong> — big is cheaper than small. And the 2020s added an amplifier: <strong>index funds are themselves a "strong get stronger" machine</strong> — a company joins an index, passive money is forced to buy it, its market cap grows, it stays in the index, and the cycle repeats.</p>
+        <h3>Where It Breaks</h3>
+        <p>First, <strong>the power law is stable; the winners are not</strong>. The shape of the distribution holds decade after decade, but the names on the leaderboard turn over dramatically. The giants of one decade barely overlap with the next. Second, <strong>the innovator's dilemma and platform shifts</strong>. Today's giants won the last platform transition — which makes them prime candidates to be disrupted in the next one. Third, <strong>the valuation anchor</strong>. By the time "the strong get stronger" is universal consensus, that expectation is already priced in — you think you are buying growth, but you are buying "growth already bought".</p>
+        <table>
+          <thead><tr><th>Dimension</th><th>When the strong get stronger</th><th>When it breaks</th></tr></thead>
+          <tbody>
+            <tr><td>Drivers</td><td>Network effects, preferential attachment, scale still compounding</td><td>Technology shifts, antitrust, market saturation</td></tr>
+            <tr><td>Leaderboard</td><td>Names stay on top</td><td>Full turnover within a decade (already demonstrated)</td></tr>
+            <tr><td>Price</td><td>Expectation not yet fully priced</td><td>Consensus formed; right tail already in the price</td></tr>
+            <tr><td>Your position</td><td>You are buying growth</td><td>You are buying souvenirs of growth</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">The power law is stable; the winners are fluid. Buying "the strong" bets that today's ranking holds. Betting on "the power law" embraces the existence of the right tail. Two completely different wagers.</div>
+
+        <h2>V. So How Should You Bet: Three Legal Postures</h2>
+        <p>If the right tail decides everything, ordinary people have exactly three legitimate ways to participate. Note what they have in common: <strong>none of them is "concentrate on one hot stock".</strong></p>
+        <h3>Posture 1: Buy the Whole Distribution — Index It</h3>
+        <p>Pick no points; buy the field. Own the index and you own the entire power-law distribution — whoever the 4% turn out to be, their gains land on your head. This is the greatest free lunch the power-law world offers ordinary investors: you don't need the eye to spot winners, only the discipline to never be absent. It is also the asset-side twin of my earlier essay on sitting still — that one dodges the average in time, this one dodges the average in assets.</p>
+        <h3>Posture 2: Bet Like a Venture Capitalist — Portfolio It</h3>
+        <p>Venture capital is routinely misread. It never "bets on Tesla" — it <strong>buys an entire shelf of lottery tickets for one thesis</strong>: dozens of positions, each small enough to go to zero, held long enough for the power law to reveal itself, accepting nineteen mediocre outcomes for one legend. No publisher demands an editor produce "the next Harry Potter" — they publish a hundred books and let the bestseller list pick the winner. <strong>A VC is a publisher, not a reader buying lottery tickets.</strong></p>
+        <h3>Posture 3: Treat Single Stocks as Options, Not Faith — Size It</h3>
+        <p>You really want to buy Tesla? Fine — but follow the rules of options: <strong>position size is the premium</strong>. Small enough that losing it all changes nothing in your life. Clear-eyed about "can I stand ten years with no return". And spread across several such bets. Options have two rules: wrong, it goes to zero; right, it adds a zero. "Heavy position and hold on for dear life" is not on the list — that isn't buying options, that is selling them.</p>
+        <div class="callout">Picking Tesla can't save you — unless you bet like a venture capitalist. And venture capitalists never "bet". They plant distributions.</div>
+
+        <h2>VI. In the End</h2>
+        <p>Back to the opening question: is betting on a Tesla-like stock in the secondary market absolutely wrong?</p>
+        <p><strong>From the distribution, it is not wrong.</strong> The right tail is real, and every bit of the market's excess return comes from it. Refusing the right tail means refusing the market itself.</p>
+        <p><strong>From the structure, for most people it is wrong.</strong> Single bet, bought after the fact, oversized, with short money — take any two of these four, and even a real Tesla handed to you would not save you: you would not hold it, not capture it, or hold it backwards. Most people don't fail at picking. They fail at posture.</p>
+        <p>The bestseller list delivers a gentle lesson after all: <strong>nobody can plan to become J.K. Rowling, but a publisher can make money systematically.</strong> You don't have to pick Tesla. You have to become the one running the publishing house — or simply buy the whole bookstore.</p>
+
+        <div class="closing">
+          <p>The strong do get stronger — but buying whoever looks strong today is chasing highs dressed up as wisdom.</p>
+          <p>In a power-law world the average is a trap; the median is the card dealt to you.</p>
+          <p>You don't have to be the one who picked Tesla. You only need to get one thing right:</p>
+          <p>Don't bet the normal way in a power-law world.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html" data-lang="cn">首页</a><a href="index.html" data-lang="en">Home</a></li>
+        <li><a href="about.html" data-lang="cn">关于</a><a href="about.html" data-lang="en">About</a></li>
+        <li><a href="projects.html" data-lang="cn">项目</a><a href="projects.html" data-lang="en">Projects</a></li>
+        <li><a href="investment.html" data-lang="cn">投资</a><a href="investment.html" data-lang="en">Trading</a></li>
+      </ul>
+      <div class="footer-contact">
+        <button type="button" class="contact-reveal-btn" id="contact-open">
+          <span data-lang="cn">联系我</span><span data-lang="en">Contact</span>
+        </button>
+      </div>
+      <p class="footer-copy">&copy; 2026 JQ</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

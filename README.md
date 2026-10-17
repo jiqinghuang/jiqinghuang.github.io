@@ -19,6 +19,7 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
   - [你交易，有人在数钱](https://jiqinghuang.github.io/article-trading-fees.html) — 手续费复利反噬与机器学习正则化类比
   - [狼与屠夫](https://jiqinghuang.github.io/article-wolves-butcher.html) — 从《聊斋志异》看交易博弈的两种误判
   - [纹丝不动的艺术](https://jiqinghuang.github.io/article-sitting-still.html) — 大涨大跌中持有不动的好坏论证
+  - [从畅销书榜到市值榜：为什么押中特斯拉救不了你](https://jiqinghuang.github.io/article-power-law.html) — 正态与幂律分布下个股押注的结构性错误
 
 ## 特色
 
