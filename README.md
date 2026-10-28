@@ -2,7 +2,7 @@
 
 JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 
-> 最后更新: 2026-10-17
+> 最后更新: 2026-10-28
 
 ## 页面结构
 
@@ -11,6 +11,7 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 - **项目** — 项目卡片索引页，链接到各项目详情
   - 量化交易策略系统（10 种趋势跟踪策略回测）
   - 保证金模型（黄金 & 白银 Wind 期货指数 VaR）
+  - 纸牌接龙（零依赖 Win95 Klondike 复刻，内置求解器判定可胜 / 死局 / 暂不确定，318 条自动化测试）
   - 前端之路：HTML / CSS 教程（离线优先中文前端教程，含实时练习场、无障碍指南和综合项目）
   - 数独逐步解（零依赖数独教学求解器，默认批量讲清中文推理并支持逐格展开（一键切一步一格），求解跑在 Web Worker 上不卡界面，185 条自动化测试）
   - 出口 IP 桌面悬浮窗（713 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖）
@@ -61,10 +62,15 @@ python ../margin_model/sync_to_website.py
 需随 [minesweeper](https://github.com/jiqinghuang/minesweeper) 仓库人工同步，以该仓库 `npm test`
 的实际输出为准。
 
+`project-solitaire.html` 同样为**手写**：当前 318 条测试 = 引擎 / 求解器 150 + UI 接线 133 + 配色 21 +
+布局 14，需随 [solitaire](https://github.com/jiqinghuang/solitaire) 仓库人工同步，以该仓库 `npm test`
+的实际输出为准。
+
 ## 相关项目
 
 - **[量化交易策略系统](https://github.com/jiqinghuang/trading_strategy)** — 10 种趋势跟踪策略回测框架
 - **[保证金模型](https://github.com/jiqinghuang/margin_model)** — 黄金 & 白银 Wind 期货指数 VaR 保证金计算
+- **[纸牌接龙](https://github.com/jiqinghuang/solitaire)** — 零依赖 Win95 Klondike 复刻，内置可胜 / 死局 / 暂不确定三态求解器；[在线试玩](https://jiqinghuang.github.io/solitaire/)
 - **[前端之路：HTML / CSS 教程](https://github.com/jiqinghuang/html-and-css-tutorial)** — 离线优先中文前端教程；[在线教程](https://jiqinghuang.github.io/html-and-css-tutorial/)
 - **[数独逐步解](https://github.com/jiqinghuang/sudoku)** — 每步讲得出理由的教学型数独求解器，Web Worker 后台求解；[在线试玩](https://jiqinghuang.github.io/sudoku/)
 - **[出口 IP 桌面悬浮窗](https://github.com/jiqinghuang/ip-float)** — 713 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖；[下载 exe](https://github.com/jiqinghuang/ip-float/releases/latest)

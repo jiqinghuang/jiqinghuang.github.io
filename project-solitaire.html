@@ -7,18 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="A zero-dependency Win95 Klondike solitaire with a real solver that tells you whether the deal is still winnable | 零依赖的 Win95 纸牌接龙复刻，内置求解器判断这局是否还能赢">
+  <meta name="description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, hints and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、提示与完整必胜路线">
   <link rel="canonical" href="https://jiqinghuang.github.io/project-solitaire.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="JQ">
   <meta property="og:title" content="Klondike Solitaire | JQ">
-  <meta property="og:description" content="A zero-dependency Win95 Klondike solitaire with a real solver that tells you whether the deal is still winnable | 零依赖的 Win95 纸牌接龙复刻，内置求解器判断这局是否还能赢">
+  <meta property="og:description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, hints and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、提示与完整必胜路线">
   <meta property="og:url" content="https://jiqinghuang.github.io/project-solitaire.html">
   <meta property="og:image" content="https://jiqinghuang.github.io/favicon.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Klondike Solitaire | JQ">
-  <meta name="twitter:description" content="A zero-dependency Win95 Klondike solitaire with a real solver that tells you whether the deal is still winnable | 零依赖的 Win95 纸牌接龙复刻，内置求解器判断这局是否还能赢">
+  <meta name="twitter:description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, hints and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、提示与完整必胜路线">
 </head>
 <body>
   <nav class="navbar">
@@ -84,7 +84,7 @@
         <div class="card">
           <div class="card-icon">&#10003;</div>
           <h3><span data-lang="cn">不谎报</span><span data-lang="en">No False Claims</span></h3>
-          <p><span data-lang="cn">求解器只给三种结论：还能赢、已死局、暂不确定。搜索超限就老实说「搜不出来」，绝不含糊地判你输，也不假装能赢。</span><span data-lang="en">The solver answers with exactly three verdicts: winnable, dead, or undetermined. When the search budget runs out it says so plainly — it never declares a loss it cannot prove, nor a win it cannot reach.</span></p>
+          <p><span data-lang="cn">求解器只给三种结论：还能赢、已死局、暂不确定。搜索超限会明确说「暂不确定」，并给出标注「未证明」的有限前瞻建议——绝不含糊地判你输，也不假装能赢。</span><span data-lang="en">The solver answers with exactly three verdicts: winnable, dead, or undetermined. When the search budget runs out it says so plainly, then offers a finite-lookahead suggestion explicitly marked unproven — it never declares a loss it cannot prove, nor a win it cannot reach.</span></p>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">完整规则 + 死局判定 + 原因诊断，全在零依赖下完成</span><span data-lang="en">Full rules, dead-end detection and diagnosis — all with zero dependencies</span></p>
       <div class="stats-row fade-in">
         <div class="stat-card">
-          <div class="stat-number">273</div>
+          <div class="stat-number">318</div>
           <div class="stat-label"><span data-lang="cn">自动化测试</span><span data-lang="en">Automated Tests</span></div>
         </div>
         <div class="stat-card">
@@ -120,11 +120,15 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">死局可判定</span><span data-lang="en">Decidable Dead Ends</span></h3>
-          <p><span data-lang="cn">每次走子后快速检查局面是否还能推进；确认无解时直接弹面板说明「为什么」——哪张牌被埋住、在等哪张牌、收牌卡在第几步、腾不出空列。</span><span data-lang="en">Every move triggers a quick check for remaining progress. On a confirmed dead end a panel explains why — which card is buried, what it is waiting for, where the foundations stalled, why no column can be freed.</span></p>
+          <p><span data-lang="cn">每次走子后快速检查局面是否还能推进；确认无解时弹出「这局已经无法继续」，只剩可逆移动时提示「当前没有可推进的走法」，并说明「为什么」——哪张牌被埋住、在等哪张牌、收牌卡在第几步、腾不出空列。</span><span data-lang="en">Every move triggers a quick check for remaining progress. A confirmed dead end says the deal cannot continue; when only reversible moves remain it says there is no advancing move — and either way explains why: which card is buried, what it is waiting for, where the foundations stalled, why no column can be freed.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">必胜路线</span><span data-lang="en">Winning Line</span></h3>
-          <p><span data-lang="cn">「分析局面」跑带转移表的 DFS，判定可胜时从搜索记录里回溯出一条完整的必胜路线，并直接给出第一步该怎么走。</span><span data-lang="en">"Analyze position" runs a transposition-table DFS; when the deal is winnable it backtracks a complete winning line from the search and tells you the exact first move.</span></p>
+          <p><span data-lang="cn">底栏「分析局面」按钮（或按 A）跑带全局 visited 的可达性搜索，判定可胜时从搜索记录里回溯出一条完整的必胜路线，并直接给出第一步该怎么走。</span><span data-lang="en">The Analyze Position button in the bottom bar (or pressing A) runs a reachability search with a global visited set; when the deal is winnable it backtracks a complete winning line from the search and tells you the exact first move.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">提示与收尾</span><span data-lang="en">Hints and Endgame</span></h3>
+          <p><span data-lang="cn">「提示」用求解器的有限前瞻推荐有净进展的走法，并说明理由；检测到 A→B→A 的状态环会停止推荐。牌库清空、所有牌翻开后可一键自动完成，胜利时每门花色由 K 领头排成一条牌串沿轨迹弹跳。</span><span data-lang="en">Hints use the solver's finite lookahead to recommend net-progress moves with a reason, and stop when an A→B→A state loop is detected. Once the deck is empty and every card is face-up, auto-complete finishes the game; victory plays the classic animation with each suit's K leading a bouncing chain of cards.</span></p>
         </div>
       </div>
     </div>
@@ -142,7 +146,7 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">求解器对拍</span><span data-lang="en">Solver Cross-Check</span></h3>
-          <p><span data-lang="cn">求解器有独立于引擎的走法生成（便于剪枝），正确性靠与引擎逐状态对拍保证：在随机牌局上枚举双方全部合法走法，必须完全一致。</span><span data-lang="en">The solver generates moves independently of the engine (for pruning), and correctness is guaranteed by cross-checking: on random positions both sides enumerate every legal move and must agree exactly.</span></p>
+          <p><span data-lang="cn">求解器有独立于引擎的走法生成（便于剪枝），正确性靠与引擎逐状态对拍保证：在随机牌局上枚举双方全部合法走法，并核对执行后的完整状态，必须完全一致。</span><span data-lang="en">The solver generates moves independently of the engine (for pruning), and correctness is guaranteed by cross-checking: on random positions both sides enumerate every legal move and verify the resulting full state, which must agree exactly.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">撤销即反向操作</span><span data-lang="en">Inverse-Operation Undo</span></h3>
@@ -158,7 +162,7 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">CI 护栏</span><span data-lang="en">CI Guards</span></h3>
-          <p><span data-lang="cn">GitHub Actions 每次推送执行类型检查、273 条测试，并校验 dist/ 与 src/ 逐字节一致——改了源码忘编译、或漏提交产物都过不了。配色与布局另有专门校验，改坏了 CI 会直接失败。</span><span data-lang="en">GitHub Actions runs typecheck and all 273 tests on every push, and verifies that dist/ matches src/ byte for byte — a forgotten build cannot ship. Colors and layout have dedicated checks, so breaking either fails CI outright.</span></p>
+          <p><span data-lang="cn">GitHub Actions 每次推送执行类型检查、318 条测试，并校验 dist/ 与 src/ 逐字节一致——改了源码忘编译、或漏提交产物都过不了。配色与布局另有专门校验，改坏了 CI 会直接失败。</span><span data-lang="en">GitHub Actions runs typecheck and all 318 tests on every push, and verifies that dist/ matches src/ byte for byte — a forgotten build cannot ship. Colors and layout have dedicated checks, so breaking either fails CI outright.</span></p>
         </div>
       </div>
     </div>
