@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   }
 
-  // Contact gate: Gaussian integral modal
+  // Contact gate: squared Gaussian integral modal
   const openBtn = document.getElementById('contact-open');
   if (openBtn) {
     const overlay = document.createElement('div');
@@ -200,9 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="cg-body">
           <p class="cg-eyebrow"><span data-lang="cn">证明你是同行</span><span data-lang="en">Prove you're a peer</span></p>
           <div class="cg-formula">
-            <span class="cg-int">&#8747;<span class="cg-lims"><sub>&minus;&infin;</sub><sup>+&infin;</sup></span></span>
-            <span class="cg-e">e<sup>&minus;x&sup2;</sup></span>
-            <span class="cg-dx">dx</span>
+            <span class="cg-pow">
+              <span class="cg-paren">&#40;</span>
+              <span class="cg-int">&#8747;<span class="cg-lims"><sub>&minus;&infin;</sub><sup>+&infin;</sup></span></span>
+              <span class="cg-e">e<sup>&minus;x&sup2;</sup></span>
+              <span class="cg-dx">dx</span>
+              <span class="cg-paren">&#41;</span>
+              <sup>2</sup>
+            </span>
             <span class="cg-eq">=&nbsp;?</span>
           </div>
           <div class="cg-row">
@@ -232,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const normalize = s => s.toLowerCase().replace(/\s+/g, '')
       .replace(/√/g, 'sqrt').replace(/π/g, 'pi')
       .replace(/\*\*/g, '^').replace(/\(1\/2\)/g, '^0.5').replace(/\^\(1\/2\)/g, '^0.5');
-    const accept = ['sqrt(pi)', 'sqrtpi', 'pi^0.5', 'pi^.5', '1.772', '1.7724', '1.77245'];
+    const accept = ['pi', '3.14159', '3.1416'];
 
     // Build contact links only after a correct answer, from char codes,
     // so the address never appears in HTML source.
@@ -258,9 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const check = () => {
       const v = normalize(input.value);
-      // 严格数字：必须是纯数字串，避免 parseFloat('1.772abc') 误放行。
+      // 严格数字：必须是纯数字串，避免 parseFloat('3.14159abc') 误放行。
       const num = /^[0-9]*\.?[0-9]+$/.test(v) ? parseFloat(v) : NaN;
-      const ok = accept.includes(v) || (!isNaN(num) && Math.abs(num - Math.sqrt(Math.PI)) < 0.001);
+      const ok = accept.includes(v) || (!isNaN(num) && Math.abs(num - Math.PI) < 0.001);
       if (ok) {
         formula.classList.add('cg-solved');
         row.hidden = true;

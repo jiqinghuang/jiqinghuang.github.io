@@ -1047,6 +1047,23 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 2rem;
   transition: opacity 0.3s;
 }
+.cg-pow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.cg-paren {
+  font-size: 2.5rem;
+  font-style: normal;
+  line-height: 1;
+  color: var(--text-bright);
+}
+.cg-pow sup {
+  font-size: 0.7em;
+  font-style: normal;
+  align-self: flex-start;
+  margin-top: 0.15em;
+}
 .cg-int {
   position: relative;
   display: inline-flex;
