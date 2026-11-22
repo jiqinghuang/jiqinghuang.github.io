@@ -12,18 +12,18 @@
        这里补一条，让行内代码用站点自己的等宽字体而不是浏览器默认的 monospace。 */
     code { font-family: var(--font-mono); font-size: 0.88em; }
   </style>
-  <meta name="description" content="A 713 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 713 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN，零运行时依赖、无需安装">
+  <meta name="description" content="A 812 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 812 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN，零运行时依赖、无需安装">
   <link rel="canonical" href="https://jiqinghuang.github.io/project-ip-float.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="JQ">
   <meta property="og:title" content="Outbound IP Desktop Widget | JQ">
-  <meta property="og:description" content="A 713 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 713 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN">
+  <meta property="og:description" content="A 812 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 812 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN">
   <meta property="og:url" content="https://jiqinghuang.github.io/project-ip-float.html">
   <meta property="og:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Outbound IP Desktop Widget | JQ">
-  <meta name="twitter:description" content="A 713 KB single-file Windows desktop card showing your outbound IP, geolocation and ASN in two lines — zero runtime dependencies.">
+  <meta name="twitter:description" content="A 812 KB single-file Windows desktop card showing your outbound IP, geolocation and ASN in two lines — zero runtime dependencies.">
   <meta name="twitter:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
 </head>
 <body>
@@ -69,8 +69,8 @@
         </a>
       </div>
       <p style="margin-top:20px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
-        <span data-lang="cn">单文件 exe（约 713 KB），双击即用 —— 不需要安装、不需要管理员权限。<br>Windows 首次运行可能提示安全警告，处理办法见仓库 README。</span>
-        <span data-lang="en">A single ~713 KB exe — double-click to run. No installer, no admin rights.<br>Windows may warn on first launch; the README covers the fix.</span>
+        <span data-lang="cn">单文件 exe（v3.1.0，约 812 KB），双击即用 —— 不需要安装、不需要管理员权限。<br>Windows 首次运行可能提示安全警告，处理办法见仓库 README。</span>
+        <span data-lang="en">A single ~812 KB exe (v3.1.0) — double-click to run. No installer, no admin rights.<br>Windows may warn on first launch; the README covers the fix.</span>
       </p>
     </div>
   </section>
@@ -91,7 +91,7 @@
 
       <div class="card-grid fade-in" style="margin-top:40px;align-items:center">
         <div class="gallery-item" style="max-width:340px;width:100%;justify-self:center">
-          <picture><source srcset="assets/ip-float/settings.webp" type="image/webp"><img src="assets/ip-float/settings.png" alt="ip-float 设置窗口：刷新间隔 5 分钟、不透明度 100%、窗口总在最前已勾选、开机时自动启动未勾选" width="696" height="774" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/ip-float/settings.webp" type="image/webp"><img src="assets/ip-float/settings.png" alt="ip-float 设置窗口：刷新间隔 5 分钟、不透明度 100%、窗口总在最前已勾选、开机时自动启动未勾选" width="696" height="777" loading="lazy" decoding="async"></picture>
           <div class="gallery-caption"><span data-lang="cn">设置窗口 · 点击放大</span><span data-lang="en">Settings · click to enlarge</span></div>
         </div>
         <div class="card" style="border:none;background:transparent;box-shadow:none;padding:0">
@@ -136,7 +136,7 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">一个足够小的工具，把该做对的细节都做对</span><span data-lang="en">A deliberately small tool that still gets the details right</span></p>
       <div class="stats-row fade-in">
         <div class="stat-card">
-          <div class="stat-number">713 <span style="font-size:1.1rem">KB</span></div>
+          <div class="stat-number">812 <span style="font-size:1.1rem">KB</span></div>
           <div class="stat-label"><span data-lang="cn">单文件成品</span><span data-lang="en">Single-File Binary</span></div>
         </div>
         <div class="stat-card">
@@ -144,8 +144,8 @@
           <div class="stat-label"><span data-lang="cn">运行时依赖</span><span data-lang="en">Runtime Dependencies</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">1824</div>
-          <div class="stat-label"><span data-lang="cn">行 C++（单文件）</span><span data-lang="en">Lines of C++ (One File)</span></div>
+          <div class="stat-number">10</div>
+          <div class="stat-label"><span data-lang="cn">按职责拆分的模块</span><span data-lang="en">Modules by Responsibility</span></div>
         </div>
         <div class="stat-card">
           <div class="stat-number">2</div>
@@ -232,20 +232,22 @@
       <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">30 秒自检</span><span data-lang="en">Verify It in 30 Seconds</span></h2>
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">没法在线试玩，但你可以不联网、不安装地先确认渲染是好的</span><span data-lang="en">You cannot try it online, but you can confirm the rendering offline without installing anything</span></p>
       <p class="fade-in" style="max-width:760px;margin:24px auto 0;color:var(--text-dim);font-size:0.95rem;line-height:1.9;text-align:center">
-        <span data-lang="cn">这是这个项目里我最满意的一个设计：exe 自带两个自检模式，用假数据渲染一张卡片或一张设置窗口截图。不联网、不受单实例限制，改完界面可以随时验证。</span>
-        <span data-lang="en">This is the part of the project I am happiest with: the exe ships two self-check modes that render the card, or the settings dialog, with sample data. No network, no single-instance restriction — the UI can be re-verified after any change.</span>
+        <span data-lang="cn">这是这个项目里我最满意的一个设计：exe 自带三种自检模式——<code>--render</code> 直接把卡片画进 PNG（不依赖桌面、壁纸或屏幕 DPI），<code>--shot</code> 抓真实卡片窗口，<code>--shot-dlg</code> 抓设置窗口。全部用演示数据、不联网、不受单实例限制，改完界面可以随时验证。</span>
+        <span data-lang="en">This is the part of the project I am happiest with: three self-check modes — <code>--render</code> draws the card straight into a PNG (independent of the desktop, wallpaper or screen DPI), <code>--shot</code> captures the real card window, and <code>--shot-dlg</code> captures the settings dialog. All use sample data, skip the network and bypass the single-instance check, so the UI can be re-verified after any change.</span>
       </p>
       <div class="fade-in" data-lang="cn" style="max-width:720px;margin:28px auto 0">
-        <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --demo --shot out.png        # 用假数据渲染一张卡片自检图
-ip-float.exe --demo --shot-dlg dlg.png    # 给设置窗口拍一张自检图</code></pre>
+        <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --render out.png             # 离屏渲染卡片（透明圆角，2x）
+ip-float.exe --demo --shot out.png        # 屏幕抓卡片（演示数据）
+ip-float.exe --demo --shot-dlg dlg.png    # 拍设置窗口</code></pre>
       </div>
       <div class="fade-in" data-lang="en" style="max-width:720px;margin:28px auto 0">
-        <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --demo --shot out.png        # render the card with sample data
-ip-float.exe --demo --shot-dlg dlg.png    # render the settings dialog</code></pre>
+        <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --render out.png             # off-screen card render (transparent, 2x)
+ip-float.exe --demo --shot out.png        # capture the card on screen (demo data)
+ip-float.exe --demo --shot-dlg dlg.png    # capture the settings dialog</code></pre>
       </div>
       <p class="fade-in" style="margin-top:20px;text-align:center;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
-        <span data-lang="cn">两个 --shot 都不联网、且不受单实例限制；因为是 -mwindows 构建没有控制台，截图会在同名位置写一个 .log 报告成功与否。</span>
-        <span data-lang="en">Both --shot modes skip the network and bypass the single-instance check. Because it is an -mwindows build with no console, each one writes a same-named .log reporting success or failure.</span>
+        <span data-lang="cn">自检都不联网、不受单实例限制；<code>--render</code> 还会额外写一个 <code>.json</code>（尺寸/缩放/圆角/配色），并可用 <code>--ini</code> 指定独立配置、不碰真实设置。因为是 -mwindows 构建没有控制台，每张图都会在同名位置写一个 <code>.log</code> 报告成功与否。</span>
+        <span data-lang="en">None of the self-check modes touch the network or the single-instance check. <code>--render</code> also writes a <code>.json</code> sidecar (size, scale, corner radius, colours) and accepts <code>--ini</code> to use a separate configuration without touching your real settings. Because this is an -mwindows build with no console, every image gets a same-named <code>.log</code> reporting success or failure.</span>
       </p>
     </div>
   </section>
@@ -254,7 +256,7 @@ ip-float.exe --demo --shot-dlg dlg.png    # render the settings dialog</code></p
   <section class="section section-alt">
     <div class="container">
       <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">架构</span><span data-lang="en">Architecture</span></h2>
-      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">一次刷新要走过的四步，全部在一个 1824 行的源文件里</span><span data-lang="en">Four steps per refresh, all inside a single 1824-line source file</span></p>
+      <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">一次刷新要走过的四步；代码按职责拆成 10 个模块，纯逻辑可脱离窗口单测</span><span data-lang="en">Four steps per refresh, split into 10 modules by responsibility — the pure logic is unit-testable without a window</span></p>
       <div class="arch-flow fade-in">
         <div class="arch-step">
           <div class="step-num">1</div>
@@ -299,7 +301,7 @@ ip-float.exe --demo --shot-dlg dlg.png    # render the settings dialog</code></p
         </div>
         <div class="card">
           <h3><span data-lang="cn">静态链接</span><span data-lang="en">Statically Linked</span></h3>
-          <p><span data-lang="cn"><code>-static -static-libgcc -static-libstdc++</code>，只依赖 7 个 Windows 自带系统库。构建用 <code>-Wall -Wextra</code> 且要求零警告，编译失败即中断，不会留下半个产物。</span><span data-lang="en">Built with <code>-static -static-libgcc -static-libstdc++</code> against seven system libraries Windows already provides. The build uses <code>-Wall -Wextra</code> and is expected to be warning-free; a compile failure aborts instead of leaving a half-written artifact.</span></p>
+          <p><span data-lang="cn"><code>-static -static-libgcc -static-libstdc++</code>，只依赖 7 个 Windows 自带系统库。构建用 <code>-Wall -Wextra</code> 且要求零警告，编译失败即中断，不会留下半个产物；GitHub Actions 每次推送都会跑 <code>-Werror</code> 构建和单测。</span><span data-lang="en">Built with <code>-static -static-libgcc -static-libstdc++</code> against seven system libraries Windows already provides. The build uses <code>-Wall -Wextra</code> and is expected to be warning-free; a compile failure aborts instead of leaving a half-written artifact. GitHub Actions runs the <code>-Werror</code> build and the unit tests on every push.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">双缓冲绘制</span><span data-lang="en">Double-Buffered Drawing</span></h3>
@@ -368,8 +370,8 @@ ip-float.exe --demo --shot-dlg dlg.png    # render the settings dialog</code></p
         </table>
       </div>
       <p class="fade-in" style="max-width:780px;margin:24px auto 0;color:var(--text-dim);font-size:0.95rem;line-height:1.9;text-align:center">
-        <span data-lang="cn">完整的处置步骤（含注册表位置、界面路径和"必须重启资源管理器"这一步的说明）都写在了仓库 README 里，构建脚本在编译完成后会自动重新签名。</span>
-        <span data-lang="en">The complete fix — registry locations, UI paths and why restarting Explorer is mandatory — is documented in the repository README, and the build script re-signs the binary automatically after compiling.</span>
+        <span data-lang="cn">完整的处置步骤（含注册表位置、界面路径和"必须重启资源管理器"这一步的说明）都写在了仓库 README 里；签名是显式步骤（<code>build.ps1 -Sign</code>），默认构建不会去动证书。</span>
+        <span data-lang="en">The complete fix — registry locations, UI paths and why restarting Explorer is mandatory — is documented in the repository README; signing is an explicit step (<code>build.ps1 -Sign</code>), and a plain build never touches certificates.</span>
       </p>
     </div>
   </section>
@@ -379,8 +381,8 @@ ip-float.exe --demo --shot-dlg dlg.png    # render the settings dialog</code></p
     <div class="container" style="text-align:center">
       <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">我的工作</span><span data-lang="en">My Role</span></h2>
       <p class="fade-in" style="max-width:760px;margin:0 auto;color:var(--text-dim);font-size:0.95rem;line-height:1.9">
-        <span data-lang="cn">独立完成全部 C++ / Win32 实现（WinHTTP 抓取与主备源轮换、手写 JSON 解析、GDI+ 半透明渲染、托盘与右键菜单、字体度量驱动的设置窗口、Per-Monitor DPI 适配），以及构建、自签名与分发链路和踩坑文档。</span>
-        <span data-lang="en">Independently implemented the entire C++/Win32 application — WinHTTP fetching with source fallback, the hand-written JSON parser, GDI+ translucent rendering, the tray icon and context menu, the font-metrics-driven settings dialog and Per-Monitor DPI handling — plus the build, self-signing and distribution pipeline and the troubleshooting documentation.</span>
+        <span data-lang="cn">独立完成全部 C++ / Win32 实现（WinHTTP 抓取与主备源轮换、手写 JSON 解析、GDI+ 半透明渲染、托盘与右键菜单、字体度量驱动的设置窗口、Per-Monitor DPI 适配），以及构建、自签名与分发链路和踩坑文档；并把单文件重构成 10 个按职责拆分的模块、补上纯逻辑单测与 GitHub Actions 构建。</span>
+        <span data-lang="en">Independently implemented the entire C++/Win32 application — WinHTTP fetching with source fallback, the hand-written JSON parser, GDI+ translucent rendering, the tray icon and context menu, the font-metrics-driven settings dialog and Per-Monitor DPI handling — plus the build, self-signing and distribution pipeline and the troubleshooting documentation, and refactored the single-file codebase into 10 modules with unit tests and a GitHub Actions build.</span>
       </p>
     </div>
   </section>
