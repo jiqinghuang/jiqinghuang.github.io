@@ -2,7 +2,7 @@
 
 JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 
-> 最后更新: 2026-10-28
+> 最后更新: 2026-11-22
 
 ## 页面结构
 
@@ -21,6 +21,7 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
   - [狼与屠夫](https://jiqinghuang.github.io/article-wolves-butcher.html) — 从《聊斋志异》看交易博弈的两种误判
   - [纹丝不动的艺术](https://jiqinghuang.github.io/article-sitting-still.html) — 大涨大跌中持有不动的好坏论证
   - [从畅销书榜到市值榜：为什么押中特斯拉救不了你](https://jiqinghuang.github.io/article-power-law.html) — 正态与幂律分布下个股押注的结构性错误
+  - [当所有人都在卖：股灾的底层原理](https://jiqinghuang.github.io/article-liquidity-crash.html) — 流动性股灾：边际定价、被迫卖家、杠杆与机器交易
 
 ## 特色
 
