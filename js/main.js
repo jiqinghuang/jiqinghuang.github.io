@@ -80,6 +80,9 @@ const I18N = {
   _apply(lang) {
     document.body.classList.toggle('lang-cn', lang === 'cn');
     document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+    // 标签页标题跟随语言；文案存放在 <html data-title-en/cn>
+    const pageTitle = document.documentElement.getAttribute('data-title-' + lang);
+    if (pageTitle) document.title = pageTitle;
     this._safeSet('lang', lang);
     this._carryLang(lang);
     // Update toggle buttons (support legacy span + new button)
@@ -93,10 +96,16 @@ const I18N = {
   }
 };
 
+// main.js 在 </body> 前同步加载：此时 DOM 已就绪，立即应用语言，
+// 避免先按静态 <title> 渲染再切换导致的标签页标题/正文闪烁。
+if (document.body) {
+  I18N.init();
+} else {
+  document.addEventListener('DOMContentLoaded', () => I18N.init(), { once: true });
+}
+
 // ===== DOM Ready =====
 document.addEventListener('DOMContentLoaded', () => {
-  I18N.init();
-
   // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
