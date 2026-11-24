@@ -12,7 +12,7 @@
        这里补一条，让行内代码用站点自己的等宽字体而不是浏览器默认的 monospace。 */
     code { font-family: var(--font-mono); font-size: 0.88em; }
   </style>
-  <meta name="description" content="A 948 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN — plus five live badges telling you whether the tunnel actually carries your traffic — zero runtime dependencies, no installer | 948 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章：隧道是否接管、IPv6 是否泄漏、系统代理是否叠加、时区是否一致、DNS 是否走隧道。零运行时依赖、无需安装">
+  <meta name="description" content="A 948 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN — plus five live badges telling you whether the tunnel actually carries your traffic, and what else overlaps with it — zero runtime dependencies, no installer | 948 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章：隧道是否接管、IPv6 是否泄漏、靠什么出去、时区是否一致、DNS 是否走隧道。零运行时依赖、无需安装">
   <link rel="canonical" href="https://jiqinghuang.github.io/project-ip-float.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
@@ -82,7 +82,7 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">桌面应用没法在线试玩，所以先把界面原样摆出来 &nbsp;·&nbsp; 点击图片可放大</span><span data-lang="en">A desktop app cannot be tried in a browser, so here is the interface as it actually renders &nbsp;·&nbsp; Click to enlarge</span></p>
 
       <div class="fade-in" style="margin-top:32px;background:#1e1f22;border:1px solid var(--border);border-radius:var(--radius-lg);padding:56px 24px;display:flex;justify-content:center">
-        <img src="assets/ip-float/card.png" alt="ip-float 悬浮卡片：第一行 203.0.113.42 · JP Tokyo Chiyoda，第二行 AS20473 Vultr · 2分钟前，第三行五个绿色状态点 TUN / V6 / 代理 / 时区 / DNS" width="680" height="160" loading="lazy" decoding="async" style="max-width:100%;height:auto;display:block">
+        <img src="assets/ip-float/card.png" alt="ip-float 悬浮卡片：第一行 203.0.113.42 · JP Tokyo Chiyoda，第二行 AS20473 Vultr · 2分钟前，第三行五个绿色状态点 TUN / V6 / 路径 / 时区 / DNS" width="680" height="160" loading="lazy" decoding="async" style="max-width:100%;height:auto;display:block">
       </div>
       <p class="fade-in" style="margin-top:14px;text-align:center;font-family:var(--font-mono);font-size:0.76rem;color:var(--text-dim)">
         <span data-lang="cn">卡片本体 · 340 &times; 80 逻辑像素 · 图为 200% DPI 离屏渲染（示例数据）</span>
@@ -91,7 +91,7 @@
 
       <div class="card-grid fade-in" style="margin-top:40px;align-items:center">
         <div class="gallery-item" style="max-width:420px;width:100%;justify-self:center">
-          <picture><source srcset="assets/ip-float/diag.webp" type="image/webp"><img src="assets/ip-float/diag.png" alt="ip-float 网络诊断窗口：顶部结论『未发现泄漏』与依据『IPv4 / IPv6 出口同为 203.0.113.42』；下面按隧道 / 出口 / 一致性分三组，每行给出检查项、值、以及判定依据，例如『隧道 已接管 IPv4 + IPv6』『IPv6 出口 与 IPv4 同源』『时区 一致 IP +9 / 本机 +9』『DNS 公共解析器 Cloudflare 1.1.1.1』；底部三个按钮 刷新 / 复制 / 关闭" width="920" height="1147" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/ip-float/diag.webp" type="image/webp"><img src="assets/ip-float/diag.png" alt="ip-float 网络诊断窗口：顶部结论『未发现泄漏』与依据『IPv4 / IPv6 出口同为 203.0.113.42』；下面按隧道 / 出口 / 一致性分三组，每行给出检查项、值、以及判定依据，例如『隧道 已接管 IPv4 + IPv6』『IPv6 出口 与 IPv4 同源』『时区 一致 IP +9 / 本机 +9』『DNS 公共解析器 Cloudflare 1.1.1.1』；底部三个按钮 刷新 / 复制 / 关闭" width="920" height="1182" loading="lazy" decoding="async"></picture>
           <div class="gallery-caption"><span data-lang="cn">网络诊断面板 · 点击放大</span><span data-lang="en">Diagnostics · click to enlarge</span></div>
         </div>
         <div class="card" style="border:none;background:transparent;box-shadow:none;padding:0">
@@ -183,7 +183,7 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">第三行：五个状态徽章</span><span data-lang="en">A Third Line: Five Status Badges</span></h3>
-          <p><span data-lang="cn">TUN / V6 / 代理 / 时区 / DNS，绿=正常、黄=存疑、红=有问题。关键在第四种状态：<b>空心圈</b>表示"当前配置下这项检查不适用"——没开隧道时问"隧道接管了吗"没有意义，它不会假装通过，也不会假装失败。没测到是实心灰点，两者绝不混用。</span><span data-lang="en">TUN / V6 / proxy / timezone / DNS, where green is fine, amber is doubtful and red is a problem. The fourth state matters most: a <b>hollow ring</b> means the check does not apply to your current setup — asking "did the tunnel take over" while no tunnel is running has no answer, and the tool says so instead of pretending either way. "Not applicable" and "could not measure" are never drawn the same.</span></p>
+          <p><span data-lang="cn">TUN / V6 / 路径 / 时区 / DNS，绿=正常、黄=存疑、红=有问题。第三行的「路径」回答的不是"系统代理开关是几"，而是<b>你现在靠什么出去、有没有两条路并存</b>。关键在第四种状态：<b>空心圈</b>表示"这项检查在你当前配置下不成立"——没开隧道时问"隧道接管了吗"没有意义，什么都没配时「路径」就是直连；它不会假装通过，也不会假装失败。没测到是实心灰点，两者绝不混用。</span><span data-lang="en">TUN / V6 / path / timezone / DNS, where green is fine, amber is doubtful and red is a problem. The third one does not report a registry switch — it answers <b>what is actually carrying your traffic, and whether two paths overlap</b>. The fourth state matters most: a <b>hollow ring</b> means the check does not hold for your setup — asking "did the tunnel take over" while no tunnel is running has no answer, and with nothing configured the path is simply "direct". "Not applicable" and "could not measure" are never drawn the same.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">右键「网络诊断…」：给依据，不只给结论</span><span data-lang="en">Right-Click Diagnostics: Evidence, Not Just a Verdict</span></h3>
