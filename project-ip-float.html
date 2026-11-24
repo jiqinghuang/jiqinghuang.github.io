@@ -91,7 +91,7 @@
 
       <div class="card-grid fade-in" style="margin-top:40px;align-items:center">
         <div class="gallery-item" style="max-width:420px;width:100%;justify-self:center">
-          <picture><source srcset="assets/ip-float/diag.webp" type="image/webp"><img src="assets/ip-float/diag.png" alt="ip-float 网络诊断窗口：顶部结论『未发现泄漏』与依据『IPv4 / IPv6 出口同为 203.0.113.42』；下面按隧道 / 出口 / 一致性分三组，每行给出检查项、值、以及判定依据，例如『隧道 已接管 IPv4 + IPv6』『IPv6 出口 与 IPv4 同源』『时区 一致 IP +9 / 本机 +9』『DNS 公共解析器 Cloudflare 1.1.1.1』；底部三个按钮 刷新 / 复制 / 关闭" width="920" height="1182" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/ip-float/diag.webp" type="image/webp"><img src="assets/ip-float/diag.png" alt="ip-float 网络诊断窗口：顶部结论『未发现泄漏』与依据『IPv4 出口 203.0.113.42，IPv6 出口 2001:db8:4c0a:1::42』；下面按隧道 / 出口 / 一致性分三组，每行给出检查项、值、以及判定依据，例如『隧道 已接管 IPv4 + IPv6』『IPv6 出口 与 IPv4 同源』『时区 一致 IP +9 / 本机 +9』『DNS 公共解析器 Cloudflare 1.1.1.1』；底部三个按钮 刷新 / 复制 / 关闭" width="920" height="1182" loading="lazy" decoding="async"></picture>
           <div class="gallery-caption"><span data-lang="cn">网络诊断面板 · 点击放大</span><span data-lang="en">Diagnostics · click to enlarge</span></div>
         </div>
         <div class="card" style="border:none;background:transparent;box-shadow:none;padding:0">
@@ -187,7 +187,7 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">右键「网络诊断…」：给依据，不只给结论</span><span data-lang="en">Right-Click Diagnostics: Evidence, Not Just a Verdict</span></h3>
-          <p><span data-lang="cn">徽章只是结论。想知道为什么，打开诊断窗口：每一行下面都写着判定依据，例如"IPv6 出口 2408:… 与 IPv4 出口 45.77… 不同源"。它读的是本机路由表和注册表，加上两次免费探测——开销只有一次 geo 请求和一次本地 DNS 查询，不额外花钱，也不需要你手动刷新。</span><span data-lang="en">The badges are only the verdict. Open the diagnostics window to see why: every row carries its own evidence, such as "IPv6 egress 2408:… differs from IPv4 egress 45.77…". Verdicts come from the routing table and the registry plus two free probes — the running cost is one geolocation request and one local DNS query, with no paid API and no manual refresh.</span></p>
+          <p><span data-lang="cn">徽章只是结论。想知道为什么，打开诊断窗口：每一行下面都写着判定依据，例如"IPv6 出口 与 IPv4 同源（同为 AS20473）"。它读的是本机路由表和注册表，加上两次免费探测——开销只有一次 geo 请求和一次本地 DNS 查询，不额外花钱，也不需要你手动刷新。</span><span data-lang="en">The badges are only the verdict. Open the diagnostics window to see why: every row carries its own evidence, such as "IPv6 egress shares the IPv4 exit (both AS20473)". Verdicts come from the routing table and the registry plus two free probes — the running cost is one geolocation request and one local DNS query, with no paid API and no manual refresh.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">只报该报的</span><span data-lang="en">Data Leaves Only When It Must</span></h3>
