@@ -12,18 +12,18 @@
        这里补一条，让行内代码用站点自己的等宽字体而不是浏览器默认的 monospace。 */
     code { font-family: var(--font-mono); font-size: 0.88em; }
   </style>
-  <meta name="description" content="A 812 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 812 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN，零运行时依赖、无需安装">
+  <meta name="description" content="A 940 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN — plus five live badges telling you whether the tunnel actually carries your traffic — zero runtime dependencies, no installer | 940 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章：隧道是否接管、IPv6 是否泄漏、系统代理是否叠加、时区是否一致、DNS 是否走隧道。零运行时依赖、无需安装">
   <link rel="canonical" href="https://jiqinghuang.github.io/project-ip-float.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="JQ">
   <meta property="og:title" content="Outbound IP Desktop Widget | JQ">
-  <meta property="og:description" content="A 812 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN in two lines — zero runtime dependencies, no installer | 812 KB 单文件 Windows 桌面悬浮卡片，两行显示出口 IP、归属地与 ASN">
+  <meta property="og:description" content="A 940 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN, with five live status badges for tunnel, IPv6, proxy, timezone and DNS — zero runtime dependencies, no installer | 940 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章">
   <meta property="og:url" content="https://jiqinghuang.github.io/project-ip-float.html">
   <meta property="og:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Outbound IP Desktop Widget | JQ">
-  <meta name="twitter:description" content="A 812 KB single-file Windows desktop card showing your outbound IP, geolocation and ASN in two lines — zero runtime dependencies.">
+  <meta name="twitter:description" content="A 940 KB single-file Windows desktop card showing your outbound IP, geolocation and ASN, with five live status badges for tunnel, IPv6, proxy, timezone and DNS — zero runtime dependencies.">
   <meta name="twitter:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
 </head>
 <body>
@@ -50,7 +50,7 @@
   <section class="page-hero">
     <div class="container">
       <h1><span data-lang="cn">出口 IP 桌面悬浮窗</span><span data-lang="en">Outbound IP Desktop Widget</span></h1>
-      <p><span data-lang="cn">// 两行看清自己从哪个 IP、哪个机房出网 · Windows 原生单文件</span><span data-lang="en">// Two lines that tell you which IP and which datacenter you egress from — one native Windows binary</span></p>
+      <p><span data-lang="cn">// 三行看清自己从哪个 IP 出网、有没有第二条路漏出去 · Windows 原生单文件</span><span data-lang="en">// Three lines that tell you which IP you egress from — and whether anything leaks around the tunnel — one native Windows binary</span></p>
       <div class="tech-tags">
         <span class="tech-tag">C++17</span>
         <span class="tech-tag">Win32 API</span>
@@ -69,8 +69,8 @@
         </a>
       </div>
       <p style="margin-top:20px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
-        <span data-lang="cn">单文件 exe（v3.1.0，约 812 KB），双击即用 —— 不需要安装、不需要管理员权限。<br>Windows 首次运行可能提示安全警告，处理办法见仓库 README。</span>
-        <span data-lang="en">A single ~812 KB exe (v3.1.0) — double-click to run. No installer, no admin rights.<br>Windows may warn on first launch; the README covers the fix.</span>
+        <span data-lang="cn">单文件 exe（v3.2.0，约 940 KB），双击即用 —— 不需要安装、不需要管理员权限。<br>Windows 首次运行可能提示安全警告，处理办法见仓库 README。</span>
+        <span data-lang="en">A single ~940 KB exe (v3.2.0) — double-click to run. No installer, no admin rights.<br>Windows may warn on first launch; the README covers the fix.</span>
       </p>
     </div>
   </section>
@@ -82,7 +82,7 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">桌面应用没法在线试玩，所以先把界面原样摆出来 &nbsp;·&nbsp; 点击图片可放大</span><span data-lang="en">A desktop app cannot be tried in a browser, so here is the interface as it actually renders &nbsp;·&nbsp; Click to enlarge</span></p>
 
       <div class="fade-in" style="margin-top:32px;background:#1e1f22;border:1px solid var(--border);border-radius:var(--radius-lg);padding:56px 24px;display:flex;justify-content:center">
-        <img src="assets/ip-float/card.png" alt="ip-float 悬浮卡片：上行显示 203.0.113.42 · JP Tokyo Chiyoda，下行显示 AS20473 Vultr · 2分钟前" width="680" height="132" loading="lazy" decoding="async" style="max-width:100%;height:auto;display:block">
+        <img src="assets/ip-float/card.png" alt="ip-float 悬浮卡片：第一行 203.0.113.42 · JP Tokyo Chiyoda，第二行 AS20473 Vultr · 2分钟前，第三行五个绿色状态点 TUN / V6 / 代理 / 时区 / DNS" width="680" height="160" loading="lazy" decoding="async" style="max-width:100%;height:auto;display:block">
       </div>
       <p class="fade-in" style="margin-top:14px;text-align:center;font-family:var(--font-mono);font-size:0.76rem;color:var(--text-dim)">
         <span data-lang="cn">卡片本体 · 340 &times; 66 逻辑像素 · 图为 200% DPI 实拍（示例数据）</span>
@@ -136,7 +136,7 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">一个足够小的工具，把该做对的细节都做对</span><span data-lang="en">A deliberately small tool that still gets the details right</span></p>
       <div class="stats-row fade-in">
         <div class="stat-card">
-          <div class="stat-number">812 <span style="font-size:1.1rem">KB</span></div>
+          <div class="stat-number">940 <span style="font-size:1.1rem">KB</span></div>
           <div class="stat-label"><span data-lang="cn">单文件成品</span><span data-lang="en">Single-File Binary</span></div>
         </div>
         <div class="stat-card">
@@ -144,7 +144,7 @@
           <div class="stat-label"><span data-lang="cn">运行时依赖</span><span data-lang="en">Runtime Dependencies</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">10</div>
+          <div class="stat-number">14</div>
           <div class="stat-label"><span data-lang="cn">按职责拆分的模块</span><span data-lang="en">Modules by Responsibility</span></div>
         </div>
         <div class="stat-card">
@@ -170,8 +170,12 @@
           <p><span data-lang="cn">双击托盘图标显示/隐藏；右键菜单含状态行（当前数据源与更新时间）、立即刷新、刷新间隔、设置、复制 IP、总在最前、开机自启、退出——并且会显示当前实际生效的配置文件路径。</span><span data-lang="en">Double-click the tray icon to show or hide the card. The context menu carries a status line (current data source and update time), refresh now, interval presets, settings, copy IP, always-on-top, run at login and quit — and it shows the configuration path actually in effect.</span></p>
         </div>
         <div class="card">
-          <h3><span data-lang="cn">状态点区分三种状态</span><span data-lang="en">One Dot, Three States</span></h3>
-          <p><span data-lang="cn">绿点=数据正常，灰点=正在查询，橙点=上次刷新失败。不用读文字，扫一眼颜色就知道现在这份数字可不可信。</span><span data-lang="en">Green means fresh data, grey means a query is in flight, amber means the last refresh failed — a glance at the colour tells you whether the number in front of you can be trusted.</span></p>
+          <h3><span data-lang="cn">第三行：五个状态徽章</span><span data-lang="en">A Third Line: Five Status Badges</span></h3>
+          <p><span data-lang="cn">TUN / V6 / 代理 / 时区 / DNS，绿=正常、黄=存疑、红=有问题。关键在第四种状态：<b>空心圈</b>表示"当前配置下这项检查不适用"——没开隧道时问"隧道接管了吗"没有意义，它不会假装通过，也不会假装失败。没测到是实心灰点，两者绝不混用。</span><span data-lang="en">TUN / V6 / proxy / timezone / DNS, where green is fine, amber is doubtful and red is a problem. The fourth state matters most: a <b>hollow ring</b> means the check does not apply to your current setup — asking "did the tunnel take over" while no tunnel is running has no answer, and the tool says so instead of pretending either way. "Not applicable" and "could not measure" are never drawn the same.</span></p>
+        </div>
+        <div class="card">
+          <h3><span data-lang="cn">右键「网络诊断…」：给依据，不只给结论</span><span data-lang="en">Right-Click Diagnostics: Evidence, Not Just a Verdict</span></h3>
+          <p><span data-lang="cn">徽章只是结论。想知道为什么，打开诊断窗口：每一行下面都写着判定依据，例如"IPv6 出口 2408:… 与 IPv4 出口 45.77… 不同源"。它读的是本机路由表和注册表，加上两次免费探测——开销只有一次 geo 请求和一次本地 DNS 查询，不额外花钱，也不需要你手动刷新。</span><span data-lang="en">The badges are only the verdict. Open the diagnostics window to see why: every row carries its own evidence, such as "IPv6 egress 2408:… differs from IPv4 egress 45.77…". Verdicts come from the routing table and the registry plus two free probes — the running cost is one geolocation request and one local DNS query, with no paid API and no manual refresh.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">只报该报的</span><span data-lang="en">Data Leaves Only When It Must</span></h3>
@@ -232,16 +236,18 @@
       <h2 class="section-title fade-in" style="text-align:center"><span data-lang="cn">30 秒自检</span><span data-lang="en">Verify It in 30 Seconds</span></h2>
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">没法在线试玩，但你可以不联网、不安装地先确认渲染是好的</span><span data-lang="en">You cannot try it online, but you can confirm the rendering offline without installing anything</span></p>
       <p class="fade-in" style="max-width:760px;margin:24px auto 0;color:var(--text-dim);font-size:0.95rem;line-height:1.9;text-align:center">
-        <span data-lang="cn">这是这个项目里我最满意的一个设计：exe 自带三种自检模式——<code>--render</code> 直接把卡片画进 PNG（不依赖桌面、壁纸或屏幕 DPI），<code>--shot</code> 抓真实卡片窗口，<code>--shot-dlg</code> 抓设置窗口。全部用演示数据、不联网、不受单实例限制，改完界面可以随时验证。</span>
-        <span data-lang="en">This is the part of the project I am happiest with: three self-check modes — <code>--render</code> draws the card straight into a PNG (independent of the desktop, wallpaper or screen DPI), <code>--shot</code> captures the real card window, and <code>--shot-dlg</code> captures the settings dialog. All use sample data, skip the network and bypass the single-instance check, so the UI can be re-verified after any change.</span>
+        <span data-lang="cn">这是这个项目里我最满意的一个设计：exe 自带四种自检模式——<code>--render</code> 直接把卡片画进 PNG（不依赖桌面、壁纸或屏幕 DPI），<code>--diag</code> 输出一份出口体检报告，<code>--shot</code> 抓真实卡片窗口，<code>--shot-dlg</code> 抓设置窗口。前三种完全离线，改完界面可以随时验证。</span>
+        <span data-lang="en">This is the part of the project I am happiest with: four self-check modes — <code>--render</code> draws the card straight into a PNG (independent of the desktop, wallpaper or screen DPI), <code>--diag</code> writes an egress health report, <code>--shot</code> captures the real card window, and <code>--shot-dlg</code> captures the settings dialog. The first three are fully offline, so the UI can be re-verified after any change.</span>
       </p>
       <div class="fade-in" data-lang="cn" style="max-width:720px;margin:28px auto 0">
         <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --render out.png             # 离屏渲染卡片（透明圆角，2x）
+ip-float.exe --diag report.txt            # 出口体检报告（.txt + .json，不建窗口）
 ip-float.exe --demo --shot out.png        # 屏幕抓卡片（演示数据）
 ip-float.exe --demo --shot-dlg dlg.png    # 拍设置窗口</code></pre>
       </div>
       <div class="fade-in" data-lang="en" style="max-width:720px;margin:28px auto 0">
         <pre style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;overflow-x:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.95;color:var(--text);margin:0"><code>ip-float.exe --render out.png             # off-screen card render (transparent, 2x)
+ip-float.exe --diag report.txt            # egress health report (.txt + .json, no window)
 ip-float.exe --demo --shot out.png        # capture the card on screen (demo data)
 ip-float.exe --demo --shot-dlg dlg.png    # capture the settings dialog</code></pre>
       </div>
