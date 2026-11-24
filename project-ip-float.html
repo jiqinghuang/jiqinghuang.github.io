@@ -12,18 +12,18 @@
        这里补一条，让行内代码用站点自己的等宽字体而不是浏览器默认的 monospace。 */
     code { font-family: var(--font-mono); font-size: 0.88em; }
   </style>
-  <meta name="description" content="A 940 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN — plus five live badges telling you whether the tunnel actually carries your traffic — zero runtime dependencies, no installer | 940 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章：隧道是否接管、IPv6 是否泄漏、系统代理是否叠加、时区是否一致、DNS 是否走隧道。零运行时依赖、无需安装">
+  <meta name="description" content="A 948 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN — plus five live badges telling you whether the tunnel actually carries your traffic — zero runtime dependencies, no installer | 948 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章：隧道是否接管、IPv6 是否泄漏、系统代理是否叠加、时区是否一致、DNS 是否走隧道。零运行时依赖、无需安装">
   <link rel="canonical" href="https://jiqinghuang.github.io/project-ip-float.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="JQ">
   <meta property="og:title" content="Outbound IP Desktop Widget | JQ">
-  <meta property="og:description" content="A 940 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN, with five live status badges for tunnel, IPv6, proxy, timezone and DNS — zero runtime dependencies, no installer | 940 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章">
+  <meta property="og:description" content="A 948 KB single-file Windows desktop card that shows your outbound IP, geolocation and ASN, with five live status badges for tunnel, IPv6, proxy, timezone and DNS — zero runtime dependencies, no installer | 948 KB 单文件 Windows 桌面悬浮卡片，三行显示出口 IP、归属地，以及五个状态徽章">
   <meta property="og:url" content="https://jiqinghuang.github.io/project-ip-float.html">
   <meta property="og:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Outbound IP Desktop Widget | JQ">
-  <meta name="twitter:description" content="A 940 KB single-file Windows desktop card showing your outbound IP, geolocation and ASN, with five live status badges for tunnel, IPv6, proxy, timezone and DNS — zero runtime dependencies.">
+  <meta name="twitter:description" content="A 948 KB single-file Windows desktop card showing your outbound IP, geolocation and ASN, with five live status badges for tunnel, IPv6, proxy, timezone and DNS — zero runtime dependencies.">
   <meta name="twitter:image" content="https://jiqinghuang.github.io/assets/ip-float/card.png">
 </head>
 <body>
@@ -69,8 +69,8 @@
         </a>
       </div>
       <p style="margin-top:20px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim)">
-        <span data-lang="cn">单文件 exe（v3.2.0，约 940 KB），双击即用 —— 不需要安装、不需要管理员权限。<br>Windows 首次运行可能提示安全警告，处理办法见仓库 README。</span>
-        <span data-lang="en">A single ~940 KB exe (v3.2.0) — double-click to run. No installer, no admin rights.<br>Windows may warn on first launch; the README covers the fix.</span>
+        <span data-lang="cn">单文件 exe（v3.2.0，约 948 KB），双击即用 —— 不需要安装、不需要管理员权限。<br>Windows 首次运行可能提示安全警告，处理办法见仓库 README。</span>
+        <span data-lang="en">A single ~948 KB exe (v3.2.0) — double-click to run. No installer, no admin rights.<br>Windows may warn on first launch; the README covers the fix.</span>
       </p>
     </div>
   </section>
@@ -85,9 +85,21 @@
         <img src="assets/ip-float/card.png" alt="ip-float 悬浮卡片：第一行 203.0.113.42 · JP Tokyo Chiyoda，第二行 AS20473 Vultr · 2分钟前，第三行五个绿色状态点 TUN / V6 / 代理 / 时区 / DNS" width="680" height="160" loading="lazy" decoding="async" style="max-width:100%;height:auto;display:block">
       </div>
       <p class="fade-in" style="margin-top:14px;text-align:center;font-family:var(--font-mono);font-size:0.76rem;color:var(--text-dim)">
-        <span data-lang="cn">卡片本体 · 340 &times; 66 逻辑像素 · 图为 200% DPI 实拍（示例数据）</span>
-        <span data-lang="en">The card itself · 340 &times; 66 logical pixels · captured at 200% DPI (sample data)</span>
+        <span data-lang="cn">卡片本体 · 340 &times; 80 逻辑像素 · 图为 200% DPI 离屏渲染（示例数据）</span>
+        <span data-lang="en">The card itself · 340 &times; 80 logical pixels · rendered off-screen at 200% DPI (sample data)</span>
       </p>
+
+      <div class="card-grid fade-in" style="margin-top:40px;align-items:center">
+        <div class="gallery-item" style="max-width:420px;width:100%;justify-self:center">
+          <picture><source srcset="assets/ip-float/diag.webp" type="image/webp"><img src="assets/ip-float/diag.png" alt="ip-float 网络诊断窗口：顶部结论『未发现泄漏』与依据『IPv4 / IPv6 出口同为 203.0.113.42』；下面按隧道 / 出口 / 一致性分三组，每行给出检查项、值、以及判定依据，例如『隧道 已接管 IPv4 + IPv6』『IPv6 出口 与 IPv4 同源』『时区 一致 IP +9 / 本机 +9』『DNS 公共解析器 Cloudflare 1.1.1.1』；底部三个按钮 刷新 / 复制 / 关闭" width="920" height="1147" loading="lazy" decoding="async"></picture>
+          <div class="gallery-caption"><span data-lang="cn">网络诊断面板 · 点击放大</span><span data-lang="en">Diagnostics · click to enlarge</span></div>
+        </div>
+        <div class="card" style="border:none;background:transparent;box-shadow:none;padding:0">
+          <h3><span data-lang="cn">先给结论，再给依据</span><span data-lang="en">Verdict First, Then the Evidence</span></h3>
+          <p><span data-lang="cn">卡片第三行那五个点只是<b>结论</b>。想知道为什么，右键卡片打开这个面板：顶部一句结论加一行依据，中间按「隧道 / 出口 / 一致性」分三组，每一行下面那行小字就是判定依据——为什么算「已接管」、为什么算「一致」，而不是让你相信一个颜色。</span><span data-lang="en">The five dots on the card are only the <b>verdict</b>. To see why, right-click the card and open this panel: one line of conclusion plus its evidence at the top, then three groups — tunnel, egress, consistency — where the small line under each row is the reasoning itself: why "taken over", why "consistent", instead of asking you to trust a colour.</span></p>
+          <p style="margin-top:12px"><span data-lang="cn">判定全部来自本机路由表和注册表，加上两三次免费探测：<code>--diag</code> 输出的是同一套结论的文本版，能直接贴进 issue 或丢给 CI。</span><span data-lang="en">Every verdict comes from the local routing table and registry plus two or three free probes. <code>--diag</code> prints the same conclusions as text, ready to paste into an issue or hand to CI.</span></p>
+        </div>
+      </div>
 
       <div class="card-grid fade-in" style="margin-top:40px;align-items:center">
         <div class="gallery-item" style="max-width:340px;width:100%;justify-self:center">
