@@ -2,7 +2,7 @@
 
 JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
 
-> 最后更新: 2026-11-22
+> 最后更新: 2026-11-25
 
 ## 页面结构
 
@@ -14,7 +14,7 @@ JQ 的个人网站 — [jiqinghuang.github.io](https://jiqinghuang.github.io/)
   - 纸牌接龙（零依赖 Win95 Klondike 复刻，内置求解器判定可胜 / 死局 / 暂不确定，318 条自动化测试）
   - 前端之路：HTML / CSS 教程（离线优先中文前端教程，含实时练习场、无障碍指南和综合项目）
   - 数独逐步解（零依赖数独教学求解器，默认批量讲清中文推理并支持逐格展开（一键切一步一格），求解跑在 Web Worker 上不卡界面，185 条自动化测试）
-  - 出口 IP 桌面悬浮窗（v3.1.0，812 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖）
+  - 出口 IP 桌面悬浮窗（v3.4.0，约 1 MB 单文件 Win32 桌面卡片，三行显示出口 IP / 归属地 / ASN 与五个状态徽章；网络变化 30 秒内自动刷新，零运行时依赖）
   - 经典扫雷复刻（零依赖 Win95 扫雷，规则/手势/终局图块对照原版，纯 CSS + 内联 SVG，2631 条自动化测试）
 - **投资专栏** — 交易相关文章
   - [你交易，有人在数钱](https://jiqinghuang.github.io/article-trading-fees.html) — 手续费复利反噬与机器学习正则化类比
@@ -75,5 +75,5 @@ python ../margin_model/sync_to_website.py
 - **[纸牌接龙](https://github.com/jiqinghuang/solitaire)** — 零依赖 Win95 Klondike 复刻，内置可胜 / 死局 / 暂不确定三态求解器；[在线试玩](https://jiqinghuang.github.io/solitaire/)
 - **[前端之路：HTML / CSS 教程](https://github.com/jiqinghuang/html-and-css-tutorial)** — 离线优先中文前端教程；[在线教程](https://jiqinghuang.github.io/html-and-css-tutorial/)
 - **[数独逐步解](https://github.com/jiqinghuang/sudoku)** — 每步讲得出理由的教学型数独求解器，Web Worker 后台求解；[在线试玩](https://jiqinghuang.github.io/sudoku/)
-- **[出口 IP 桌面悬浮窗](https://github.com/jiqinghuang/ip-float)** — v3.1.0，812 KB 单文件 Win32 桌面卡片，两行显示出口 IP / 归属地 / ASN，零运行时依赖；[下载 exe](https://github.com/jiqinghuang/ip-float/releases/latest)
+- **[出口 IP 桌面悬浮窗](https://github.com/jiqinghuang/ip-float)** — v3.4.0，约 1 MB 单文件 Win32 桌面卡片，三行显示出口 IP / 归属地 / ASN 与五个状态徽章；网络变化 30 秒内自动刷新，支持期望出口与脱敏诊断；[下载 exe](https://github.com/jiqinghuang/ip-float/releases/latest)
 - **[经典扫雷复刻](https://github.com/jiqinghuang/minesweeper)** — 零依赖 Win95 扫雷复刻，引擎/UI 分离 + 双套测试 + CI 闭环；[在线试玩](https://jiqinghuang.github.io/minesweeper/)
