@@ -7,18 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, hints and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、提示与完整必胜路线">
+  <meta name="description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, player-view hints, Web Worker analysis and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、玩家视角提示、Web Worker 后台分析与完整必胜路线">
   <link rel="canonical" href="https://jiqinghuang.github.io/project-solitaire.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="JQ">
   <meta property="og:title" content="Klondike Solitaire | JQ">
-  <meta property="og:description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, hints and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、提示与完整必胜路线">
+  <meta property="og:description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, player-view hints, Web Worker analysis and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、玩家视角提示、Web Worker 后台分析与完整必胜路线">
   <meta property="og:url" content="https://jiqinghuang.github.io/project-solitaire.html">
   <meta property="og:image" content="https://jiqinghuang.github.io/favicon.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Klondike Solitaire | JQ">
-  <meta name="twitter:description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, hints and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、提示与完整必胜路线">
+  <meta name="twitter:description" content="A zero-dependency Win95 Klondike solitaire with a real solver: dead-end diagnosis, three-state analysis, player-view hints, Web Worker analysis and the full winning line | 零依赖的 Win95 纸牌接龙复刻，内置求解器：死局诊断、三态分析、玩家视角提示、Web Worker 后台分析与完整必胜路线">
 </head>
 <body>
   <nav class="navbar">
@@ -49,7 +49,8 @@
         <span class="tech-tag">TypeScript</span>
         <span class="tech-tag">Vanilla JS</span>
         <span class="tech-tag">Zero Dependency</span>
-        <span class="tech-tag">DFS Solver</span>
+        <span class="tech-tag">Iterative DFS Solver</span>
+        <span class="tech-tag">Web Worker</span>
         <span class="tech-tag">OKLCh Color</span>
         <span class="tech-tag">GitHub Actions</span>
         <span class="tech-tag">GitHub Pages</span>
@@ -97,7 +98,7 @@
       <p class="section-subtitle fade-in" style="text-align:center"><span data-lang="cn">完整规则 + 死局判定 + 原因诊断，全在零依赖下完成</span><span data-lang="en">Full rules, dead-end detection and diagnosis — all with zero dependencies</span></p>
       <div class="stats-row fade-in">
         <div class="stat-card">
-          <div class="stat-number">318</div>
+          <div class="stat-number">340</div>
           <div class="stat-label"><span data-lang="cn">自动化测试</span><span data-lang="en">Automated Tests</span></div>
         </div>
         <div class="stat-card">
@@ -124,11 +125,11 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">必胜路线</span><span data-lang="en">Winning Line</span></h3>
-          <p><span data-lang="cn">底栏「分析局面」按钮（或按 A）跑带全局 visited 的可达性搜索，判定可胜时从搜索记录里回溯出一条完整的必胜路线，并直接给出第一步该怎么走。</span><span data-lang="en">The Analyze Position button in the bottom bar (or pressing A) runs a reachability search with a global visited set; when the deal is winnable it backtracks a complete winning line from the search and tells you the exact first move.</span></p>
+          <p><span data-lang="cn">底栏「分析局面」按钮（或按 A）在 Web Worker 中跑显式栈迭代 DFS + 全局 visited 的完整状态搜索，只受节点/时间预算限制；判定可胜时从搜索记录里回溯出一条完整必胜路线，并直接给出第一步该怎么走。搜索未完成时会明确说明触发的是节点上限还是时间上限。</span><span data-lang="en">The Analyze Position button in the bottom bar (or pressing A) runs a complete-state search in a Web Worker using iterative DFS with explicit stack and a global visited set, bounded only by node/time budgets. When the deal is winnable it backtracks a complete winning line and tells you the exact first move; when search does not finish it says whether the node or time limit was reached.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">提示与收尾</span><span data-lang="en">Hints and Endgame</span></h3>
-          <p><span data-lang="cn">「提示」用求解器的有限前瞻推荐有净进展的走法，并说明理由；检测到 A→B→A 的状态环会停止推荐。牌库清空、所有牌翻开后可一键自动完成，胜利时每门花色由 K 领头排成一条牌串沿轨迹弹跳。</span><span data-lang="en">Hints use the solver's finite lookahead to recommend net-progress moves with a reason, and stop when an A→B→A state loop is detected. Once the deck is empty and every card is face-up, auto-complete finishes the game; victory plays the classic animation with each suit's K leading a bouncing chain of cards.</span></p>
+          <p><span data-lang="cn">「提示」默认使用玩家视角：只读取当前可见牌，不偷看暗牌点数，优先推荐收牌和翻开暗牌的走法，并过滤左右倒牌式循环；没有明显净进展时直接建议撤销或重新发牌。牌库清空、所有牌翻开后可一键自动完成（废牌堆非空也能收尾），胜利时每门花色由 K 领头排成一条牌串沿轨迹弹跳。</span><span data-lang="en">Hints default to a player's-eye view: they read only currently visible cards, never peek at face-down ranks, prefer foundation and reveal moves, and filter reversible back-and-forth loops; when no net progress exists they suggest undo or redeal. Once the deck is empty and every card is face-up, auto-complete finishes the game (even with cards left in the waste), and victory plays the classic animation with each suit's K leading a bouncing chain of cards.</span></p>
         </div>
       </div>
     </div>
@@ -154,7 +155,7 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">响应式牌宽</span><span data-lang="en">Responsive Card Width</span></h3>
-          <p><span data-lang="cn">牌宽用 clamp() 随视口伸缩，窗口大时牌也大（1920px 下牌桌占 54% 宽），小屏自动缩到 30px 下限；27 种视口宽度上验证不出现横向滚动条。</span><span data-lang="en">Card width scales with the viewport via clamp() — the board takes 54% of a 1920px screen and shrinks to a 30px floor on small screens. Verified across 27 viewport widths that no horizontal scrollbar ever appears.</span></p>
+          <p><span data-lang="cn">牌宽用 clamp() 随视口伸缩，并用 JS 读取不含滚动条的 clientWidth 覆盖 100vw 兜底；窗口大时牌也大（1920px 下牌桌占 54% 宽），小屏自动缩到 30px 下限，27 种视口宽度上验证不出现横向滚动条。</span><span data-lang="en">Card width scales with the viewport via clamp(), with a JS-measured clientWidth (excluding the scrollbar) overriding the 100vw fallback. The board takes 54% of a 1920px screen and shrinks to a 30px floor on small screens, verified across 27 viewport widths with no horizontal scrollbar.</span></p>
         </div>
         <div class="card">
           <h3><span data-lang="cn">配色按色彩科学</span><span data-lang="en">Scientifically Derived Colors</span></h3>
@@ -162,7 +163,7 @@
         </div>
         <div class="card">
           <h3><span data-lang="cn">CI 护栏</span><span data-lang="en">CI Guards</span></h3>
-          <p><span data-lang="cn">GitHub Actions 每次推送执行类型检查、318 条测试，并校验 dist/ 与 src/ 逐字节一致——改了源码忘编译、或漏提交产物都过不了。配色与布局另有专门校验，改坏了 CI 会直接失败。</span><span data-lang="en">GitHub Actions runs typecheck and all 318 tests on every push, and verifies that dist/ matches src/ byte for byte — a forgotten build cannot ship. Colors and layout have dedicated checks, so breaking either fails CI outright.</span></p>
+          <p><span data-lang="cn">GitHub Actions 每次推送执行类型检查、340 条测试，并先清空 dist/ 再重新编译，严格校验 dist/ 与 src/ 同步——改了源码忘编译、漏提交产物或遗留孤儿文件都过不了。配色与布局另有专门校验，改坏了 CI 会直接失败。</span><span data-lang="en">GitHub Actions runs typecheck and all 340 tests on every push, then clears dist/ and rebuilds before strictly verifying that dist/ matches src/ — a forgotten build, missing artifact or orphan file cannot ship. Colors and layout have dedicated checks, so breaking either fails CI outright.</span></p>
         </div>
       </div>
     </div>
